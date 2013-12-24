@@ -6,7 +6,7 @@ loaded_modules:
 - jquery
 - bootstrap
 - fontawesome
-- highlightjs
+- prettify
 - imagesloaded
 - fancybox
 - mathjax

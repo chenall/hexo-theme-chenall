@@ -46,8 +46,9 @@ if (item.updated)
 if (item.comments && theme.comments.provider && theme.comments.show_count)
    item_meta.push('<span class="comment-link">' + partial('../_comments/'+theme.comments.provider+"_comment_count") + '</span>');
 
-%>
-<article id="<%- item.layout %>" class="<%- item.layout %> well">
+-%>
+<article>
+<div id="<%- item.layout %>" class="<%- item.layout %> well">
   <% if (item.photos){ %>
     <%- partial('post/gallery') %>
   <% } %>
@@ -60,21 +61,21 @@ if (item.comments && theme.comments.provider && theme.comments.show_count)
       <% } %>
     </header>
     <%- config.load_widgets('before_content',index,item) %>
-    <section class="entry">
+    <div class="entry">
       <% if (item.excerpt && index){ %>
         <%- item.excerpt %>
       <% } else { %>
         <%- item.content %>
       <% } %>
-    </section>
+    </div>
     <%- config.load_widgets('after_content',index,item) %>
     <% if (index){ %>
       <% if (item.excerpt){ %>
-      <section id='more-link'>
+      <div id='more-link'>
         <div align="left">
           <a href="<%- config.root + item.path %>#more" class="more-link glyphicon glyphicon-chevron-right"><%- hexo.__("read more") %></a>
         </div>
-      </section>
+      </div>
       <% } %>
     <% } %>
     <%if (item.layout != "link") { %>
@@ -84,11 +85,12 @@ if (item.comments && theme.comments.provider && theme.comments.show_count)
         <div class="clearfix"></div>
     <%}%>
   </div>
+</div>
 </article>
 
 <% if (!index) {%>
     <%- config.load_widgets('after_post',index,item) -%>
     <% if (item.comments && theme.comments.provider) { %>
-	<section id="comment"><a name="comments"></a><%- partial('comment') -%></section>
+	<div id="comment"><a name="comments"></a><%- partial('comment') -%></div>
     <%}%>
-<% } %>
+<% } -%>
