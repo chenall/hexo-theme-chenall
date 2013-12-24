@@ -1,7 +1,7 @@
 <% if (site.tags.length){ %>
 <ul class="list-group">
   <% site.tags.sort('name').each(function(item){ -%>
-    <li class="list-group-item"><span class="badge"><%= item.posts.length %></span><a href="<%- config.root + item.path %>"></a><%= item.name %></li>
+    <li class="list-group-item"><span class="badge"><%= item.posts.length %></span><a href="<%- config.root + item.path %>"><%= item.name %></a></li>
   <% }); -%>
 </ul>
 <% } %>

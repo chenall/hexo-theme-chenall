@@ -42,7 +42,8 @@ modules:
   # MathJax is an open source JavaScript display engine for mathematics that works in all browsers.
   mathjax: # 生成数学公式插件
     css:
-    js: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    js: http://cdn.bootcss.com/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    #js: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
   uyan: #有言评论系统
     uid: 1880458
   ujian: #友荐：为网站添加'猜你喜欢'功能
