@@ -1,0 +1,94 @@
+<%
+partial('module');
+if (!item.thread)
+{
+    if (item.wordpress_id)
+	item.thread = item.wordpress_id;
+    else if (item.id)
+	item.thread = item.id;
+    else if (item.slug)
+	item.thread = item.slug;
+}
+page.thread = item.thread;
+
+if (item.layout == "link")
+    item.comments = false;
+
+if (!page.keywords)
+{
+    if (theme.keywords)
+	page.keywords = theme.keywords;
+    else if (config.keywords)
+	page.keywords = config.keywords;
+}
+
+var cats = [];
+var tags = [];
+var item_meta = [];
+if (item.categories && item.categories.length)
+{
+    item.categories.forEach(function(cat){
+	cats.push('<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>');
+    });
+    item_meta.push('<span class="categories breadcrumb">' + hexo.__('Posted in') + ' ' + cats.join("") + '</span>');
+}
+
+if (item.tags && item.tags.length){ 
+    item.tags.forEach(function(tag){
+	tags.push('<a href="' + config.root + tag.path + '" class="label label-primary">' + tag.name + '</a>');
+    });
+    item_meta.push('<span class="tags">' + hexo.__('Tagged') + ' ' + tags.join(",") + '</span>');
+}
+
+if (item.updated)
+    item_meta.push('<span class="time">'+ hexo.__('updated') + ':<time datetime="' + item.updated.format(config.date_format)+ '"> ' + item.updated.format(config.date_format)+ '</time></span>');
+
+if (item.comments && theme.comments.provider && theme.comments.show_count)
+   item_meta.push('<span class="comment-link">' + partial('../_comments/'+theme.comments.provider+"_comment_count") + '</span>');
+
+%>
+<article id="<%- item.layout %>" class="<%- item.layout %> well">
+  <% if (item.photos){ %>
+    <%- partial('post/gallery') %>
+  <% } %>
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <%- partial('post/title') %>
+      <% if (item.layout != 'page'){ %>
+        <span><%- hexo.__('Posted on') %><time datetime="<%- item.date.toDate().toISOString() -%>"> <a href="<%- config.root + item.path %>"><%= item.date.format(config.date_format) %></a></time></span>
+      <% } %>
+    </header>
+    <%- config.load_widgets('before_content',index,item) %>
+    <section class="entry">
+      <% if (item.excerpt && index){ %>
+        <%- item.excerpt %>
+      <% } else { %>
+        <%- item.content %>
+      <% } %>
+    </section>
+    <%- config.load_widgets('after_content',index,item) %>
+    <% if (index){ %>
+      <% if (item.excerpt){ %>
+      <section id='more-link'>
+        <div align="left">
+          <a href="<%- config.root + item.path %>#more" class="more-link glyphicon glyphicon-chevron-right"><%- hexo.__("read more") %></a>
+        </div>
+      </section>
+      <% } %>
+    <% } %>
+    <%if (item.layout != "link") { %>
+        <footer id="post-meta">
+        <%- item_meta.join(' | ') %>
+        </footer>
+        <div class="clearfix"></div>
+    <%}%>
+  </div>
+</article>
+
+<% if (!index) {%>
+    <%- config.load_widgets('after_post',index,item) -%>
+    <% if (item.comments && theme.comments.provider) { %>
+	<section id="comment"><a name="comments"></a><%- partial('comment') -%></section>
+    <%}%>
+<% } %>

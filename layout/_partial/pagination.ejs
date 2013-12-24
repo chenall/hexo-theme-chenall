@@ -1,0 +1,6 @@
+<%if (page.prev || page.next) {%>
+<ul id="pagination" class="pagination pagination-lg">
+  <%- paginator({show_all: true,prev_text:'&laquo;',next_text:'&raquo;'}).replace(/<a.+?\/a>/g,'<li>$&</li>').replace(/<span.+?\/span>/g,'<li class="active">$&</li>')%>
+  <div class="clearfix"></div>
+</ul>
+<%}%>

@@ -1,0 +1,6 @@
+<% theme.widgets.sidebar.forEach(function(widget){ %>
+<div id="widget_<%- widget %>" class="widget panel panel-primary">
+    <div class="panel-heading"><%- hexo.__(widget) -%></h2></div>
+    <%- partial('../_widget/' + widget) -%>
+</div>
+<% }); %>

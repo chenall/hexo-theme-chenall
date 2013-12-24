@@ -1,0 +1,24 @@
+<%partial('module');%>
+<%- partial('_partial/head') %>
+<body>
+  <header id="header" class="container inner"><%- partial('_partial/header') %></header>
+    <div id='content' class="container inner">
+       <div class="page-header-wrapper"><div class="page-header"><h1><%- config.title %> <small><%- config.subtitle %></small></h1></div></div>
+       <div class="row">
+         <div id="main-col" class="alignleft col9 col-sm-7 col-md-9 col-lg-9">
+	    <%- config.load_widgets('header') %>
+	    <div id="wrapper"><%- body %></div>
+         </div>
+         <aside id="sidebar well-sm" class="alignright col3 col-sm-5 col-md-3 col-lg-3"><%- partial('_partial/sidebar') %></aside>
+         <div class="clearfix"></div>
+       </div>
+    </div>
+    <footer id="footer" class="container">
+    <div class="panel panel-info">
+    <%- config.load_widgets('footer') -%>
+    <%- partial('_partial/footer') %>
+    </div>
+    </footer>
+    <%- partial('_partial/after_footer') %>
+</body>
+</html>

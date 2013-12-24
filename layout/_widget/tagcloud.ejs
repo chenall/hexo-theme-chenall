@@ -1,0 +1,7 @@
+<% if (site.tags.length){ %>
+<div class="widget tagcloud">
+  <div class="entry panel-body">
+    <%- tagcloud(site.tags, {color: true,min_font: 5,max_font: 30,start_color: '#DB25B1',end_color: '#24072E'}) %>
+  </div>
+</div>
+<% } %>

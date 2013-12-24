@@ -1,0 +1,14 @@
+<% theme.loaded_modules.forEach(function(mod){%>
+    <% if (hexo.debug) { %><!-- module <%- mod -%> Script BEGIN --><%}%>
+    <%var module = theme.modules[mod];
+    if (module && module.js) {%><script src="<%- config.addRootPath(module.js) %>"></script><%}%>
+    <%- partial('../_modules/'+mod,{module: module}) -%>
+    <% if (hexo.debug) { %><!-- module <%- '../_modules/'+mod -%> Script END --><%}%>
+<% }); %>
+<% if (hexo.debug) { %>
+    <script type="text/javascript">
+	var theme = <%-JSON.stringify(theme)%>;
+	var hexo = <%-JSON.stringify(hexo)%>;
+	var config = <%-JSON.stringify(config)%>;
+    </script>
+<% } %>

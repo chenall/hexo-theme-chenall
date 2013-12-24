@@ -1,37 +1,3 @@
-# chenall
-
-基于[Hexo]默认主题light修改而成,采用bootstrap css框架
-在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.
-可以自定义组合各种组件,像评论系统,统计系统等.
-
-[demo](http://hexo.chenall.net)
-
-## 安装方法
-
-通过以下命令下载主题到您的theme目录，然后修改blog的_config.yml中theme为bootstrap-light。
-
-```
-git clone git://github.com/chenall/hexo-theme-chenall.git themes/chenall
-```
-或
-```
-svn co -r HEAD https://github.com/chenall/hexo-theme-chenall/trunk themes/chenall
-```
-
-## 更新
-
-通过以下命令来保持更新:
-
-```
-cd themes/light
-git pull 或 svn up
-```
-
-## 配置说明
-
-默认的配置:
-
-``` yaml
 # Site default meta keywords
 #keywords: site, wide, default, keywords
 
@@ -89,9 +55,9 @@ modules:
 #
 # 
 comments:
-    provider: doushuo
+    provider: duoshuo
     show_count: true
-    short_name: chenallcn
+    short_name: hexochenall
 
 ## 站点分析统计代码功能组件
 # 加载在站点的footer位置
@@ -130,10 +96,11 @@ widgets:
     - recent_comments
   before_content: # 文章内容前
   after_content:  # 文章内容后
+    - wumiiRelatedItems
     - post_footer_info
     - ujian
   after_post:     # 文章框架之后
-    - wumiiRelatedItems
+    - uyan
 
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown
@@ -151,6 +118,4 @@ addthis:
   facebook: true
 
 rss: /atom.xml
-```
 
-[Hexo]: http://zespia.tw/hexo/
