@@ -1,11 +1,17 @@
-<h1 class="title">
-<% if (item.link){ -%>
-  <% if (item.title){ -%>
-    <a href="<%- item.link %>" target="_blank"><%= item.title %></a>
-  <%} else { %><a href="<%- item.link %>" target="_blank"><%= item.link %></a><%}%>
-  <%} else { -%>
-  <% if (index){ -%>
-    <a href="<%- config.root %><%- item.path %>"><%= item.title %></a>
-    <% } else { %><%= item.title -%><% } %>
-  <%}%>
-</h1>
+<%
+var str = '';
+if (item.link)
+{
+    str += '<a href="'  + item.link + '" target="_blank">';
+    if (item.title)
+	str += item.title;
+    else
+	str += item.link;
+    str += "</a>";
+}
+else if (index)
+    str = '<a href="' + config.root + item.path + '">' + item.title + '</a>';
+else
+    str = item.title;
+-%>
+<%- str -%>

@@ -19,7 +19,7 @@
   <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
   <% if (page.description){ %>
   <meta name="description" content="<%= page.description %>">
-  <% } else if (config.plugins && config.plugins.indexOf('hexo-summarizer') >=0 && typeof auto_keyword_desc !== 'undefined' && page.content){ %>
+  <% } else if (typeof(auto_keyword_desc) == 'function' && page.content){ %>
   <%- auto_keyword_desc(page.content) %>
   <% } else if (config.description){ %>
   <meta name="description" content="<%= config.description %>">

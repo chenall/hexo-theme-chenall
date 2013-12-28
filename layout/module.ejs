@@ -21,19 +21,32 @@ theme.add_module = function(mod)
 	theme.loaded_modules.splice(-2,0,mod);
 }
 
-config.load_widgets = function(name,index,item)
+config.load_widgets = function(name,item,index)
 {
     if (name.search('_') >= 0 && index)
 	return "";
     var str="<section id='" + name + "_widget'>";
-    if (theme.widgets[name])
+    var widgets = [];
+    if (!item || !item.widgets || item.widgets.theme != false)
     {
-	theme.widgets[name].forEach(function(widget){
-	    str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';
-	    str += partial('_widget/' + widget,{pos: name,item: item});
-	    str += '</div>';
-	});
+	if (theme.widgets && theme.widgets[name])
+	    widgets = theme.widgets[name];
     }
+
+    if (item && item.widgets && item.widgets[name])
+    {
+	item.widgets[name].forEach(function(widget){
+	    if (widgets.indexOf(widget) == -1)
+		widgets.push(widget);
+	})
+    }
+
+    widgets.forEach(function(widget){
+	str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';
+	str += partial('_widget/' + widget,{pos: name,item: item});
+	str += '</div>';
+    });
+
     str +='</section>';
     return str;
 }

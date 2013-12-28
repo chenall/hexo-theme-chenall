@@ -100,8 +100,8 @@ widgets:
     - wumiiRelatedItems
     - post_footer_info
     - ujian
+
   after_post:     # 文章框架之后
-    - uyan
 
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown
