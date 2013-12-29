@@ -1,0 +1,9 @@
+<%if (!item || item.layout == 'page') return;%>
+<ul class="pager">
+  <%if (item.prev) {%>
+  <li class="previous"><a href="<%- config.root + item.prev.path%>" title="<%- item.prev.title%>">&larr; <%- item.prev.title%></a></li>
+  <%}%>
+  <%if (item.next) {%>
+  <li class="next"><a href="<%- config.root + item.next.path%>" title="<%- item.next.title%>"><%- item.next.title%> &rarr;</a></li>
+  <%}%>
+</ul>

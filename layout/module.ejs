@@ -30,7 +30,7 @@ config.load_widgets = function(name,item,index)
     if (!item || !item.widgets || item.widgets.theme != false)
     {
 	if (theme.widgets && theme.widgets[name])
-	    widgets = theme.widgets[name];
+	    widgets = widgets.concat(theme.widgets[name]);
     }
 
     if (item && item.widgets && item.widgets[name])

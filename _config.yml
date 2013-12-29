@@ -102,6 +102,7 @@ widgets:
     - ujian
 
   after_post:     # 文章框架之后
+    - post_pageNav
 
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown
