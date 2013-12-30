@@ -1,7 +1,13 @@
-<% if (site.categories.length){ %>
-<ul class="list-group">
-<% site.categories.sort('name').each(function(item){ -%>
-  <li class="list-group-item"><span class="badge"><%- item.posts.length %></span><a href="<%- config.root + item.path %>"><%- item.name %></a></li>
-<% }); -%>
-</ul>
-<% } %>
+<%if (!theme._widgets.hasOwnProperty('category')){
+    var str = '';
+    if (site.categories.length)
+    {
+	str = '<ul class="list-group">';
+	site.categories.sort('name').each(function(item){
+	    str += '<li class="list-group-item"><span class="badge">'+ item.posts.length + '</span><a href="' + config.root + item.path + '">' + item.name + '</a></li>';
+	});
+	str += '</ul>';
+    }
+    theme._widgets.category = str;
+}%>
+<%- theme._widgets.category %>

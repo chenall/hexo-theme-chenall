@@ -113,11 +113,7 @@ facebook_id:
 linkedin_id:
 github_id: chenall/almrun
 
-addthis:
-  enable: false
-  pubid:
-  twitter: true
-  facebook: true
+
 
 rss: /atom.xml
 

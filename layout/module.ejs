@@ -53,4 +53,8 @@ config.load_widgets = function(name,item,index)
 
 if (theme.comments.provider)
     theme.comments.info = theme.comments[theme.comments.provider];
+theme._widgets = new Object;
+
+if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug'))
+    hexo.debug = hexo.env.debug;
 %>
