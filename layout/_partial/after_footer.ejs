@@ -10,5 +10,7 @@
 	var theme = <%-JSON.stringify(theme)%>;
 	var hexo = <%-JSON.stringify(hexo)%>;
 	var config = <%-JSON.stringify(config)%>;
+	var site = <%- hexo.__dump(site)%>;
+	var page = <%- hexo.__dump(page)%>;
     </script>
 <% } %>

@@ -1,5 +1,5 @@
 <%
-if (config.addRootPath)
+if (config.addRootPath && theme.add_module)
    return;
 //为了方便使用,首先对一些变量进行预处理,
 config.addRootPath = function(str){
@@ -7,6 +7,26 @@ config.addRootPath = function(str){
 	return config.root + str.substr(1);
     else
 	return str;
+}
+var bt_class = ['default','primary','success','info','warning','danger']
+hexo.randomclass = function()
+{
+    return bt_class[(Math.random()*100%5).toFixed()];
+}
+
+hexo.__dump = function(obj)
+{
+    var cache = [];
+    return JSON.stringify(obj,function(key, value){
+	if (typeof value === 'object' && value !== null) {
+	    if (cache.indexOf(value) !== -1) {
+		// Circular reference found, discard key
+		return;
+	    }
+	    cache.push(value);
+	}
+	return value;
+    });
 }
 
 hexo.__ = function(str)

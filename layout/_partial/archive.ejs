@@ -1,14 +1,27 @@
 <%
 partial('module');
 var title = '';
-if (page.category) title = page.category;
+var sub_cats = [];
+if (page.category)
+{
+    title = page.category;
+    var t = page.path.split('/');
+    var index = t.length - 2;
+    var x = t[index];
+    site.categories.sort('name').each(function(item){
+	var ts = item.path.split('/');
+	if ((ts.length - t.length) == 1 && ts[index] === x)
+	    sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+hexo.randomclass()+'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
+    });
+    title += '<small>' + sub_cats.join(' ') + '<small>';
+}
 if (page.tag) title = page.tag;
 if (page.archive){
   if (page.year) title = page.year + (page.month ? '/' + page.month : '');
   else title = __('archive_a');
 }
 %>
-<h2 class="archive-title<% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%= title %></h2>
+<h2 class="archive-title<% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%- title %></h2>
 
 <% if (pagination == 2){ %>
   <% page.posts.each(function(item){ %>
