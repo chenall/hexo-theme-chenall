@@ -2,5 +2,5 @@
 <div id="widget_<%- widget %>" class="widget panel panel-primary">
     <div class="panel-heading"><%- hexo.__(widget) -%></div>
     <%- partial('../_widget/' + widget) -%>
-</div><%if (hexo.debug){%><!--widget_<%- widget %>--><%}%>
+</div><%if (!cache && hexo.debug){%><!--widget_<%- widget %>--><%}%>
 <% }); %>

@@ -11,6 +11,7 @@ archive_a: 归档
 archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最近文章
+latest_update_posts: 最近更新
 recent_comments: 最近评论
 Home: 主页
 About: 关于
@@ -20,3 +21,5 @@ read more: 阅读全文
 updated: 最近更新
 Tagged: 标签
 Posted in: 发表于
+google_sidebar: 赞助商
+google_cse: 搜索

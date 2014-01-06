@@ -22,26 +22,29 @@ if (!page.keywords)
 	page.keywords = config.keywords;
 }
 
-var cats = [];
-var tags = [];
 var item_meta = [];
 if (item.categories && item.categories.length)
 {
-    item.categories.forEach(function(cat){
-	cats.push('<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>');
-    });
-    item_meta.push('<span class="categories breadcrumb">' + hexo.__('Posted in') + ' ' + cats.join("") + '</span>');
+  var cats = [];
+  item.categories.forEach(function(cat){
+    if (!cat.parent)
+      cats.push('<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>');
+    else
+      cats[cats.length - 1] += '<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>';
+  });
+  item_meta.push('<span class="categories">' + hexo.__('Posted in') + '<span class="breadcrumb glyphicon glyphicon-book">' + cats.join('</span><span class="breadcrumb">') + '</span></span>');
 }
 
 if (item.tags && item.tags.length){ 
-    item.tags.forEach(function(tag){
-	tags.push('<a href="' + config.root + tag.path + '" class="label label-primary">' + tag.name + '</a>');
+    var tags = [];
+    item.tags.forEach(function(tag,i){
+	tags.push('<a href="' + config.root + tag.path + '" class="label label-'+ theme.tw_style(i) +'">' + tag.name + '</a>');
     });
-    item_meta.push('<span class="tags">' + hexo.__('Tagged') + ' ' + tags.join(",") + '</span>');
+    item_meta.push('<span class="tags">' + hexo.__('Tagged') + ' ' + tags.join("") + '</span>');
 }
 
 if (item.updated)
-    item_meta.push('<span class="time">'+ hexo.__('updated') + ':<time datetime="' + item.updated.format(config.date_format)+ '"> ' + item.updated.format(config.date_format)+ '</time></span>');
+    item_meta.push('<span class="time">'+ hexo.__('updated') + ':<time title="'+ item.updated.format('YYYY-MM-DD HH:mm:ss') +'"datetime="' + item.updated.format('YYYY-MM-DD HH:mm:ss') + '"> ' + item.updated.format(config.date_format)+ '</time></span>');
 
 if (item.comments && theme.comments.provider && theme.comments.show_count)
    item_meta.push('<span class="comment-link">' + partial('../_comments/'+theme.comments.provider+"_comment_count") + '</span>');

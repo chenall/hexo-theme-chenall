@@ -14,7 +14,10 @@
 	}
    })
    $('pre code').each(function(){
-	var c = $(this).attr('class').match(/\s?(lang\-\w+)/i);
+	var c = $(this).attr('class')
+	if (!c)
+	    return;
+	c = c.match(/\s?(lang\-\w+)/i);
 	if (c && lang.indexOf(c[1]) == -1)
 	{
 	    lang.push(c[1]);

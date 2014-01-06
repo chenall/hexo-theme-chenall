@@ -5,13 +5,10 @@ var sub_cats = [];
 if (page.category)
 {
     title = page.category;
-    var t = page.path.split('/');
-    var index = t.length - 2;
-    var x = t[index];
-    site.categories.sort('name').each(function(item){
-	var ts = item.path.split('/');
-	if ((ts.length - t.length) == 1 && ts[index] === x)
-	    sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+hexo.randomclass()+'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
+    var cur_category = site.categories.findOne({name: page.category});
+    site.categories.sort('name').each(function(item,i){
+	if (item.parent && item.parent == cur_category._id)
+	    sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+ theme.tw_style(i) +'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
     });
     title += '<small>' + sub_cats.join(' ') + '<small>';
 }

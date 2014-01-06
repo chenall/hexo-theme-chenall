@@ -7,12 +7,12 @@
 - 支持单独启用或禁用小工具(像侧边栏之类的)
 - 支持单独启用或禁用评论
 - 可以单独指定加载小工具
-
+- 支持子分类显示(侧边栏只显示一级分类)
 [demo](http://hexo.chenall.net)
 
 ## 安装方法
 
-通过以下命令下载主题到您的theme目录，然后修改blog的_config.yml中theme为bootstrap-light。
+通过以下命令下载主题到您的theme目录，然后修改blog的_config.yml中theme为chenall。
 
 ```
 git clone git://github.com/chenall/hexo-theme-chenall.git themes/chenall

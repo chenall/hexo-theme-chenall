@@ -8,10 +8,11 @@ config.addRootPath = function(str){
     else
 	return str;
 }
-var bt_class = ['default','primary','success','info','warning','danger']
-hexo.randomclass = function()
+
+var tw_constyl = ['primary','success','info','warning','danger'];
+theme.tw_style = function(i)
 {
-    return bt_class[(Math.random()*100%5).toFixed()];
+  return tw_constyl[i%4];
 }
 
 hexo.__dump = function(obj)
@@ -47,19 +48,25 @@ config.load_widgets = function(name,item,index)
 	return "";
     var str="<section id='" + name + "_widget'>";
     var widgets = [];
-    if (!item || !item.widgets || item.widgets.theme != false)
-    {
-	if (theme.widgets && theme.widgets[name])
-	    widgets = widgets.concat(theme.widgets[name]);
-    }
-
+    var theme_widgets = [];
+    if (theme.widgets && theme.widgets[name])
+        theme_widgets = theme.widgets[name];
     if (item && item.widgets && item.widgets[name])
     {
-	item.widgets[name].forEach(function(widget){
-	    if (widgets.indexOf(widget) == -1)
-		widgets.push(widget);
-	})
-    }
+        item.widgets[name].forEach(function(widget){
+            if (widget == '+')//+代表加载主题指定的widgets
+            {
+                theme_widgets.forEach(function(n){
+                    if (widgets.indexOf(widget) == -1)
+                        widgets.push(n);
+                })
+            }
+            else if (widgets.indexOf(widget) == -1)
+                widgets.push(widget);
+        })
+        
+    } else if (!item || item.layout !== 'page' || name.search('_') < 0)//对于页面默认不加载文章前后相关的widgets
+        widgets = widgets.concat(theme_widgets);
 
     widgets.forEach(function(widget){
 	str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';

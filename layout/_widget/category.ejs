@@ -1,15 +1,19 @@
-<%if (!theme._widgets.hasOwnProperty('category')){
-    var str = '';
-    if (site.categories.length)
-    {
-		str = '<ul class="list-group">';
-		site.categories.sort('name').each(function(item){
-			var ts = item.path.split('/');
-			if (ts.length <= 3)
-			    str += '<li class="list-group-item"><span class="badge">'+ item.posts.length + '</span><a href="' + config.root + item.path + '">' + item.name + '</a></li>';
-		});
-		str += '</ul>';
-    }
-    theme._widgets.category = str;
+<%if (hexo.debug || !theme._widgets.hasOwnProperty('category')){
+  var str = '';
+  if (site.categories.length)
+  {
+    str = '<ul class="list-group">';
+    site.categories.sort('name').each(function(item){
+      if (!item.parent && item.posts.length)
+        str += '<li class="list-group-item"><span class="badge">'+ item.posts.length + '</span><a href="' + config.root + item.path + '">' + item.name + '</a></li>';
+    });
+    str += '</ul>';
+  }
+  theme._widgets.category = str;
 }%>
 <%- theme._widgets.category %>
+<% if (!cache) { %>
+    <script type="text/javascript">
+	var cats = <%- hexo.__dump(site.categories)%>;
+    </script>
+<% } %>
