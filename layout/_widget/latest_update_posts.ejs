@@ -1,0 +1,15 @@
+<%if (hexo.debug || !theme._widgets.hasOwnProperty('latest_update'))
+{
+    var str = '';
+    if (site.posts.length)
+    {
+	str = '<ul class="list-group">';
+	site.posts.sort('updated', -1).limit(7).each(function(post){
+	    str += '<li class="list-group-item"><a href="' + config.root + post.path + '" title="'+ post.title +'">' + post.title + '</a></li>';
+	});
+	str += '</ul>';
+    }
+    theme._widgets.latest_update = str;
+}
+%>
+<%- theme._widgets.latest_update %>
