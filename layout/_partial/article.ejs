@@ -81,12 +81,12 @@ if (item.comments && theme.comments.provider && theme.comments.show_count)
       </div>
       <% } %>
     <% } %>
-    <%if (item.layout != "link") { %>
+    <%if (item.layout != "link" && item.layout != 'page') { %>
         <footer id="post-meta">
         <%- item_meta.join(' | ') %>
         </footer>
-        <div class="clearfix"></div>
     <%}%>
+    <div class="clearfix"></div>
   </div>
 </div>
 </article>
