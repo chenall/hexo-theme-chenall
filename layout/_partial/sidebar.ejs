@@ -1,6 +1,6 @@
-<% theme.widgets.sidebar.forEach(function(widget){ %>
+<% theme.widgets.sidebar.forEach(function(widget){ var title = __(widget);%>
 <div id="widget_<%- widget %>" class="widget panel panel-primary">
-    <div class="panel-heading"><%- hexo.__(widget) -%></div>
-    <%- partial('../_widget/' + widget) -%>
+  <%- title?'<div class="panel-heading">' + title + '</div>':'' -%>
+  <%- partial('../_widget/' + widget) -%>
 </div><%if (!cache && hexo.debug){%><!--widget_<%- widget %>--><%}%>
 <% }); %>

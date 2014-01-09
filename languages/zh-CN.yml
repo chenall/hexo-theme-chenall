@@ -1,5 +1,4 @@
 categories: 分类
-category: 分类
 search: 搜索
 tags: 标签
 tagcloud: 标签云
@@ -10,16 +9,28 @@ comment: 留言
 archive_a: 归档
 archive_b: 归档：%s
 page: 第 %d 页
-recent_posts: 最近文章
-latest_update_posts: 最近更新
-recent_comments: 最近评论
-Home: 主页
-About: 关于
-Archives: 归档
-sina_weiboshow: 新浪微搏秀
-read more: 阅读全文
-updated: 最近更新
-Tagged: 标签
-Posted in: 发表于
-google_sidebar: 赞助商
-google_cse: 搜索
+
+post:
+  updated: 最近更新
+  Tagged: 标签
+  Posted on: 发表于
+  Posted in: 归类
+  read more: 阅读全文
+
+menu:
+  Home: 主页
+  About: 关于
+  Archives: 归档
+
+widgets:
+  category: 分类
+  recent_posts: 最近文章
+  latest_update_posts: 最近更新
+  recent_comments: 最近评论
+  sina_weiboshow: 新浪微搏秀
+  google_sidebar: 赞助商
+  google_cse: 搜索
+  tags: 标签
+  tagcloud: 标签云
+  
+

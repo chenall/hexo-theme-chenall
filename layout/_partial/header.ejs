@@ -12,12 +12,12 @@
 		    <a class='dropdown-toggle' data-toggle='dropdown' href='#'><%= i %><b class='caret'></b></a>
 		    <ul class='dropdown-menu'>
 		<%      for (var j in theme.menu[i]) { %>
-		      <li><a href="<%-(theme.menu[i][j][0] == '/' && theme.menu[i][j][1] != '/')?config.root + theme.menu[i][j].substr(1):theme.menu[i][j]%>"><%= hexo.__(j) %></a></li>
+		      <li><a href="<%-(theme.menu[i][j][0] == '/' && theme.menu[i][j][1] != '/')?config.root + theme.menu[i][j].substr(1):theme.menu[i][j]%>"><%- __(j) %></a></li>
 		<%      } %>
 		    </ul>
 		  </li>
 		<%} else {%>
-		    <li><a href="<%-(theme.menu[i][0] == '/' && theme.menu[i][1] != '/')?config.root +  theme.menu[i].substr(1):theme.menu[i]%>"><%= hexo.__(i) %></a></li>
+		    <li><a href="<%-(theme.menu[i][0] == '/' && theme.menu[i][1] != '/')?config.root +  theme.menu[i].substr(1):theme.menu[i]%>"><%- __(i) %></a></li>
 	    <%	}
 	}%>
       </ul>

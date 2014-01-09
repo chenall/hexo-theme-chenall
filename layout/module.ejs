@@ -30,10 +30,13 @@ hexo.__dump = function(obj)
     });
 }
 
-hexo.__ = function(str)
+hexo.__ = function(item)
 {
-  var a = __(str);
-  return a?a:str;
+  return function(str)
+  {
+    var s = __(item?item + '.' + str:str);
+    return s?s:str;
+  }
 }
 
 theme.add_module = function(mod)
@@ -78,8 +81,6 @@ config.load_widgets = function(name,item,index)
     return str;
 }
 
-if (theme.comments.provider)
-    theme.comments.info = theme.comments[theme.comments.provider];
 theme._widgets = new Object;
 
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug'))

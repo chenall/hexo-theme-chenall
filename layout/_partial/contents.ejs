@@ -1,0 +1,98 @@
+<%
+if (!item.thread)
+{
+    if (item.wordpress_id)
+	item.thread = item.wordpress_id;
+    else if (item.id)
+	item.thread = item.id;
+    else if (item.slug)
+	item.thread = item.slug;
+}
+page.thread = item.thread;
+
+if (item.layout == "link")
+    item.comments = false;
+
+if (!page.keywords)
+{
+    if (theme.keywords)
+	page.keywords = theme.keywords;
+    else if (config.keywords)
+	page.keywords = config.keywords;
+}
+
+var item_meta = [];
+if (item.categories && item.categories.length)
+{
+  var cats = [];
+  item.categories.forEach(function(cat){
+    if (!cat.parent)
+      cats.push('<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>');
+    else
+      cats[cats.length - 1] += '<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>';
+  });
+  item_meta.push('<span class="categories">' + __('Posted in') + '<span class="breadcrumb glyphicon glyphicon-book">' + cats.join('</span><span class="breadcrumb">') + '</span></span>');
+}
+
+if (item.tags && item.tags.length){ 
+    var tags = [];
+    item.tags.forEach(function(tag,i){
+	tags.push('<a href="' + config.root + tag.path + '" class="label label-'+ theme.tw_style(i) +'">' + tag.name + '</a>');
+    });
+    item_meta.push('<span class="tags">' + __('Tagged') + ' ' + tags.join("") + '</span>');
+}
+
+if (item.updated)
+    item_meta.push('<span class="time">'+ __('updated') + ':<time title="'+ item.updated.format('YYYY-MM-DD HH:mm:ss') +'"datetime="' + item.updated.format('YYYY-MM-DD HH:mm:ss') + '"> ' + item.updated.format(config.date_format)+ '</time></span>');
+
+if (item.comments && theme.comments.provider && theme.comments.show_count)
+   item_meta.push('<span class="comment-link">' + partial('../_comments/'+theme.comments.provider+"_comment_count") + '</span>');
+   
+-%>
+<article>
+<div id="<%- item.layout %>" class="<%- item.layout %> well">
+  <% if (item.photos){ %>
+    <%- partial('post/gallery') %>
+  <% } %>
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><%- partial('post/title') %></h1>
+      <% if (item.layout != 'page'){ %>
+        <span><%- __('Posted on') %><time datetime="<%- item.date.toDate().toISOString() -%>"> <a href="<%- config.root + item.path %>"><%= item.date.format(config.date_format) %></a></time></span>
+      <% } %>
+    </header>
+    <%- config.load_widgets('before_content',item,index) %>
+    <div class="entry">
+      <% if (item.excerpt && index){ %>
+        <%- item.excerpt %>
+      <% } else { %>
+        <%- item.content %>
+      <% } %>
+    </div>
+    <%- config.load_widgets('after_content',item,index) %>
+    <% if (index){ %>
+      <% if (item.excerpt){ %>
+      <div id='more-link'>
+        <div align="left">
+          <a href="<%- config.root + item.path %>#more" class="more-link glyphicon glyphicon-chevron-right"><%- __("read more") %></a>
+        </div>
+      </div>
+      <% } %>
+    <% } %>
+    <%if (item.layout != "link" && item.layout != 'page') { %>
+        <footer id="post-meta">
+        <%- item_meta.join(' | ') %>
+        </footer>
+    <%}%>
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+<% if (!index) {%>
+    <%- config.load_widgets('after_post',item,index) -%>
+    <% if (item.comments && theme.comments.provider) { %>
+	<div id="comment"><a name="comments"></a><%- partial('comment') -%></div>
+    <%}%>
+<% } -%>
