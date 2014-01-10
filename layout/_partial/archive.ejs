@@ -1,0 +1,48 @@
+<%
+partial('module');
+var title = '';
+var sub_cats = [];
+if (page.category)
+{
+    title = page.category;
+    var cur_category = site.categories.findOne({name: page.category});
+    site.categories.sort('name').each(function(item,i){
+	if (item.parent && item.parent == cur_category._id)
+        sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+ UserConfig.twbs_sty(i) +'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
+    });
+    title += '<small>' + sub_cats.join(' ') + '<small>';
+}
+if (page.tag) title = page.tag;
+if (page.archive){
+  if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+  else title = __('archive_a');
+}
+%>
+<h2 class="archive-title<% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%- title %></h2>
+
+<% if (pagination == 2){ %>
+  <% page.posts.each(function(item){ %>
+    <%- partial('article', {item: item, index: true}) %>
+  <% }); %>
+
+  <%- partial('pagination') %>
+<% } else { %>
+<div class="archive">
+  <ul class="list-group">
+  <% page.posts.each(function(item,id){ -%>
+    <li class="list-group-item">
+    <h3><time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format(config.date_format) %></time> <%- partial('post/title',{item: item,index: true}) -%></h3>
+    <%
+	if (!item.description && typeof(auto_keyword_desc) == 'function')
+	{
+	    var desc = auto_keyword_desc(item.content);
+	    var t = desc.match(/content="(.*?)"/);
+	    if (t) item.description = t[1];
+	}
+    %>
+    <% if (item.description) {%><p class="list-group-item-text"><%- item.description -%></p><%}%>
+    </li>
+  <% }); %>
+  </ul>
+</div>
+<% } -%>

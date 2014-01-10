@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%
+  var title = [];
+  if (page.current > 1) title.push(__('page', page.current));
+  if (page.title) title.push(page.title);
+  if (page.category) title.push(page.category);
+  if (page.tag) title.push(page.tag);
+  if (page.archive){
+    if (page.year) title.push(__('archive_b', page.year + (page.month ? '/' + page.month : '')));
+    else title.push(__('archive_a'));
+  }
+  title.push(config.title);
+  %>
+  <title><%= title.join(' | ') %></title>
+  <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
+  <% if (page.description){ %>
+  <meta name="description" content="<%= page.description %>">
+  <% } else if (typeof(auto_keyword_desc) == 'function' && page.content){ %>
+  <%- auto_keyword_desc(page.content) %>
+  <% } else if (config.description){ %>
+  <meta name="description" content="<%= config.description %>">
+  <% } else if (page.excerpt){ %>
+  <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
+  <% } else if (page.content){ %>
+  <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
+  <% } %>
+  <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"/><% } %>
+  <meta property="og:site_name" content="<%= config.title %>"/>
+
+  <% if(page.cover) { %>
+    <meta property="og:image" content="<%= page.cover %>" />
+  <% } else { %>
+    <meta property="og:image" content="<%= config.cover %>"/>
+  <% } %>
+  <style>
+img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}body{padding-top:70px;background-color:#fff;}.widget ul .icon:before{content:'\f069';color:#4141e9;font:12px FontAwesome;}article footer{padding-top:10px;border-top:1px solid #333;}article a.more-link{padding-right:20px;padding-top:10px;padding-bottom:20px;color:#880088;text-decoration:none;}article header .icon{color:#258fb8;}article .post .icon:before{content:'\f15c';}article .comment .icon:before{content:'\f086';}article .photo .icon:before{content:'\f030';}article .link .icon:before{content:'\f0c1';}article .link .title a:after{content:'\f08e';color:#999;font:12px FontAwesome;padding-left:10px;vertical-align:super;}article .gallery{overflow:hidden;position:relative;}article .gallery:hover .control{opacity:1;-ms-filter:none;filter:none;}article .gallery img{position:absolute;top:0;left:0;opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);}article .gallery .control{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-webkit-transition:0.3s;-moz-transition:0.3s;-o-transition:0.3s;-ms-transition:0.3s;transition:0.3s;}article .gallery .prev,article .gallery .next{position:absolute;top:0;width:50%;height:100%;cursor:pointer;}article .gallery .prev:before,article .gallery .next:before{position:absolute;font:24px/1 FontAwesome;text-align:center;width:24px;text-shadow:0 0 15px rgba(0,0,0,0.5);color:#fff;margin-top:-12px;top:50%;}article .gallery .prev{left:0;}article .gallery .prev:before{content:'\f053';left:10px;}article .gallery .next{right:0;}article .gallery .next:before{content:'\f054';right:10px;}article video,article img{min-width:0%;max-width:100%;height:auto;border:none;}.tagcloud .entry a{padding-left:5px;display:inline-block;}#sidebar ul li{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.post hr{border-top: 1px solid #080;}.tags a{margin-left: 2px}
+.categories .breadcrumb{padding: 5px 5px;margin-bottom: 0px;}
+.categories .breadcrumb>li+li:before{padding: 0px 2px;content:'/';}
+  </style> 
+  <link href="<%- config.root %>css/test.css" rel="stylesheet"/>
+  <link href="<%- config.root %>favicon.png" rel="icon">
+  <link rel="alternate" href="<% if (UserConfig.rss){ %><%- UserConfig.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
+  <%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
+  <%- css(modules_css) -%>
+   <style>code{white-space: pre;word-wrap:break-word; overflow:hidden;}</style>
+   <script src="<%- config.root %>js/respond.min.js"></script>
+ </head>

@@ -1,0 +1,20 @@
+<div class="panel-footer">
+  <div id="site-info">
+    <span class='author'>
+  <% if (config.author){ %>
+  &copy; <%= new Date().getFullYear() %> <%= config.author %>
+  <% } else { %>
+  &copy; <%= new Date().getFullYear() %> <%= config.title %>
+  <% } %>
+    </span>
+  <% if (UserConfig.analytics && UserConfig.analytics.provider) {
+       var provider = UserConfig.analytics.provider.split(',');
+       provider.forEach(function(t){
+     %><span id='analytics-<%-t%>'><%- partial('../_analytics/'+t,{mod_info:UserConfig.analytics[t]}) -%></span><%
+       })
+  }%>
+  </div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></div>
+</div>
+<div class="clearfix"></div>
+

@@ -1,0 +1,12 @@
+<%if (!UserConfig.cached_widgets.hasOwnProperty('tagcloud')){
+    var str = '';
+    if (site.tags.length)
+    {
+	str += '<div class="widget tagcloud"><div class="entry panel-body">';
+	str += tagcloud(site.tags, {color: true,min_font: 5,max_font: 30,start_color: '#DB25B1',end_color: '#24072E'});
+	str += '</div></div>';
+    }
+    UserConfig.cached_widgets.tagcloud = str;
+}
+%>
+<%- UserConfig.cached_widgets.tagcloud %>

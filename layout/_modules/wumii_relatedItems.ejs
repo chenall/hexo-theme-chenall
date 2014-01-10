@@ -1,0 +1,30 @@
+<!--wumii_relatedItems-->
+<% if (page.layout == 'post') { 
+var cats = [];
+var tags = [];
+if (page.categories && page.categories.length)
+{
+    page.categories.forEach(function(cat){
+	cats.push(cat.name);
+    });
+}
+
+if (page.tags && page.tags.length){
+    page.tags.forEach(function(tag){
+	tags.push(tag.name);
+    });
+}
+%>
+<script type="text/javascript">
+    var wumiiPermaLink = "<%-url%>";
+    var wumiiTitle = <%-JSON.stringify(page.title)%>;
+    var wumiiTags = <%-JSON.stringify(tags.join(','))%>;
+    var wumiiCategories = <%-JSON.stringify(cats)%>;
+    var wumiiSitePrefix = "<%-config.url%>";
+    var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+<img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+</a>
+<% } %>

@@ -1,0 +1,17 @@
+<%
+var str = '';
+if (item.link)
+{
+    str += '<a href="'  + item.link + '" target="_blank">';
+    if (item.title)
+	str += item.title;
+    else
+	str += item.link;
+    str += "</a>";
+}
+else if (index)
+    str = '<a href="' + config.root + item.path + '">' + item.title + '</a>';
+else
+    str = item.title;
+-%>
+<%- str -%>

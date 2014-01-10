@@ -1,0 +1,13 @@
+<% UserConfig.loaded_modules.forEach(function(mod){%>
+    <% if (!cache && hexo.debug) { %><!-- module <%- mod -%> Script BEGIN --><%}%>
+    <%var module = UserConfig.modules[mod];
+    if (module && module.js) {%><script src="<%- RealPath(module.js) %>"></script><%}%>
+    <%- partial('../_modules/'+mod,{module: module}) -%>
+    <% if (!cache && hexo.debug) { %><!-- module <%- '../_modules/'+mod -%> Script END --><%}%>
+<% }); %>
+<% if (!cache && hexo.debug) { %>
+    <script type="text/javascript">
+	var UserConfig = <%-JSON.stringify(UserConfig)%>;
+	var hexo = <%-JSON.stringify(hexo)%>;
+    </script>
+<% } %>
