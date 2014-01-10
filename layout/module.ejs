@@ -34,7 +34,7 @@ usercfg.load_widgets = function(name,item,index)
                 widgets.push(widget);
         })
         
-    } else if (!item || item.layout !== 'page' || name.search('_') < 0)//对于页面默认不加载文章前后相关的widgets
+    } else if (!item || ((!item.widgets || item.widgets.theme !== false) && (item.layout !== 'page' || name.search('_') < 0)))//对于页面默认不加载文章前后相关的widgets
         widgets = widgets.concat(theme_widgets);
 
     widgets.forEach(function(widget){
