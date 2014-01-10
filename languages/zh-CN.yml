@@ -21,6 +21,7 @@ menu:
   Home: 主页
   About: 关于
   Archives: 归档
+  GuestBook: 留言板
 
 widgets:
   category: 分类
@@ -29,7 +30,6 @@ widgets:
   recent_comments: 最近评论
   sina_weiboshow: 新浪微搏秀
   google_sidebar: 赞助商
-  google_cse: 搜索
   tags: 标签
   tagcloud: 标签云
   

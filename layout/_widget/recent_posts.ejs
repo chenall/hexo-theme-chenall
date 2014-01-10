@@ -1,4 +1,4 @@
-<%if (!theme._widgets.hasOwnProperty('recent_posts'))
+<%if (!UserConfig.cached_widgets.hasOwnProperty('recent_posts'))
 {
     var str = '';
     if (site.posts.length)
@@ -9,7 +9,7 @@
 	});
 	str += '</ul>';
     }
-    theme._widgets.recent_posts = str;
+    UserConfig.cached_widgets.recent_posts = str;
 }
 %>
-<%- theme._widgets.recent_posts %>
+<%- UserConfig.cached_widgets.recent_posts %>

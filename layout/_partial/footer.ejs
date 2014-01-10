@@ -7,10 +7,10 @@
   &copy; <%= new Date().getFullYear() %> <%= config.title %>
   <% } %>
     </span>
-  <% if (theme.analytics && theme.analytics.provider) {
-       var provider = theme.analytics.provider.split(',');
+  <% if (UserConfig.analytics && UserConfig.analytics.provider) {
+       var provider = UserConfig.analytics.provider.split(',');
        provider.forEach(function(t){
-	 %><span id='analytics-<%-t%>'><%- partial('../_analytics/'+t,{mod_info:theme.analytics[t]}) -%></span><%
+     %><span id='analytics-<%-t%>'><%- partial('../_analytics/'+t,{mod_info:UserConfig.analytics[t]}) -%></span><%
        })
   }%>
   </div>

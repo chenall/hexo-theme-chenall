@@ -1,59 +1,25 @@
 <%
-if (config.addRootPath && theme.add_module)
+if (this.hasOwnProperty('UserConfig') && UserConfig)
    return;
-//为了方便使用,首先对一些变量进行预处理,
-config.addRootPath = function(str){
-    if (str.length > 2 && str[0] == '/' && str[1] != '/')
-	return config.root + str.substr(1);
-    else
-	return str;
-}
-
-var tw_constyl = ['primary','success','info','warning','danger'];
-theme.tw_style = function(i)
-{
-  return tw_constyl[i%4];
-}
-
-hexo.__dump = function(obj)
-{
-    var cache = [];
-    return JSON.stringify(obj,function(key, value){
-	if (typeof value === 'object' && value !== null) {
-	    if (cache.indexOf(value) !== -1) {
-		// Circular reference found, discard key
-		return;
-	    }
-	    cache.push(value);
-	}
-	return value;
-    });
-}
 
 hexo.__ = function(item)
 {
-  return function(str)
+  return function(str,opt)
   {
     var s = __(item?item + '.' + str:str);
-    return s?s:str;
+    return s?s:(opt===false?false:str);
   }
 }
 
-theme.add_module = function(mod)
-{
-    if (theme.loaded_modules.indexOf(mod) < 0)
-	theme.loaded_modules.splice(-2,0,mod);
-}
-
-config.load_widgets = function(name,item,index)
+usercfg.load_widgets = function(name,item,index)
 {
     if (name.search('_') >= 0 && index)
 	return "";
     var str="<section id='" + name + "_widget'>";
     var widgets = [];
     var theme_widgets = [];
-    if (theme.widgets && theme.widgets[name])
-        theme_widgets = theme.widgets[name];
+    if (usercfg.widgets && usercfg.widgets[name])
+        theme_widgets = usercfg.widgets[name];
     if (item && item.widgets && item.widgets[name])
     {
         item.widgets[name].forEach(function(widget){
@@ -81,8 +47,8 @@ config.load_widgets = function(name,item,index)
     return str;
 }
 
-theme._widgets = new Object;
-
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug'))
     hexo.debug = hexo.env.debug;
+
+this.UserConfig = _.extend({},hexo.config,usercfg);
 %>

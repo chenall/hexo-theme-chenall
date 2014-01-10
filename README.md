@@ -7,8 +7,10 @@
 - 支持单独启用或禁用小工具(像侧边栏之类的)
 - 支持单独启用或禁用评论
 - 可以单独指定加载小工具
-- 支持子分类显示(侧边栏只显示一级分类)
-[demo](http://hexo.chenall.net)
+- 支持多个分类，支持子分类
+- 独特的用户配置文件(自动加载`source\_config.yml`作为主题的配置文件,这样可以避免升级主题或其它原因导致的配置文件丢失).
+　
+ 效果: [demo]
 
 ## 安装方法
 
@@ -31,7 +33,22 @@ cd themes/light
 git pull 或 svn up
 ```
 
-## 配置说明
+## 分类说明
+
+一行一个分类,每一行都是一个分类,这一点和HEXO默认的配置不一样(hexo默认是属于上一个的子分类)
+同时支持多级分类,像下面的.就设置了两个分类,`编程开发`和`VBScript`,`VBScript`是一个子分类.具体效果请参考[demo]
+
+```yaml
+categories: 
+- 程序设计/VB/VBScript
+- 编程开发
+```
+  
+## 主题配置说明
+
+注: 配置中如果需要访问到本地路径,除非特别指定否则应该用`css/theme.css`不要写成`/css/theme.css`,前者是相对路径会自动添加config.root路径.后者是绝对路径.
+
+本主题特色: **把这个配置文件复制到`source`目录下则会优先使用该配置,这样可以避免由于升级主题或其它原因导致的配置丢失.更方便使用.**
 
 默认的配置:
 
@@ -44,7 +61,7 @@ loaded_modules:
 - jquery
 - bootstrap
 - fontawesome
-- highlightjs
+- prettify
 - imagesloaded
 - fancybox
 - mathjax
@@ -71,7 +88,7 @@ modules:
     css: http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
     js:  http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
   imagesloaded: #监测图片是否加载完毕的JavaScript库 使用Gallery Post 时需要用到
-    js: /js/jquery.imagesloaded.min.js
+    js: js/jquery.imagesloaded.min.js
   Gallery:
     css: http://cdn.bootcss.com/blueimp-gallery/2.11.2/css/blueimp-gallery.min.css
     js: http://cdn.bootcss.com/blueimp-gallery/2.11.2/js/jquery.blueimp-gallery.min.js
@@ -80,7 +97,8 @@ modules:
   # MathJax is an open source JavaScript display engine for mathematics that works in all browsers.
   mathjax: # 生成数学公式插件
     css:
-    js: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    js: http://cdn.bootcss.com/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    #js: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
   uyan: #有言评论系统
     uid: 1880458
   ujian: #友荐：为网站添加'猜你喜欢'功能
@@ -93,9 +111,9 @@ modules:
 #
 # 
 comments:
-    provider: doushuo
+    provider: duoshuo
     show_count: true
-    short_name: chenallcn
+    short_name: hexochenall
 
 ## 站点分析统计代码功能组件
 # 加载在站点的footer位置
@@ -114,9 +132,9 @@ analytics:
 
 # 站点顶部菜单,支持子菜单
 menu:
-  Home: /
-  About: /about
-  Archives: /archives
+  Home: ''
+  About: about/
+  Archives: archives/
   其它链接:
     chenall: //chenall.net
     gihtub: https://github.com/chenall/hexo-theme-chenall
@@ -134,10 +152,12 @@ widgets:
     - recent_comments
   before_content: # 文章内容前
   after_content:  # 文章内容后
+    - wumiiRelatedItems
     - post_footer_info
     - ujian
+
   after_post:     # 文章框架之后
-    - wumiiRelatedItems
+    - post_pageNav
 
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown
@@ -148,13 +168,48 @@ facebook_id:
 linkedin_id:
 github_id: chenall/almrun
 
-addthis:
-  enable: false
-  pubid:
-  twitter: true
-  facebook: true
-
-rss: /atom.xml
+rss: atom.xml
 ```
 
+### 其它语言支持
+
+  本主题只设置了简单中文语言文件,要使用其它语言,可以自己翻译下.以下是简单中文的语言文件例子:
+
+```yaml
+categories: 分类
+search: 搜索
+tags: 标签
+tagcloud: 标签云
+tweets: 推文
+prev: 上一页
+next: 下一页
+comment: 留言
+archive_a: 归档
+archive_b: 归档：%s
+page: 第 %d 页
+
+post:
+  updated: 最近更新
+  Tagged: 标签
+  Posted on: 发表于
+  Posted in: 归类
+  read more: 阅读全文
+
+menu:
+  Home: 主页
+  About: 关于
+  Archives: 归档
+  GuestBook: 留言板
+
+widgets:
+  category: 分类
+  recent_posts: 最近文章
+  latest_update_posts: 最近更新
+  recent_comments: 最近评论
+  sina_weiboshow: 新浪微搏秀
+  google_sidebar: 赞助商
+  tags: 标签
+  tagcloud: 标签云
+```
 [Hexo]: http://zespia.tw/hexo/
+[demo]: http://hexo.chenall.net

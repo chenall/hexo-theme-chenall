@@ -1,4 +1,4 @@
-<%if (!theme._widgets.hasOwnProperty('tagcloud')){
+<%if (!UserConfig.cached_widgets.hasOwnProperty('tagcloud')){
     var str = '';
     if (site.tags.length)
     {
@@ -6,7 +6,7 @@
 	str += tagcloud(site.tags, {color: true,min_font: 5,max_font: 30,start_color: '#DB25B1',end_color: '#24072E'});
 	str += '</div></div>';
     }
-    theme._widgets.tagcloud = str;
+    UserConfig.cached_widgets.tagcloud = str;
 }
 %>
-<%- theme._widgets.tagcloud %>
+<%- UserConfig.cached_widgets.tagcloud %>

@@ -15,8 +15,8 @@ if (item.layout == "link")
 
 if (!page.keywords)
 {
-    if (theme.keywords)
-	page.keywords = theme.keywords;
+    if (UserConfig.keywords)
+    page.keywords = UserConfig.keywords;
     else if (config.keywords)
 	page.keywords = config.keywords;
 }
@@ -37,7 +37,7 @@ if (item.categories && item.categories.length)
 if (item.tags && item.tags.length){ 
     var tags = [];
     item.tags.forEach(function(tag,i){
-	tags.push('<a href="' + config.root + tag.path + '" class="label label-'+ theme.tw_style(i) +'">' + tag.name + '</a>');
+    tags.push('<a href="' + config.root + tag.path + '" class="label label-'+ UserConfig.twbs_sty(i) +'">' + tag.name + '</a>');
     });
     item_meta.push('<span class="tags">' + __('Tagged') + ' ' + tags.join("") + '</span>');
 }
@@ -45,8 +45,8 @@ if (item.tags && item.tags.length){
 if (item.updated)
     item_meta.push('<span class="time">'+ __('updated') + ':<time title="'+ item.updated.format('YYYY-MM-DD HH:mm:ss') +'"datetime="' + item.updated.format('YYYY-MM-DD HH:mm:ss') + '"> ' + item.updated.format(config.date_format)+ '</time></span>');
 
-if (item.comments && theme.comments.provider && theme.comments.show_count)
-   item_meta.push('<span class="comment-link">' + partial('../_comments/'+theme.comments.provider+"_comment_count") + '</span>');
+if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_count)
+   item_meta.push('<span class="comment-link">' + partial('../_comments/'+UserConfig.comments.provider+"_comment_count") + '</span>');
    
 -%>
 <article>
@@ -62,7 +62,7 @@ if (item.comments && theme.comments.provider && theme.comments.show_count)
         <span><%- __('Posted on') %><time datetime="<%- item.date.toDate().toISOString() -%>"> <a href="<%- config.root + item.path %>"><%= item.date.format(config.date_format) %></a></time></span>
       <% } %>
     </header>
-    <%- config.load_widgets('before_content',item,index) %>
+    <%- UserConfig.load_widgets('before_content',item,index) %>
     <div class="entry">
       <% if (item.excerpt && index){ %>
         <%- item.excerpt %>
@@ -70,7 +70,7 @@ if (item.comments && theme.comments.provider && theme.comments.show_count)
         <%- item.content %>
       <% } %>
     </div>
-    <%- config.load_widgets('after_content',item,index) %>
+    <%- UserConfig.load_widgets('after_content',item,index) %>
     <% if (index){ %>
       <% if (item.excerpt){ %>
       <div id='more-link'>
@@ -91,8 +91,8 @@ if (item.comments && theme.comments.provider && theme.comments.show_count)
 </article>
 
 <% if (!index) {%>
-    <%- config.load_widgets('after_post',item,index) -%>
-    <% if (item.comments && theme.comments.provider) { %>
+    <%- UserConfig.load_widgets('after_post',item,index) -%>
+    <% if (item.comments && UserConfig.comments.provider) { %>
 	<div id="comment"><a name="comments"></a><%- partial('comment') -%></div>
     <%}%>
 <% } -%>

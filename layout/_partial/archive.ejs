@@ -8,7 +8,7 @@ if (page.category)
     var cur_category = site.categories.findOne({name: page.category});
     site.categories.sort('name').each(function(item,i){
 	if (item.parent && item.parent == cur_category._id)
-	    sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+ theme.tw_style(i) +'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
+        sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+ UserConfig.twbs_sty(i) +'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
     });
     title += '<small>' + sub_cats.join(' ') + '<small>';
 }

@@ -1,14 +1,13 @@
-<% theme.loaded_modules.forEach(function(mod){%>
+<% UserConfig.loaded_modules.forEach(function(mod){%>
     <% if (!cache && hexo.debug) { %><!-- module <%- mod -%> Script BEGIN --><%}%>
-    <%var module = theme.modules[mod];
-    if (module && module.js) {%><script src="<%- config.addRootPath(module.js) %>"></script><%}%>
+    <%var module = UserConfig.modules[mod];
+    if (module && module.js) {%><script src="<%- RealPath(module.js) %>"></script><%}%>
     <%- partial('../_modules/'+mod,{module: module}) -%>
     <% if (!cache && hexo.debug) { %><!-- module <%- '../_modules/'+mod -%> Script END --><%}%>
 <% }); %>
 <% if (!cache && hexo.debug) { %>
     <script type="text/javascript">
-	var theme = <%-JSON.stringify(theme)%>;
+	var UserConfig = <%-JSON.stringify(UserConfig)%>;
 	var hexo = <%-JSON.stringify(hexo)%>;
-	var config = <%-JSON.stringify(config)%>;
     </script>
 <% } %>

@@ -1,4 +1,4 @@
-<%if (hexo.debug || !theme._widgets.hasOwnProperty('category')){
+<%if (hexo.debug || !UserConfig.cached_widgets.hasOwnProperty('category')){
   var str = '';
   if (site.categories.length)
   {
@@ -9,9 +9,9 @@
     });
     str += '</ul>';
   }
-  theme._widgets.category = str;
+  UserConfig.cached_widgets.category = str;
 }%>
-<%- theme._widgets.category %>
+<%- UserConfig.cached_widgets.category %>
 <% if (!cache) { %>
     <script type="text/javascript">
 	var cats = <%- hexo.__dump(site.categories)%>;

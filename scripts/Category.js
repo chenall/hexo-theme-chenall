@@ -56,3 +56,4 @@ var hookCategory = function(data, next){
 };
 var Post = hexo.model('Post');
 Post.schema.pres.save.unshift(hookCategory);
+hexo.log.d('support "multiple first-level categories" and "Folder as category"');

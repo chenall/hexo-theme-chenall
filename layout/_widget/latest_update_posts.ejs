@@ -1,4 +1,4 @@
-<%if (hexo.debug || !theme._widgets.hasOwnProperty('latest_update'))
+<%if (hexo.debug || !UserConfig.cached_widgets.hasOwnProperty('latest_update'))
 {
     var str = '';
     if (site.posts.length)
@@ -9,7 +9,7 @@
 	});
 	str += '</ul>';
     }
-    theme._widgets.latest_update = str;
+    UserConfig.cached_widgets.latest_update = str;
 }
 %>
-<%- theme._widgets.latest_update %>
+<%- UserConfig.cached_widgets.latest_update %>

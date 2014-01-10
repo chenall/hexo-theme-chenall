@@ -1,4 +1,4 @@
-<% theme.widgets.sidebar.forEach(function(widget){ var title = __(widget);%>
+<% UserConfig.widgets.sidebar.forEach(function(widget){ var title = __(widget,false);%>
 <div id="widget_<%- widget %>" class="widget panel panel-primary">
   <%- title?'<div class="panel-heading">' + title + '</div>':'' -%>
   <%- partial('../_widget/' + widget) -%>

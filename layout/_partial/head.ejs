@@ -45,13 +45,11 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 .categories .breadcrumb{padding: 5px 5px;margin-bottom: 0px;}
 .categories .breadcrumb>li+li:before{padding: 0px 2px;content:'/';}
   </style> 
-  <link href="/css/test.css" rel="stylesheet"/>
+  <link href="<%- config.root %>css/test.css" rel="stylesheet"/>
   <link href="<%- config.root %>favicon.png" rel="icon">
-  <link rel="alternate" href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
-  <% theme.loaded_modules.forEach(function(mod){
-    var module = theme.modules[mod];
-    if (module && module.css) {%><link rel="stylesheet" href="<%- config.addRootPath(module.css) %>" type="text/css"><%}%>
-  <%});%>
+  <link rel="alternate" href="<% if (UserConfig.rss){ %><%- UserConfig.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
+  <%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
+  <%- css(modules_css) -%>
    <style>code{white-space: pre;word-wrap:break-word; overflow:hidden;}</style>
    <script src="<%- config.root %>js/respond.min.js"></script>
  </head>
