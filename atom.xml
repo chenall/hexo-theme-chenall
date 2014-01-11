@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="http://hexo.chenall.net/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net"/>
-  <updated>2014-01-11T09:51:25.869Z</updated>
+  <updated>2014-01-11T14:32:56.426Z</updated>
   <id>http://hexo.chenall.net/</id>
   <author>
     <name><![CDATA[chenall]]></name>
@@ -240,29 +240,21 @@ title: 禁用评论框方法示范
     <link href="http://hexo.chenall.net/post/gallery/"/>
     <id>http://hexo.chenall.net/post/gallery/</id>
     <published>2013-12-10T00:00:00.000Z</published>
-    <updated>2014-01-08T05:55:57.000Z</updated>
-    <content type="html"><![CDATA[<p>图片展示页面功能</p>
+    <updated>2014-01-11T14:12:34.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="-56fe-7247-8f6e-64ad-529f-80fd-">图片轮播功能</h3>
 <a id="more"></a>
 
-<p><img src="/imgs/1lightning1.jpg" alt="测试 - 本图片的注释内容"></p>
-<p>图片的注释内容会显示在图片下方</p>
-<p>使用方法: 设置layout为photo,并添加要展示的图片地址</p>
-<pre><code>layout: photo
-photos:
-- /imgs/1lightning1.jpg
-- /imgs/2lightning2.jpg
-</code></pre><p>本页面头部信息</p>
-<pre><code>layout: photo
-title: 图片展示页面示范
-date: 2013-12-20
-photos:
-- /imgs/1lightning1.jpg
-- /imgs/2lightning2.jpg
-tags:
-- Gallery
-- hexo
-- 测试
-</code></pre><p>PS: 本文章放在在<code>_POST/目录分类</code>会自动添加一个分类名子就是文件夹名<code>目录分类</code></p>
+<p>使用方法: 只要在photos中添加图片就行了,例子</p>
+<pre><code class="lang-yaml">photos:
+- imgs/1lightning1.jpg
+- imgs/2lightning2.jpg
+</code></pre>
+<p>图片后面还可以添加一些说明信息,支持HTML标签用<code>&gt;&gt;</code>分隔第一个是标题,第二个是内容介绍.<br>比如本页面头部信息:</p>
+<pre><code class="lang-yaml">photos:
+- imgs/1lightning1.jpg&gt;&gt;测试图片1&gt;&gt;测试图片1的说明介绍信息支持使用HTML标签哦,比如&lt;a href=&#39;http://chenall.net&#39;&gt;我的搏客&lt;/a&gt;
+- imgs/2lightning2.jpg&gt;&gt;测试图片2
+</code></pre>
+<p>PS: 本文章放在在<code>_POST/目录分类</code>会自动添加一个分类名子就是文件夹名<code>目录分类</code></p>
 ]]></content>
     <category scheme="http://hexo.chenall.net/tags/Gallery/" term="Gallery"/>
     <category scheme="http://hexo.chenall.net/tags/hexo/" term="hexo"/>
