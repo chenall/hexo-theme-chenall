@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="http://hexo.chenall.net/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net"/>
-  <updated>2014-01-10T08:11:37.178Z</updated>
+  <updated>2014-01-11T03:54:39.995Z</updated>
   <id>http://hexo.chenall.net/</id>
   <author>
     <name><![CDATA[chenall]]></name>
@@ -47,6 +47,27 @@ git pull 或 svn up
     <category scheme="http://hexo.chenall.net/categories/介绍/" term="介绍"/>
   </entry>
   <entry>
+    <title type="html"><![CDATA[自定义添加小工具]]></title>
+    <link href="http://hexo.chenall.net/post/customWidget/"/>
+    <id>http://hexo.chenall.net/post/customWidget/</id>
+    <published>2013-12-28T07:00:00.000Z</published>
+    <updated>2014-01-08T06:08:54.000Z</updated>
+    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
+<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
+<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
+<p>例子:</p>
+<pre><code>layout: post
+title: 自定义添加小工具
+widgets:
+  after_content:
+    - post_pageNav
+    - +
+  after_post:
+    - uyan
+</code></pre>]]></content>
+    <category scheme="http://hexo.chenall.net/tags/测试/" term="测试"/>
+  </entry>
+  <entry>
     <title type="html"><![CDATA[禁用所有小工具的文章]]></title>
     <link href="http://hexo.chenall.net/post/nowidget/"/>
     <id>http://hexo.chenall.net/post/nowidget/</id>
@@ -71,27 +92,6 @@ widgets:
 ]]></content>
     <category scheme="http://hexo.chenall.net/categories/测试/" term="测试"/>
     <category scheme="http://hexo.chenall.net/categories/测试/子分类/" term="子分类"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[自定义添加小工具]]></title>
-    <link href="http://hexo.chenall.net/post/customWidget/"/>
-    <id>http://hexo.chenall.net/post/customWidget/</id>
-    <published>2013-12-28T07:00:00.000Z</published>
-    <updated>2014-01-08T06:08:54.000Z</updated>
-    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
-<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
-<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
-<p>例子:</p>
-<pre><code>layout: post
-title: 自定义添加小工具
-widgets:
-  after_content:
-    - post_pageNav
-    - +
-  after_post:
-    - uyan
-</code></pre>]]></content>
-    <category scheme="http://hexo.chenall.net/tags/测试/" term="测试"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[单独禁用侧边栏]]></title>

@@ -144,7 +144,7 @@ title: 无侧边栏
     <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
 <ul class="pager">
   
-  <li class="previous"><a href="/post/customWidget/" title="自定义添加小工具">&larr; 自定义添加小工具</a></li>
+  <li class="previous"><a href="/post/nowidget/" title="禁用所有小工具的文章">&larr; 禁用所有小工具的文章</a></li>
   
   
   <li class="next"><a href="/post/code/" title="代码显示示范">代码显示示范 &rarr;</a></li>
@@ -302,6 +302,9 @@ var uyan_config={
         }
     });
 </script>    
+<script type="text/javascript">
+$('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');})
+</script>
 
 
 </body>

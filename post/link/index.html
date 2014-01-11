@@ -159,25 +159,20 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 </div>
 
 <div id="widget_category" class="widget panel panel-primary">
-  <div class="panel-heading">分类</div>  
-<ul class="list-group"><li class="list-group-item"><span class="badge">4</span><a href="/categories/介绍/">介绍</a></li><li class="list-group-item"><span class="badge">1</span><a href="/categories/代码/">代码</a></li><li class="list-group-item"><span class="badge">1</span><a href="/categories/文章/">文章</a></li><li class="list-group-item"><span class="badge">7</span><a href="/categories/测试/">测试</a></li><li class="list-group-item"><span class="badge">2</span><a href="/categories/目录分类/">目录分类</a></li></ul>
-
+  <div class="panel-heading">分类</div>  <div data-src='category' class='ajax_widgets'>正在加载...</div>
 </div>
 
 <div id="widget_recent_posts" class="widget panel panel-primary">
-  <div class="panel-heading">最近文章</div>  
-<ul class="list-group"><li class="list-group-item icon"><a href="/post/intro/">介绍</a></li><li class="list-group-item icon"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item icon"><a href="/post/customWidget/">自定义添加小工具</a></li><li class="list-group-item icon"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item icon"><a href="/post/code/">代码显示示范</a></li></ul>
-</div>
+  <div class="panel-heading">最近文章</div>  <div data-src='recent_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_tagcloud" class="widget panel panel-primary">
-  <div class="panel-heading">标签云</div>  
-<div class="widget tagcloud"><div class="entry panel-body"><a href="/tags/Gallery/" style="font-size: 5.00px; color: #db25b1;">Gallery</a><a href="/tags/Hexo/" style="font-size: 5.00px; color: #db25b1;">Hexo</a><a href="/tags/Mathjax/" style="font-size: 5.00px; color: #db25b1;">Mathjax</a><a href="/tags/amet/" style="font-size: 5.00px; color: #db25b1;">amet</a><a href="/tags/chenall/" style="font-size: 17.50px; color: #801670;">chenall</a><a href="/tags/code/" style="font-size: 5.00px; color: #db25b1;">code</a><a href="/tags/dolor/" style="font-size: 17.50px; color: #801670;">dolor</a><a href="/tags/hexo/" style="font-size: 30.00px; color: #24772e;">hexo</a><a href="/tags/link/" style="font-size: 5.00px; color: #db25b1;">link</a><a href="/tags/post/" style="font-size: 5.00px; color: #db25b1;">post</a><a href="/tags/test/" style="font-size: 17.50px; color: #801670;">test</a><a href="/tags/theme/" style="font-size: 5.00px; color: #db25b1;">theme</a><a href="/tags/标签1/" style="font-size: 5.00px; color: #db25b1;">标签1</a><a href="/tags/测试/" style="font-size: 30.00px; color: #24772e;">测试</a></div></div>
-</div>
+  <div class="panel-heading">标签云</div>  <div data-src='tagcloud' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_latest_update_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_tags" class="widget panel panel-primary">
-  <div class="panel-heading">标签</div>  
-<ul class="list-group"><li class="list-group-item"><span class="badge">1</span><a href="/tags/Gallery/">Gallery</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/Hexo/">Hexo</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/Mathjax/">Mathjax</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/amet/">amet</a></li><li class="list-group-item"><span class="badge">2</span><a href="/tags/chenall/">chenall</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/code/">code</a></li><li class="list-group-item"><span class="badge">2</span><a href="/tags/dolor/">dolor</a></li><li class="list-group-item"><span class="badge">4</span><a href="/tags/hexo/">hexo</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/link/">link</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/post/">post</a></li><li class="list-group-item"><span class="badge">2</span><a href="/tags/test/">test</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/theme/">theme</a></li><li class="list-group-item"><span class="badge">1</span><a href="/tags/标签1/">标签1</a></li><li class="list-group-item"><span class="badge">4</span><a href="/tags/测试/">测试</a></li></ul>
-</div>
+  <div class="panel-heading">标签</div>  <div data-src='tags' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=2&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -321,6 +316,9 @@ var uyan_config={
         }
     });
 </script>    
+<script type="text/javascript">
+$('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');})
+</script>
 
 
 </body>

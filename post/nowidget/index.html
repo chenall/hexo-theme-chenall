@@ -144,10 +144,10 @@ widgets:
     <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
 <ul class="pager">
   
-  <li class="previous"><a href="/post/intro/" title="介绍">&larr; 介绍</a></li>
+  <li class="previous"><a href="/post/customWidget/" title="自定义添加小工具">&larr; 自定义添加小工具</a></li>
   
   
-  <li class="next"><a href="/post/customWidget/" title="自定义添加小工具">自定义添加小工具 &rarr;</a></li>
+  <li class="next"><a href="/post/nosidebar/" title="单独禁用侧边栏">单独禁用侧边栏 &rarr;</a></li>
   
 </ul></div></section>    
 	<div id="comment"><a name="comments"></a>
@@ -302,6 +302,9 @@ var uyan_config={
         }
     });
 </script>    
+<script type="text/javascript">
+$('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');})
+</script>
 
 
 </body>
