@@ -13,7 +13,6 @@
    }
 }
 
-
 /*styles for 480px - 620px @ 16px!*/
 @media only screen and (min-width: 30em) and (max-width: 38.75em) {
   body {
@@ -26,10 +25,6 @@
       width: 100%;
     }
 }
-}
-
-
-
 
 @media screen and (min-width: 38.75em),only print,projector{body{background:red;}}
 
@@ -58,7 +53,6 @@
       width: 75%;
     }
 }
-}
 
 @media screen and (min-width: 1200px){
   body {
@@ -70,4 +64,4 @@
     .alignleft {
       width: 75%;
     }
-}}
+}
