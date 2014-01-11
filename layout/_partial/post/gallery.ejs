@@ -1,15 +1,20 @@
-<div class="gallery">
-  <div class="photoset">
-    <% if (item.photos.length){ %>
-      <% item.photos.forEach(function(photo){ %>
-        <img src="<%- photo %>">
-      <% }); %>
-    <% } else { %>
-      <img src="<%- item.photos %>">
-    <% } %>
+<div id="carousel-captions" class="carousel slide" data-interval='3000' data-carousel=0 data-ride="carousel">
+  <ol class="carousel-indicators">
+  <%for(var i=0;i<item.photos.length;++i){%>
+    <li data-target="#carousel-captions" data-slide-to="<%-i%>" <%-i==0?'class="active"':''%>></li>
+  <%}%>
+  </ol>
+  <div class="carousel-inner">
+    <%item.photos.forEach(function(photo,index){hexo.log.log(photo);var item = photo.split('>>'); -%>
+    <div class="item<%- index==0?' active':''%>">
+      <img src="<%-RealPath(item[0])%>">
+      <div class="carousel-caption">
+        <h3><%- item[1]%></h3>
+        <p><%- item[2]%></p>
+      </div>
+    </div>
+    <%}); -%>
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+  <a class="left carousel-control" href="#carousel-captions" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#carousel-captions" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
