@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="http://hexo.chenall.net/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net"/>
-  <updated>2014-01-11T05:55:05.184Z</updated>
+  <updated>2014-01-11T09:48:34.897Z</updated>
   <id>http://hexo.chenall.net/</id>
   <author>
     <name><![CDATA[chenall]]></name>
@@ -47,27 +47,6 @@ git pull 或 svn up
     <category scheme="http://hexo.chenall.net/categories/介绍/" term="介绍"/>
   </entry>
   <entry>
-    <title type="html"><![CDATA[自定义添加小工具]]></title>
-    <link href="http://hexo.chenall.net/post/customWidget/"/>
-    <id>http://hexo.chenall.net/post/customWidget/</id>
-    <published>2013-12-28T07:00:00.000Z</published>
-    <updated>2014-01-08T06:08:54.000Z</updated>
-    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
-<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
-<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
-<p>例子:</p>
-<pre><code>layout: post
-title: 自定义添加小工具
-widgets:
-  after_content:
-    - post_pageNav
-    - +
-  after_post:
-    - uyan
-</code></pre>]]></content>
-    <category scheme="http://hexo.chenall.net/tags/测试/" term="测试"/>
-  </entry>
-  <entry>
     <title type="html"><![CDATA[禁用所有小工具的文章]]></title>
     <link href="http://hexo.chenall.net/post/nowidget/"/>
     <id>http://hexo.chenall.net/post/nowidget/</id>
@@ -92,6 +71,27 @@ widgets:
 ]]></content>
     <category scheme="http://hexo.chenall.net/categories/测试/" term="测试"/>
     <category scheme="http://hexo.chenall.net/categories/测试/子分类/" term="子分类"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[自定义添加小工具]]></title>
+    <link href="http://hexo.chenall.net/post/customWidget/"/>
+    <id>http://hexo.chenall.net/post/customWidget/</id>
+    <published>2013-12-28T07:00:00.000Z</published>
+    <updated>2014-01-08T06:08:54.000Z</updated>
+    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
+<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
+<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
+<p>例子:</p>
+<pre><code>layout: post
+title: 自定义添加小工具
+widgets:
+  after_content:
+    - post_pageNav
+    - +
+  after_post:
+    - uyan
+</code></pre>]]></content>
+    <category scheme="http://hexo.chenall.net/tags/测试/" term="测试"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[单独禁用侧边栏]]></title>
@@ -216,7 +216,7 @@ title: 禁用评论框方法示范
     <link href="http://hexo.chenall.net/post/Mathjax/"/>
     <id>http://hexo.chenall.net/post/Mathjax/</id>
     <published>2013-12-23T00:00:00.000Z</published>
-    <updated>2013-12-28T07:18:14.000Z</updated>
+    <updated>2014-01-11T06:20:37.000Z</updated>
     <content type="html"><![CDATA[<p>以下内容需要启用Mathjax,否则显示不正常 来源 <a href="http://winterland.me/2013/12/hexo-mathjax/" target="_blank">http://winterland.me/2013/12/hexo-mathjax/</a></p>
 <blockquote>
 <p>大家都喜欢用 $E=mc^2$ 举例子，但是我不是很理解。  </p>
@@ -226,17 +226,9 @@ title: 禁用评论框方法示范
 <p>插入矩阵（同上）：</p>
 <p>\begin{bmatrix}<br>1 &amp; 2\\<br>3 &amp; 4<br>\end{bmatrix}</p>
 <p>来个复杂点的（注意有的公式开头不会自动识别，用$$包围）：</p>
-<p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2}</p>
-<ul>
-<li>\frac{\partial^2 u}{\partial y^2}</li>
-<li>\frac{\partial^2 u}{\partial z^2}\right)$$</li>
-</ul>
+<p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2}<br>+\frac{\partial^2 u}{\partial y^2}<br>+\frac{\partial^2 u}{\partial z^2}\right)$$</p>
 <p>最后来个牛逼的吧，薛定谔方程，大学物理就记得这个了：</p>
-<p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>= \frac{-\hbar^2}{2m} \left(<br>\frac{\partial^2}{\partial x^2}</p>
-<ul>
-<li>\frac{\partial^2}{\partial y^2}</li>
-<li>\frac{\partial^2}{\partial z^2}<br>\right) \psi + V \psi.$$</li>
-</ul>
+<p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>= \frac{-\hbar^2}{2m} \left(<br>\frac{\partial^2}{\partial x^2}<br>+\frac{\partial^2}{\partial y^2}<br>+\frac{\partial^2}{\partial z^2}<br>\right) \psi + V \psi.$$</p>
 </blockquote>
 ]]></content>
     <category scheme="http://hexo.chenall.net/tags/Mathjax/" term="Mathjax"/>

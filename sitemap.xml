@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://hexo.chenall.net/post/Mathjax/</loc>
+    <lastmod>2014-01-11T06:20:37.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://hexo.chenall.net/post/intro/</loc>
     <lastmod>2014-01-09T00:16:50.000Z</lastmod>
   </url>
@@ -39,10 +43,6 @@
   <url>
     <loc>http://hexo.chenall.net/page/index.html</loc>
     <lastmod>2014-01-07T00:48:31.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://hexo.chenall.net/post/Mathjax/</loc>
-    <lastmod>2013-12-28T07:18:14.000Z</lastmod>
   </url>
   <url>
     <loc>http://hexo.chenall.net/post/nocomments/</loc>
