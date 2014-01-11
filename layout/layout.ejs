@@ -1,3 +1,6 @@
+<%if (page.layout == 'widget'){ -%>
+<%- trim(body) -%>
+<%return;} -%>
 <%partial('module');%>
 <%- partial('_partial/head') %>
 <% var sidebar = (!page.hasOwnProperty('sidebar') || page.sidebar);

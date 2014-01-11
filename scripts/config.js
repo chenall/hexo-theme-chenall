@@ -11,10 +11,7 @@ var userConfig = function()
   var cfg = global.usercfg = hexo.render.renderSync({path: configFile});
   cfg.cached_widgets = new Object;
   cfg.twbs_style = ['primary','success','info','warning','danger'];
-  cfg.twbs_sty = function(i)
-  {
-    return cfg.twbs_style[i%4];
-  }
+  cfg.twbs_sty = function(i){return cfg.twbs_style[i%4];}
   UserConfig = null;//To Reload User Config
   hexo.log.d("User Configuration file load successfully.")
 }

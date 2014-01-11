@@ -10,6 +10,17 @@ hexo.__ = function(item)
     return s?s:(opt===false?false:str);
   }
 }
+usercfg.load_static_widgets = function(name)
+{
+  if (UserConfig.ajax_widgets)
+    return "<div data-src='"+ name +"' class='ajax_widgets'>正在加载...</div>";
+  if (!UserConfig.cached_widgets.hasOwnProperty(name))
+  {
+    var str = partial('_widget/static/' + name,{name: name});
+    UserConfig.cached_widgets[name] = str;
+  }
+  return UserConfig.cached_widgets[name];
+}
 
 usercfg.load_widgets = function(name,item,index)
 {
@@ -39,7 +50,7 @@ usercfg.load_widgets = function(name,item,index)
 
     widgets.forEach(function(widget){
 	str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';
-	str += partial('_widget/' + widget,{pos: name,item: item});
+	str += partial('_widget/' + widget,{pos: name,item: item,name: widget});
 	str += '</div>';
     });
 
@@ -50,5 +61,5 @@ usercfg.load_widgets = function(name,item,index)
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug'))
     hexo.debug = hexo.env.debug;
 
-this.UserConfig = _.extend({},hexo.config,usercfg);
+this.UserConfig = _.extend({ajax_widgets: true},hexo.config,usercfg);
 %>

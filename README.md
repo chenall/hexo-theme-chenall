@@ -139,6 +139,14 @@ menu:
     chenall: //chenall.net
     gihtub: https://github.com/chenall/hexo-theme-chenall
 
+# ajax_widgets是否使用jquery.load动态加载widget的内容,
+# 注: 部份小工具,像标签,分类,最近文章等,这些工具的内容在所有页面都是一样的,这时它就支持动态加载
+# 所谓的动态加载,就是把这些内容从文章中分离出来独立存在,并采用ajax技术动态加载到指定位置.
+# 使用动态加载,更新文章时,就不会因为分类或标签等内容的更改,导致所有页面都需要更新.
+#
+ajax_widgets: true
+
+# 要加载的工具在这里添加
 widgets:
   header: #顶部
   footer: #底部
@@ -147,6 +155,7 @@ widgets:
     - category
     - recent_posts
     - tagcloud
+    - latest_update_posts
     - tags
     - sina_weiboshow
     - recent_comments
@@ -173,7 +182,7 @@ rss: atom.xml
 
 ### 其它语言支持
 
-  本主题只设置了简单中文语言文件,要使用其它语言,可以自己翻译下.以下是简单中文的语言文件例子:
+  本主题只设置了简单中文语言文件,要使用其它语言,可以自己翻译下.以下是简体中文的语言文件例子:
 
 ```yaml
 categories: 分类

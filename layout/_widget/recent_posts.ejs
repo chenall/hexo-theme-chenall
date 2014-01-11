@@ -1,15 +1,1 @@
-<%if (!UserConfig.cached_widgets.hasOwnProperty('recent_posts'))
-{
-    var str = '';
-    if (site.posts.length)
-    {
-	str = '<ul class="list-group">';
-	site.posts.sort('date', -1).limit(5).each(function(post){
-	    str += '<li class="list-group-item icon"><a href="' + config.root + post.path + '">' + post.title + '</a></li>';
-	});
-	str += '</ul>';
-    }
-    UserConfig.cached_widgets.recent_posts = str;
-}
-%>
-<%- UserConfig.cached_widgets.recent_posts %>
+<%-UserConfig.load_static_widgets(name)%>
