@@ -8,15 +8,18 @@ if (page.widgets && page.widgets.theme == false)
     sidebar = false;
 %>
 <body>
-  <header id="header" class="container inner"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
-    <div id='content' class="container inner">
-       <div class="page-header-wrapper"><div class="page-header"><h1><%- config.title %> <small><%- config.subtitle %></small></h1></div></div>
+  <header id="header" class="container"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
+    <div id='content' class="container">
+       <div class="page-header-wrapper">
+       <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+       <div class="page-header"><h1><%- config.title %> <small><%- config.subtitle %></small></h1></div>
+       </div>
        <div class="row">
-         <div id="main-col" <%if (sidebar) {%>class="alignleft col9 col-sm-7 col-md-9 col-lg-9"<%}%>>
+         <div id="main-col" <%if (sidebar) {%>class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9"<%}%>>
         <%- UserConfig.load_widgets('header',page) %>
 	    <div id="wrapper"><%- body %></div><!--wapper-->
          </div><!-- ID main-col END -->
-         <%if (sidebar) {%><div id="sidebar" class="alignright col3 col-sm-5 col-md-3 col-lg-3 well-sm"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></div><%}%>
+         <%if (sidebar) {%><aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></aside><%}%>
          <div class="clearfix"></div>
        </div><!-- row END -->
     </div>

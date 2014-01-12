@@ -31,7 +31,7 @@ if (item.categories && item.categories.length)
     else
       cats[cats.length - 1] += '<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>';
   });
-  item_meta.push('<span class="categories">' + __('Posted in') + '<span class="breadcrumb glyphicon glyphicon-book">' + cats.join('</span><span class="breadcrumb">') + '</span></span>');
+  item_meta.push('<span class="categories">' + __('Posted in') + '<span class="breadcrumb fa fa-folder">' + cats.join('</span><span class="breadcrumb">') + '</span></span>');
 }
 
 if (item.tags && item.tags.length){ 
@@ -59,7 +59,7 @@ if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_co
         <span><%- __('Posted on') %><time datetime="<%- item.date.toDate().toISOString() -%>"> <a href="<%- config.root + item.path %>"><%= item.date.format(config.date_format) %></a></time></span>
       <% } %>
     </header>
-    <%- item.photos?partial('post/gallery'):''%>
+    <%- partial('post/gallery')%>
     <%- UserConfig.load_widgets('before_content',item,index) %>
     <div class="entry">
       <% if (item.excerpt && index){ %>
@@ -73,7 +73,7 @@ if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_co
       <% if (item.excerpt){ %>
       <div id='more-link'>
         <div align="left">
-          <a href="<%- config.root + item.path %>#more" class="more-link glyphicon glyphicon-chevron-right"><%- __("read more") %></a>
+          <a href="<%- config.root + item.path %>#more" class="more-link fa fa-play"><%- __("read more") %></a>
         </div>
       </div>
       <% } %>

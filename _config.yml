@@ -21,7 +21,7 @@ modules:
   jquery:
     js: http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js
   bootstrap: #强大的CSS框架，由Twitter的开发工程师推出
-    css: http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css
+    css: css/bootstrap.min.css
     js: http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js
   prettify: # Google Code Prettify 代码的高亮显示
     css: http://cdn.bootcss.com/prettify/r298/prettify.min.css

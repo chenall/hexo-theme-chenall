@@ -1,59 +1,42 @@
 /*styles for 300 and up @ 16px!*/
 /* The max-width declaration below blocks this from ever working */
-@media only screen and (min-width: 18.75em){
-  body {
-    background-color: #888;
-  }
- .inner {
-	width: 100%
-	margin: 0 auto;
-   }
-   .alignleft {
-      width: 100%;
-   }
-}
 
-/*styles for 480px - 620px @ 16px!*/
-@media only screen and (min-width: 30em) and (max-width: 38.75em) {
-  body {
-    background-color: #999;
-  }
-    .inner {
-	width: 600px;
-    }
-    .alignleft {
-      width: 100%;
+@media(min-width:768px) {
+    .container {
+        width: 750px
     }
 }
 
-@media screen and (min-width: 38.75em),only print,projector{body{background:red;}}
-
-/*styles for 800px and up @ 16px!*/
-@media screen and (min-width: 50em){
-  body {
-    background-color: #aaa;
-  }
-    .inner {
-	width: 800px;
-    }
-    .alignleft {
-      width: 60%;
+@media(min-width:992px) {
+    .container {
+        width: 970px
     }
 }
 
-/*styles for 1100px and up @ 16px!*/
-@media screen and (min-width: 68.75em){
-  body {
-    background-color: #ccc;
-  }
-    .inner {
-	width: 100%;
-    }
-    .alignleft {
-      width: 75%;
+@media(min-width:1200px) {
+    .container {
+        width: 1170px
     }
 }
-
+@media(max-width:767px) {
+  .row .alignleft {width: 99%;}
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .row .alignleft {width: 70%;}
+  .row .alignright {width: 30%;}
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .row .alignleft {width: 75%;}
+  .row .alignright {width: 25%;}
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container{}
+  .row .alignleft {width: 75%;}
+  .row .alignright {width: 25%;}
+}
 @media screen and (min-width: 1200px){
   body {
     background-color: #eee;
@@ -61,7 +44,6 @@
     .inner {
 	width: 100%;
     }
-    .alignleft {
-      width: 75%;
-    }
+    .row .alignleft {width: 75%;}
+    .row .alignright {width: 20%;}
 }

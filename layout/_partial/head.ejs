@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%
   var title = [];
@@ -44,12 +45,23 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 .post hr{border-top: 1px solid #080;}.tags a{margin-left: 2px}
 .categories .breadcrumb{padding: 5px 5px;margin-bottom: 0px;}
 .categories .breadcrumb>li+li:before{padding: 0px 2px;content:'/';}
-  </style> 
-  <link href="<%- config.root %>css/test.css" rel="stylesheet"/>
+.testIE{display:none;}
+.carousel-control .fa{position: absolute;top: 50%;z-index: 5;display: inline-block;}
+  </style>
+  <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+  <!--[if lte IE 7]><%-css('css/ie7.css')%><![endif]-->
+  <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
+  <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
   <link href="<%- config.root %>favicon.png" rel="icon">
   <link rel="alternate" href="<% if (UserConfig.rss){ %><%- UserConfig.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
   <%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
   <%- css(modules_css) -%>
+
    <style>code{white-space: pre;word-wrap:break-word; overflow:hidden;}</style>
+<!--[if lt IE 9]>
+   <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
+   <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
    <script src="<%- config.root %>js/respond.min.js"></script>
+   <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
  </head>

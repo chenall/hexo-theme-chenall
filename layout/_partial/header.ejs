@@ -1,7 +1,7 @@
 <nav id="main-nav" class="navbar navbar-default navbar-fixed-top <% if (UserConfig.bs_nav_inverse) { %>navbar-inverse <%}%>" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="<%- config.root %>"><%- config.title %></a>
+      <a class="navbar-brand" href="<%- config.root %>"><%- config.title %><%if (hexo.debug) {%>[<span class='testIE IE9'>IE9</span><span class='testIE IE8'>IE8</span><span class='testIE IE7'>lte IE7</span>]<%}%></a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
