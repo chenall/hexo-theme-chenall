@@ -1,0 +1,21 @@
+/*styles for 300 and up @ 16px!*/
+/* The max-width declaration below blocks this from ever working */
+.testIE.IE7{display:inline;}
+@media(max-width:767px) {
+  .row .alignleft {width: 100%;}
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .row .alignleft {width: 60%;}
+  .row .alignright {width: 30%;}
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .row .alignleft {width: 73%;}
+  .row .alignright {width: 20%;}
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .row .alignleft {width: 75%;}
+  .row .alignright {width: 20%;}
+}

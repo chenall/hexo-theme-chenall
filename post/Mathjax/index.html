@@ -3,12 +3,13 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>数学公式示范 | hexo theme chenall</title>
   <meta name="author" content="chenall">
   
-              <meta name="description" content="以下内容需要启用Mahjax,否则显示不正常 来源 hp://winerand.me/2013/12/hexo-mahjax/;大家都喜欢用 E=mc2 举例子，但是我不是很理解;这个公式 \cos 2\hea = \cos2 \hea - \sin2 \hea =  2 \cos2 \hea - 1 少年可还记得">
+              <meta name="description" content="本文章内容需要启用Mahjax,否则显示不正常 来源 hp://winerand.me/2013/12/hexo-mahjax/;大家都喜欢用 E=mc2 举例子，但是我不是很理解;这个公式 \cos 2\hea = \cos2 \hea - \sin2 \hea =  2 \cos2 \hea - 1 少年可还记得">
             <meta name="keywords" content="partial,frac,amp,theta,dot,公式,cos,psi,aligned,这个">        
   
   
@@ -25,21 +26,32 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 .post hr{border-top: 1px solid #080;}.tags a{margin-left: 2px}
 .categories .breadcrumb{padding: 5px 5px;margin-bottom: 0px;}
 .categories .breadcrumb>li+li:before{padding: 0px 2px;content:'/';}
-  </style> 
-  <link href="/css/test.css" rel="stylesheet"/>
+.testIE{display:none;}
+.carousel-control .fa{position: absolute;top: 50%;z-index: 5;display: inline-block;}
+  </style>
+  <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+  <!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
+  <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
+  <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
   <link href="/favicon.png" rel="icon">
   <link rel="alternate" href="atom.xml" title="hexo theme chenall" type="application/atom+xml">
   
-  <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" type="text/css">
-<link rel="stylesheet" href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css">   <style>code{white-space: pre;word-wrap:break-word; overflow:hidden;}</style>
+<link rel="stylesheet" href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css">
+   <style>code{white-space: pre;word-wrap:break-word; overflow:hidden;}</style>
+<!--[if lt IE 9]>
+   <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
+   <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
    <script src="/js/respond.min.js"></script>
+   <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
  </head>
 
 
 <body>
-  <header id="header" class="container inner"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
+  <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">hexo theme chenall</a>
@@ -77,10 +89,13 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
   </div>
 </nav>
 <div class="clearfix"></div></header>
-    <div id='content' class="container inner">
-       <div class="page-header-wrapper"><div class="page-header"><h1>hexo theme chenall <small>hexo模块化主题,自由,强大</small></h1></div></div>
+    <div id='content' class="container">
+       <div class="page-header-wrapper">
+       <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+       <div class="page-header"><h1>hexo theme chenall <small>hexo模块化主题,自由,强大</small></h1></div>
+       </div>
        <div class="row">
-         <div id="main-col" class="alignleft col9 col-sm-7 col-md-9 col-lg-9">
+         <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
         <section id='header_widget'></section>
 	    <div id="wrapper">
 <article>
@@ -92,20 +107,13 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
       
         <span>发表于<time datetime="2013-12-23T00:00:00.000Z"> <a href="/post/Mathjax/">2013-12-23</a></time></span>      
     </header>
-    <div id="carousel-captions" class="carousel slide" data-interval='3000' data-carousel=0 data-ride="carousel">
-  <ol class="carousel-indicators">
-  
-  </ol>
-  <div class="carousel-inner">
-      </div>
-  <a class="left carousel-control" href="#carousel-captions" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-  <a class="right carousel-control" href="#carousel-captions" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-</div>
-
+    
     <section id='before_content_widget'></section>
     <div class="entry">
       
-        <p>以下内容需要启用Mathjax,否则显示不正常 来源 <a href="http://winterland.me/2013/12/hexo-mathjax/" target="_blank">http://winterland.me/2013/12/hexo-mathjax/</a></p>
+        <p>本文章内容需要启用Mathjax,否则显示不正常 来源 <a href="http://winterland.me/2013/12/hexo-mathjax/" target="_blank">http://winterland.me/2013/12/hexo-mathjax/</a></p>
+<a id="more"></a>
+
 <blockquote>
 <p>大家都喜欢用 $E=mc^2$ 举例子，但是我不是很理解。  </p>
 <p>这个公式 $\cos 2\theta = \cos^2 \theta - \sin^2 \theta =  2 \cos^2 \theta - 1$ 少年可还记得？</p>
@@ -134,7 +142,7 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
     
     
         <footer id="post-meta">
-        <span class="tags">标签 <a href="/tags/Mathjax/" class="label label-primary">Mathjax</a><a href="/tags/Hexo/" class="label label-success">Hexo</a><a href="/tags/测试/" class="label label-info">测试</a></span> | <span class="time">最近更新:<time title="2014-01-11 14:20:37"datetime="2014-01-11 14:20:37"> 2014-01-11</time></span> | <span class="comment-link">
+        <span class="tags">标签 <a href="/tags/Mathjax/" class="label label-primary">Mathjax</a><a href="/tags/Hexo/" class="label label-success">Hexo</a><a href="/tags/测试/" class="label label-info">测试</a></span> | <span class="time">最近更新:<time title="2014-01-12 14:47:08"datetime="2014-01-12 14:47:08"> 2014-01-12</time></span> | <span class="comment-link">
 <a href="http://hexo.chenall.net/post/Mathjax/#comments" class="ds-thread-count comment-link" data-thread-key="Mathjax" data-count-type="comments">暂无评论</a></span>
         </footer>
     
@@ -163,7 +171,7 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 </div>    
 </div><!--wapper-->
          </div><!-- ID main-col END -->
-         <div id="sidebar" class="alignright col3 col-sm-5 col-md-3 col-lg-3 well-sm">
+         <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
 <div id="widget_search" class="widget panel panel-primary">
     <form action="//google.com/search" method="get" accept-charset="utf-8">
   <div class="input-group">
@@ -205,7 +213,7 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 
 </div>
 
-</div>
+</aside>
          <div class="clearfix"></div>
        </div><!-- row END -->
     </div>

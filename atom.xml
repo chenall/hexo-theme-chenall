@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="http://hexo.chenall.net/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net"/>
-  <updated>2014-01-11T14:36:11.915Z</updated>
+  <updated>2014-01-12T07:15:11.728Z</updated>
   <id>http://hexo.chenall.net/</id>
   <author>
     <name><![CDATA[chenall]]></name>
@@ -216,8 +216,10 @@ title: 禁用评论框方法示范
     <link href="http://hexo.chenall.net/post/Mathjax/"/>
     <id>http://hexo.chenall.net/post/Mathjax/</id>
     <published>2013-12-23T00:00:00.000Z</published>
-    <updated>2014-01-11T06:20:37.000Z</updated>
-    <content type="html"><![CDATA[<p>以下内容需要启用Mathjax,否则显示不正常 来源 <a href="http://winterland.me/2013/12/hexo-mathjax/" target="_blank">http://winterland.me/2013/12/hexo-mathjax/</a></p>
+    <updated>2014-01-12T06:47:08.000Z</updated>
+    <content type="html"><![CDATA[<p>本文章内容需要启用Mathjax,否则显示不正常 来源 <a href="http://winterland.me/2013/12/hexo-mathjax/" target="_blank">http://winterland.me/2013/12/hexo-mathjax/</a></p>
+<a id="more"></a>
+
 <blockquote>
 <p>大家都喜欢用 $E=mc^2$ 举例子，但是我不是很理解。  </p>
 <p>这个公式 $\cos 2\theta = \cos^2 \theta - \sin^2 \theta =  2 \cos^2 \theta - 1$ 少年可还记得？</p>

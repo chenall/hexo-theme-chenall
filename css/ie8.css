@@ -1,0 +1,3 @@
+/*styles for 300 and up @ 16px!*/
+/* The max-width declaration below blocks this from ever working */
+.testIE.IE8{display:inline;}
