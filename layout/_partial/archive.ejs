@@ -10,7 +10,7 @@ if (page.category)
 	if (item.parent && item.parent == cur_category._id)
         sub_cats.push('<a href="'+ config.root + item.path +'"><span class="label label-'+ UserConfig.twbs_sty(i) +'">'+item.name+'<span class="badge">'+ item.length +'</span></span></a>');
     });
-    title += '<small>' + sub_cats.join(' ') + '<small>';
+    title += '<small>' + sub_cats.join(' ') + '</small>';
 }
 if (page.tag) title = page.tag;
 if (page.archive){
