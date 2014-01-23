@@ -11,6 +11,18 @@ hexo.__ = function(item)
   }
 }
 
+this.iTags = [];
+iTags.push({preg:/<iLink\s+(\w+)\s*:\s*(.+?)\s*\><\/iLink>(\n\n)?/g,func: function(match,attr,f,br){
+  var data = {},posts;
+  if (attr == 'tag'){posts = site.tags;data['name'] = f;}else if (attr == 'cat' || attr == 'category'){posts = site.categories;data['name'] = f;}else{posts = site.posts;data[attr] = f;}
+  var post = posts.findOne(data);
+  return post?'<a href=\"' + config.root + post.path +'" target="_blank">' + (post.title?post.title:f) + '</a>' + (br?'<br>':''):'';
+}});
+
+iTags.push({preg:/<ijs>([\w\W]+?)<\/ijs>/g,func: function(match,content){
+  return eval(content);
+}});
+
 usercfg.load_static_widgets = function(name)
 {
   if (UserConfig.ajax_widgets)

@@ -1,2 +1,10 @@
-<%partial('module');%>
-<%- partial('contents',{__: hexo.__('post')}) -%>
+<%partial('module'); -%>
+<%
+var contents = partial('contents',{__: hexo.__('post')});
+if (iTags && iTags.length)
+{
+  iTags.forEach(function(iTag){
+    contents = contents.replace(iTag.preg,iTag.func);
+  })
+}; -%>
+<%- contents -%>

@@ -9,7 +9,8 @@
 - 可以单独指定加载小工具
 - 支持多个分类，支持子分类
 - 独特的用户配置文件(自动加载`$SOURCE\_$THEME.yml`[默认就是**source\\_chenall.yml**]作为主题的配置文件,这样可以避免升级主题或其它原因导致的配置文件丢失).
-- iLink 文章内链功能
+- `iLink` 文章内链功能
+- `ijs` 文章内嵌脚本或能
 
 注: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
@@ -47,6 +48,36 @@ categories:
 - 编程开发
 ```
 
+## ijs 内嵌脚本
+
+ijs 是本主题的增强标签,可以在文章中内嵌脚本,这样可以实现一些特殊功能.(因为是在主题中执行的,所以可以使用那些helper插件);
+
+一个简单的例子,在文章中插入以下内容.
+
+```
+{% ijs %}
+return link('http://chenall.net');
+{% endijs %}
+```
+
+以上通过hexo内置的helper插件link实现在文章中插入一个链接指向`http://chenall.net`.
+
+复杂一些的例子,在文章中插入最近的5篇文章.
+
+```
+{% ijs %}
+var str = '';
+if (site.posts.length){
+  str = '<ul class="list-group">';
+  site.posts.sort('date', -1).limit(5).each(function(post){
+    str += '<li class="list-group-item"><a href="' + config.root + post.path + '">' + post.title + '</a></li>';
+  });
+  str += '</ul>';
+}
+return str;
+{% endijs %}
+```
+
 ## iLink 文章内链
 
 iLink 是本主题自带的tag插件,通过iLink可以很方便的在文章中插入文章链接.
@@ -59,8 +90,6 @@ iLink 使用格式
 TYPE: 类型
 VALUE: 值
 ```
-
-
 
 其中TYPE可使用的值如下:
 
