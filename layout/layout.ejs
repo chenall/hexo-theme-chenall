@@ -6,7 +6,15 @@
 <% var sidebar = (!page.hasOwnProperty('sidebar') || page.sidebar);
 if (page.widgets && page.widgets.theme == false)
     sidebar = false;
+
+var iLink_preg = /<iLink\s+(\w+)\s*:\s*(.+?)\s*\><\/iLink>(\n\n)?/g;
+var iLink_replace = function(match,attr,f,br){var data = {},posts;
+  if (attr == 'tag'){posts = site.tags;data['name'] = f;}else if (attr == 'cat' || attr == 'category'){posts = site.categories;data['name'] = f;}else{posts = site.posts;data[attr] = f;}
+  var post = posts.findOne(data);
+  return post?'<a href=\"' + config.root + post.path +'" target="_blank">' + (post.title?post.title:f) + '</a>' + (br?'<br>':''):'';
+};
 %>
+
 <body>
   <header id="header" class="container"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
     <div id='content' class="container">
@@ -17,7 +25,7 @@ if (page.widgets && page.widgets.theme == false)
        <div class="row">
          <div id="main-col" <%if (sidebar) {%>class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9"<%}%>>
         <%- UserConfig.load_widgets('header',page) %>
-	    <div id="wrapper"><%- body %></div><!--wapper-->
+	    <div id="wrapper"><%- body.replace(iLink_preg,iLink_replace) %></div><!--wapper-->
          </div><!-- ID main-col END -->
          <%if (sidebar) {%><aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></aside><%}%>
          <div class="clearfix"></div>

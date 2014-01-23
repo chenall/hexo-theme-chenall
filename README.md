@@ -9,6 +9,7 @@
 - 可以单独指定加载小工具
 - 支持多个分类，支持子分类
 - 独特的用户配置文件(自动加载`$SOURCE\_$THEME.yml`[默认就是**source\\_chenall.yml**]作为主题的配置文件,这样可以避免升级主题或其它原因导致的配置文件丢失).
+- iLink 文章内链功能
 
 注: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
@@ -45,7 +46,53 @@ categories:
 - 程序设计/VB/VBScript
 - 编程开发
 ```
-  
+
+## iLink 文章内链
+
+iLink 是本主题自带的tag插件,通过iLink可以很方便的在文章中插入文章链接.
+
+注: **iLink** 是有区分大小写的
+
+iLink 使用格式
+```
+{% iLink TYPE:VALUE%}
+TYPE: 类型
+VALUE: 值
+```
+
+
+
+其中TYPE可使用的值如下:
+
+* `tag`  链接到标签  
+   例子:  
+   ```
+   {% iLink tag:GRUB4DOS %}
+   ```
+* `cat` 或 `category` 链接到分类  
+   例子:  
+   ```
+   {% iLink cat:程序设计 %}
+   ```
+* 其它值会根据提供的信息自动链接到指定文章   
+  例子:
+	1. 链接到源文件名是`_posts/test.md`的文章  
+      ```
+      {% iLink source:_posts/test.md %}
+      ```
+    2. 链接到文章标题为'测试文章'的文章  
+      ```
+      {% iLink title:测试文章 %}
+      ```
+    3. 若某个文章页有额外添加了一些信息比如`myid: test`  
+      ```
+      {% iLink myid:test %}
+      ```
+    4. 通过文章的slug  
+      ```
+      {% iLink slug:test %}
+      ```
+
 ## 主题配置说明
 
 注: 配置中如果需要访问到本地路径,除非特别指定否则应该用`css/theme.css`不要写成`/css/theme.css`,前者是相对路径会自动添加config.root路径.后者是绝对路径.

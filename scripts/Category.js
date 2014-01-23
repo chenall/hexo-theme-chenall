@@ -54,6 +54,11 @@ var hookCategory = function(data, next){
 
   next();
 };
+
+hexo.extend.tag.register('iLink',function(args, content){
+  return '<iLink ' + args.join(' ') + '></iLink>';
+});
+
 var Post = hexo.model('Post');
 Post.schema.pres.save.unshift(hookCategory);
 hexo.log.d('support "multiple first-level categories" and "Folder as category"');
