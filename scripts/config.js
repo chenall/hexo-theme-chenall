@@ -1,13 +1,14 @@
 var fs = require('fs');
 var userConfig = function()
 {
-  var configFile = hexo.source_dir + '_config.yml';
+  var configFile = hexo.source_dir + '_'+ hexo.config.theme+ '.yml';
   if (!fs.existsSync(configFile))
   {
     configFile = hexo.theme_dir + '_config.yml';
     if (!fs.existsSync(configFile))
       return;
   }
+  hexo.log.d('Theme config file: ' + configFile.green);
   var cfg = global.usercfg = hexo.render.renderSync({path: configFile});
   cfg.cached_widgets = new Object;
   cfg.twbs_style = ['primary','success','info','warning','danger'];
