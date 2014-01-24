@@ -33,11 +33,16 @@ if (page.archive){
     <li class="list-group-item">
     <h3><time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format(config.date_format) %></time> <%- partial('post/title',{item: item,index: true}) -%></h3>
     <%
-	if (!item.description && typeof(auto_keyword_desc) == 'function')
+	if (!item.description)
 	{
-	    var desc = auto_keyword_desc(item.content);
+          if (item.excerpt)
+            item.description = item.excerpt;
+          else if (typeof(auto_keyword_desc) == 'function')
+          {
+	    var desc = auto_keyword_desc(item.raw.substr(item.raw.search('---') + 5));
 	    var t = desc.match(/content="(.*?)"/);
 	    if (t) item.description = t[1];
+          }
 	}
     %>
     <% if (item.description) {%><p class="list-group-item-text"><%- item.description -%></p><%}%>
