@@ -1,11 +1,14 @@
 var fs = require('fs');
 
-hexo.extend.tag.register('iLink',function(args, content){
-  return '<iLink ' + args.join(' ') + '></iLink>';
-});
+var iLink = function(args, content){
+  return '<!--[iLink[' + args.join(' ') + ']iLink]-->';
+}
+
+hexo.extend.tag.register('iLink',iLink);
+hexo.extend.tag.register('ilink',iLink);
 
 hexo.extend.tag.register('ijs',function(args, content){
-  return '<ijs>(function(){' + content + '})();</ijs>';
+  return '<!--[ijs[(function(){' + content + '})();]ijs]-->';
 },true);
 
 var userConfig = function()

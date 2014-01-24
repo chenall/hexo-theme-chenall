@@ -1,10 +1,3 @@
 <%partial('module'); -%>
-<%
-var contents = partial('contents',{__: hexo.__('post')});
-if (iTags && iTags.length)
-{
-  iTags.forEach(function(iTag){
-    contents = contents.replace(iTag.preg,iTag.func);
-  })
-}; -%>
-<%- contents -%>
+<%if(iTags&&!item.iTagsCache){for(var tag in iTags)item.content=item.content.replace(eval("/<!--\\["+tag+"\\[([\\s\\S]+?)\\]"+tag+"\\]-->(\\n\\n)?/gi"),iTags[tag]);item.iTagsCache=!0} -%>
+<%- partial('contents',{__: hexo.__('post')}) -%>
