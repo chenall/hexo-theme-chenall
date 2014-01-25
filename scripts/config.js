@@ -48,9 +48,17 @@ var RealPath = function(item)
   return item;
 }
 
+var excerpt = function(data, callback){
+  if (!data.excerpt && data.description){
+    data.excerpt = data.description;
+  }
+  callback(null, data);
+};
+
 hexo.extend.helper.register('add_module', add_module);
 hexo.extend.helper.register('RealPath', RealPath);
 hexo.extend.helper.register('load_widgets',function(name,item,index){return usercfg.load_widgets(name,item,index);});
+hexo.extend.filter.register('post', excerpt);
 
 hexo.__dump = function(obj)
 {

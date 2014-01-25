@@ -101,7 +101,7 @@ widgets:
     - recent_posts
     - tagcloud
     - latest_update_posts
-    - tags
+    - random_posts
     - sina_weiboshow
     - recent_comments
   before_content: # 文章内容前
@@ -112,6 +112,7 @@ widgets:
 
   after_post:     # 文章框架之后
     - post_pageNav
+    - related_posts
 
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown

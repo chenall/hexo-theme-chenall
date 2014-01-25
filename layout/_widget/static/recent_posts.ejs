@@ -1,2 +1,1 @@
-<%var str = '';if (site.posts.length){str = '<ul class="list-group">';site.posts.sort('date', -1).limit(5).each(function(post){str += '<li class="list-group-item "><a href="' + config.root + post.path + '">' + post.title + '</a></li>';});str += '</ul>';}%>
-<%-str -%>
+<%-list_posts({count:7,ulClass: "list-group",liClass:"list-group-item",orderby: 'date',order:-1}) -%>

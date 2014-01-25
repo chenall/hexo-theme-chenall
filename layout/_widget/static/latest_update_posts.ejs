@@ -1,12 +1,1 @@
-<%
-  var str = '';
-  if (site.posts.length)
-  {
-    str = '<ul class="list-group">';
-    site.posts.sort('updated', -1).limit(7).each(function(post){
-        str += '<li class="list-group-item"><a href="' + config.root + post.path + '" title="'+ post.title +'">' + post.title + '</a></li>';
-    });
-    str += '</ul>';
-  }
-%>
-<%- str%>
+<%-list_posts({count:8,ulClass: "list-group",liClass:"list-group-item",orderby: 'updated',order:-1}) -%>
