@@ -39,6 +39,8 @@ usercfg.load_static_widgets = function(name)
   return UserConfig.cached_widgets[name];
 }
 
+this.fs = hexo.util.fs;
+
 usercfg.load_widgets = function(name,item,index)
 {
     if (name.search('_') >= 0 && index)
@@ -67,7 +69,11 @@ usercfg.load_widgets = function(name,item,index)
 
     widgets.forEach(function(widget){
 	str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';
-	str += partial('_widget/' + widget,{pos: name,item: item,name: widget});
+	if (usercfg.user_widget_dir && fs.existsSync(usercfg.user_widget_dir + widget + '.ejs')){
+          str += partial(usercfg.user_widget_dir + widget,{pos: name,item: item,name: widget});
+	} else {
+          str += partial('_widget/' + widget,{pos: name,item: item,name: widget});
+	}
 	str += '</div>';
     });
 

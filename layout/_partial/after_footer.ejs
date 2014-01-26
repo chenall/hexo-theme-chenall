@@ -1,8 +1,11 @@
 <% UserConfig.loaded_modules.forEach(function(mod){%>
     <% if (!cache && hexo.debug) { %><!-- module <%- mod -%> Script BEGIN --><%}%>
-    <%var module = UserConfig.modules[mod];
-    if (module && module.js) {%><script src="<%- RealPath(module.js) %>"></script><%}%>
+    <%var module = UserConfig.modules[mod];if (module && module.js) {%><script src="<%- RealPath(module.js) -%>"></script><%}%>
+    <% if (UserConfig.user_module_dir && fs.existsSync(UserConfig.user_module_dir + mod + ".ejs")){ -%>
+    <%- partial(UserConfig.user_module_dir + mod,{module: module}) %>
+    <%}else{ -%>
     <%- partial('../_modules/'+mod,{module: module}) -%>
+    <%}%>
     <% if (!cache && hexo.debug) { %><!-- module <%- '../_modules/'+mod -%> Script END --><%}%>
 <% }); %>
 <script type="text/javascript">

@@ -1,6 +1,10 @@
 <% UserConfig.widgets.sidebar.forEach(function(widget){ var title = __(widget,false);%>
 <div id="widget_<%- widget %>" class="widget panel panel-primary">
   <%- title?'<div class="panel-heading">' + title + '</div>':'' -%>
+  <% if (UserConfig.user_widget_dir && fs.existsSync(UserConfig.user_widget_dir + widget + ".ejs")){ -%>
+  <%- partial(UserConfig.user_widget_dir + widget,{name: widget}) %>
+  <%}else{ -%>
   <%- partial('../_widget/' + widget,{name: widget}) -%>
+  <%}%>
 </div><%if (!cache && hexo.debug){%><!--widget_<%- widget %>--><%}%>
 <% }); %>
