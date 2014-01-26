@@ -8,8 +8,8 @@
 if (page.widgets && page.widgets.theme == false)
     sidebar = false;
 %>
-
 <body>
+<%- partial(UserConfig.user_module_dir + 'addon_body.ejs') -%>
 <%if (UserConfig.GTM_ID){ -%>
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=<%-UserConfig.GTM_ID%>"
@@ -43,5 +43,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     </footer>
     <%- partial('_partial/after_footer') %>
+    <%- partial(UserConfig.user_module_dir + 'addon_after_footer.ejs') -%>
 </body>
 </html>
