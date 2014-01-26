@@ -1,5 +1,6 @@
 var _ = require('lodash');
 
+
 function get_posts(site,options){
   if (!options) {
     options = {};
@@ -9,12 +10,13 @@ function get_posts(site,options){
     count: 6,
     orderby: 'date',
     order: -1,
-    tags: '',
-    categories: '',
+    query:{tags: '',categories: '',operator: ''},
   }, options);
 
-  var posts = site.posts,tags,categories;
+  var posts = site.posts;
   var query_data = [];
+  var conditions = options.query;
+  var query_operator = 'and';
 
   var findData = function(data,source){
     var len = source.length;
@@ -25,10 +27,6 @@ function get_posts(site,options){
     return false;
   }
 
-
-  var findtag = function(data){return findData(data,tags);}
-  var findcategories = function(data){return findData(data,categories);}
-
   var array_case_find = function(data,value){
     value = value.toUpperCase();
     for(var i=0,len=data.length;i<len;++i){
@@ -37,40 +35,69 @@ function get_posts(site,options){
     return false;
   }
 
-  if (_.isObject(options.tags)){
-    if (options.tags._index) tags = options.tags._index;
-  } else {
-    options.tags = options.tags.split(/\s*,\s*/);
-    if (options.tags && options.tags.length){
-      var data = site.tags.find({name: {$where: function(name){return array_case_find(options.tags,name)}}});
-      tags = data._index;
+  var get_index = function(type,query){
+    if (_.isObject(query['_index'])) return query._index;
+
+    if (!_.isObject(query)) query = query.split(/\s*,\s*/);
+    if (query && query.length){
+      var data = site[type].find({name: {$where: function(name){return array_case_find(query,name)}}});
+      return data._index;
+    }
+    return false;
+  }
+
+  var keys = Object.keys(conditions);
+
+  for (var i = 0, len = keys.length; i<len; ++i){
+    var key = keys[i],
+        query = conditions[key];
+    switch(key)
+    {
+      case 'tags':
+      case 'categories':
+        {
+          var _index = get_index(key,query);
+          if (_index && _index.length){
+            var obj = {};
+            obj[key]= {$where: function(data){return findData(data,_index)}};
+            query_data.push(obj);
+          }
+        }
+        break;
+      case 'operator':
+        query_operator = query;
+        break;
+      default:
+        {
+          var obj = {};
+          obj[key] = (typeof query == 'function')?{$where: query}:query;
+          query_data.push(obj);
+        }
+        break;
     }
   }
 
-  if (_.isObject(options.categories)){
-    if (options.categories._index) categories = options.categories._index;
-  } else {
-    options.categories = options.categories.split(/\s*,\s*/);
-    if (options.categories.length){
-      var data = site.categories.find({name: {$where: function(name){return array_case_find(options.categories,name)}}});
-      categories = data._index;
-    }
-  }
+  if (options.posts) posts = options.posts;
 
-  if (tags && tags.length){query_data.push({type: 'tags',func: findtag});}
-  if (categories && categories.length){query_data.push({type: 'categories',func: findcategories})}
+  if (options.orderby){
+    if (options.orderby == 'random')
+      posts = posts.random();
+    else
+      posts = posts.sort(options.orderby, options.order);
+  }
 
   if (query_data.length){
     var query = {};
-    query_data.forEach(function(data){
-      query[data.type] = {$where: data.func};
-    })
-    posts = posts.find(query);
+    var query_opt;
+
+    if (options.count) query_opt = {limit: options.count};
+
+    query['$'+query_operator] = query_data;
+
+    return posts.find(query,query_opt);
   }
 
-  if (options.orderby == 'random')
-    return posts.random().limit(options.count);
-  return posts.sort(options.orderby, options.order).limit(options.count);
+  return options.count?posts.limit(options.count):posts;
 };
 
 var helper = hexo.extend.helper;
@@ -90,22 +117,26 @@ if (!helper.store.list_posts){
     options = _.extend({
       ulClass: '',
       liClass: '',
-      class: 'list-group',
+      style: 'list',
+      separator: ', ',
+      class: 'post',
     }, options);
 
-    var posts = get_posts(this.site,options);
-    var style = options.style,
-      ulClass = options.ulClass?options.ulClass:options.class;
-      liClass = options.liClass?options.liClass:options.class + '-item';
-
-    var result = '<ul class="' + ulClass + '">';
-    var root = this.config.root;
+    var posts = get_posts(this.site,options),
+      style = options.style,
+      root = this.config.root,
+      ul = '<ul class="' + (options.ulClass?options.ulClass:options.class) + '">',
+      li = '<li class="' + (options.liClass?options.liClass:options.class + '-list-item') + '">',
+      arr = [];
 
     posts.each(function(post){
-      result += '<li class="' + liClass + '"><a href="' + root + post.path + '">' + post.title + '</a></li>';
+      arr.push( '<a href="' + root + post.path + '">' + (post.title?post.title:post.slug) + '</a>');
     });
 
-    result += '</ul>'
-    return result;
+    if (arr.lentgh == 0) return '';
+
+    if (style != 'list') return arr.join(options.separator);
+
+    return  ul + li + arr.join('</li>' + li) + '</li></ul>';
   })
 };

@@ -1,2 +1,2 @@
 <%if (!item) return;%>
-<%-list_posts({count:5,ulClass: "list-group",liClass:"list-group-item",tags: item.tags,orderby: 'random'}) -%>
+<%-list_posts({count:8,ulClass: "list-group",liClass:"list-group-item",orderby: 'random',query:{operator: 'or',tags: item.tags,categories: item.categories}}) -%>
