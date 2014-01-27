@@ -13,13 +13,7 @@ page.thread = item.thread;
 if (item.layout == "link")
     item.comments = false;
 
-if (!page.keywords)
-{
-    if (UserConfig.keywords)
-    page.keywords = UserConfig.keywords;
-    else if (config.keywords)
-	page.keywords = config.keywords;
-}
+if (!page.keywords && UserConfig.keywords) page.keywords = UserConfig.keywords;
 
 var item_meta = [];
 if (item.categories && item.categories.length)
@@ -43,7 +37,7 @@ if (item.tags && item.tags.length){
 }
 
 if (item.updated)
-    item_meta.push('<span class="time">'+ __('updated') + ':<time title="'+ item.updated.format('YYYY-MM-DD HH:mm:ss') +'"datetime="' + item.updated.format('YYYY-MM-DD HH:mm:ss') + '"> ' + item.updated.format(config.date_format)+ '</time></span>');
+    item_meta.push('<span class="time">'+ __('updated') + ':<time title="'+ item.updated.format('YYYY-MM-DD HH:mm:ss') +'"datetime="' + item.updated.format('YYYY-MM-DD HH:mm:ss') + '"> ' + item.updated.format(UserConfig.date_format)+ '</time></span>');
 
 if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_count)
    item_meta.push('<span class="comment-link">' + partial('../_comments/'+UserConfig.comments.provider+"_comment_count") + '</span>');
@@ -56,7 +50,7 @@ if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_co
       <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><%- partial('post/title') %></h1>
       <% if (item.layout != 'page'){ %>
-        <span><%- __('Posted on') %><time datetime="<%- item.date.toDate().toISOString() -%>"> <a href="<%- config.root + item.path %>"><%= item.date.format(config.date_format) %></a></time></span>
+        <span><%- __('Posted on') %><time datetime="<%- item.date.toDate().toISOString() -%>"> <a href="<%- config.root + item.path %>"><%= item.date.format(UserConfig.date_format) %></a></time></span>
       <% } %>
     </header>
     <%- partial('post/gallery')%>
@@ -91,6 +85,6 @@ if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_co
 <% if (!index) {%>
     <%- UserConfig.load_widgets('after_post',item,index) -%>
     <% if (item.comments && UserConfig.comments.provider) { %>
-	<div id="comment"><a name="comments"></a><%- partial('comment') -%></div>
+	<div id="comments"><%- partial('../_comments/' + UserConfig.comments.provider) -%></div>
     <%}%>
 <% } -%>

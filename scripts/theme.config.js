@@ -1,4 +1,3 @@
-var fs = require('fs');
 
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug')) hexo.debug = hexo.env.debug;
 

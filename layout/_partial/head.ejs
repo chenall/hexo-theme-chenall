@@ -11,7 +11,7 @@ if (page.archive){
   if (page.year) title.push(__('archive_b', page.year + (page.month ? '/' + page.month : '')));
   else title.push(__('archive_a'));
 }
-title.push(config.title);
+title.push(UserConfig.title);
 %>
 <title><%= title.join(' | ') %></title>
 <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
@@ -19,8 +19,8 @@ title.push(config.title);
 <meta name="description" content="<%= page.description.trim() %>">
 <% } else if (typeof(auto_keyword_desc) == 'function' && page.content){ %>
 <%- auto_keyword_desc(page.content) %>
-<% } else if (config.description){ %>
-<meta name="description" content="<%= config.description %>">
+<% } else if (UserConfig.description){ %>
+<meta name="description" content="<%= UserConfig.description %>">
 <% } else if (page.excerpt){ %>
 <meta name="description" content="<%= strip_html(page.excerpt).trim() %>">
 <% } else if (page.content){ %>
@@ -30,7 +30,7 @@ title.push(config.title);
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"/><% } %>
-<meta property="og:site_name" content="<%= config.title -%>"/>
+<meta property="og:site_name" content="<%= UserConfig.title -%>"/>
 
 <% if(page.cover) { %>
   <meta property="og:image" content="<%= page.cover %>" />
@@ -53,7 +53,7 @@ blockquote footer cite:before {content: "—";padding: 0 0.3em;}
 <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
 <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
 <link href="<%- config.root %>favicon.png" rel="icon">
-<link rel="alternate" href="<% if (UserConfig.rss){ %><%- RealPath(UserConfig.rss) %><% } else if (config.feed.path){ %><%- RealPath(config.feed.path) %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %> Feed" type="application/atom+xml">
+<link rel="alternate" href="<% if (UserConfig.rss){ %><%- RealPath(UserConfig.rss) %><% } else if (config.feed.path){ %><%- RealPath(config.feed.path) %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= UserConfig.title %> Feed" type="application/atom+xml">
 <%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
 <%- css(modules_css) -%>
 

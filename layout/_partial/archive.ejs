@@ -31,7 +31,7 @@ if (page.archive){
   <ul class="list-group">
   <% page.posts.each(function(item,id){ -%>
     <li class="list-group-item">
-    <h3><time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format(config.date_format) %></time> <%- partial('post/title',{item: item,index: true}) -%></h3>
+    <h3><time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format(UserConfig.date_format) %></time> <%- partial('post/title',{item: item,index: true}) -%></h3>
     <%
 	if (!item.description)
 	{
