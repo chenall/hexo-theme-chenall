@@ -53,7 +53,7 @@ blockquote footer cite:before {content: "—";padding: 0 0.3em;}
 <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
 <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
 <link href="<%- config.root %>favicon.png" rel="icon">
-<link rel="alternate" href="<% if (UserConfig.rss){ %><%- UserConfig.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
+<link rel="alternate" href="<% if (UserConfig.rss){ %><%- RealPath(UserConfig.rss) %><% } else if (config.feed.path){ %><%- RealPath(config.feed.path) %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %> Feed" type="application/atom+xml">
 <%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
 <%- css(modules_css) -%>
 
@@ -64,4 +64,3 @@ blockquote footer cite:before {content: "—";padding: 0 0.3em;}
    <script src="<%- config.root %>js/respond.min.js"></script>
    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
 <![endif]-->
-
