@@ -24,30 +24,58 @@ if (page.archive){
   <% page.posts.each(function(item){ %>
     <%- partial('article', {item: item, index: true}) %>
   <% }); %>
-
   <%- partial('pagination') %>
-<% } else { %>
+<%return;}%>
 <div class="archive">
-  <ul class="list-group">
-  <% page.posts.each(function(item,id){ -%>
-    <li class="list-group-item">
-    <h3><time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format(UserConfig.date_format) %></time> <%- partial('post/title',{item: item,index: true}) -%></h3>
-    <%
-	if (!item.description)
-	{
-          if (item.excerpt)
-            item.description = item.excerpt;
-          else if (typeof(auto_keyword_desc) == 'function')
-          {
-	    var desc = auto_keyword_desc(item.raw.substr(item.raw.search('---') + 5));
-	    var t = desc.match(/content="(.*?)"/);
-	    if (t) item.description = t[1];
-          }
-	}
-    %>
-    <% if (item.description) {%><p class="list-group-item-text"><%- item.description -%></p><%}%>
-    </li>
-  <% }); %>
-  </ul>
+<%
+var posts = page.posts.sort('date',-1);
+var item_data = '';
+var item_year = '';
+var item_arr = {};
+
+posts.each(function(item,id){
+  var this_year = item.date.year();
+  if (this_year != item_year){
+    if (item_data.length){
+      item_data += '</ul>';
+      item_arr[item_year]= item_data;
+    }
+    item_year = this_year;
+    item_data='<ul class="list-group">';
+  }
+  item_data +='<li class="list-group-item">';
+  item_data +='<h3><time datetime="' + item.date.toDate().toISOString() + '">' + item.date.format(UserConfig.date_format) +'</time>  ';
+  item_data +=partial('post/title',{item: item,index: true});
+  item_data +='</h3>';
+  if (!item.description){
+    if (item.excerpt) item.description = item.excerpt;
+    else if (typeof(auto_keyword_desc) == 'function'){
+      var desc = auto_keyword_desc(item.raw.substr(item.raw.search('---') + 5));
+      var t = desc.match(/content="(.*?)"/);
+      if (t) item.description = t[1];
+    }
+  }
+  if (item.description) item_data += '<p class="list-group-item-text">' + item.description + '</p>';
+})
+item_arr[item_year] = item_data;
+var item_keys = Object.keys(item_arr);
+if (item_keys.length == 1){%>
+  <%- item_arr[item_keys[0]]%>
+<%}else{
+var nav_tabs = [];
+var tab_contents = [];
+for(item in item_arr){
+  nav_tabs.push('<li class="'+(item == item_year?' active':'')+'"><a href="#year_'+item+'" data-toggle="pill">'+item+'</a></li>');
+  tab_contents.push('<div class="tab-pane fade'+(item == item_year?' in active':'')+'" id="year_'+item+'">'+item_arr[item]+'</div>');
+}
+%>
+<!-- Nav tabs -->
+<ul class="nav nav-pills">
+<%- nav_tabs.join('')%>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+<%- tab_contents.join('')%>
 </div>
-<% } -%>
+<%}%>
+</div>

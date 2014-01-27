@@ -15,7 +15,7 @@
 
 注: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
-### **具体效果:** [demo]
+### **具体效果:** [demo] 或我的搏客 [chenall.net]
 
 ## 安装方法
 
@@ -328,3 +328,4 @@ widgets:
 ```
 [Hexo]: http://zespia.tw/hexo/
 [demo]: http://hexo.chenall.net
+[chenall.net]: http://chenall.net
