@@ -5,12 +5,10 @@ var hookCategory = function(data, next){
 
   var _cats = categories.slice(0);
   var source = data.source.split('/');
-  if (source.length > 2)
-  {
+  if (source.length > 2){
     source = source.slice(1,-1);
     source = source.join('/');
-    if (_cats.indexOf(source) == -1)
-      _cats.push(source);
+    if (_cats.indexOf(source) == -1)  _cats.push(source);
   }
 
   if (!_cats.length) return next();

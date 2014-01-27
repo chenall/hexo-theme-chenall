@@ -1,11 +1,10 @@
 <%
-if (this.hasOwnProperty('UserConfig') && UserConfig)
-   return;
+if (!usercfg.updated) return;
 
-hexo.__ = function(item)
-{
-  return function(str,opt)
-  {
+if (!usercfg.themeconfig) usercfg.themeconfig = theme;
+
+hexo.__ = function(item){
+  return function(str,opt){
     var s = __(item?item + '.' + str:str);
     return s?s:(opt===false?false:str);
   }
@@ -27,53 +26,42 @@ iTags.ijs = function(match,content){
   return eval(content);
 };
 
-usercfg.load_static_widgets = function(name)
-{
-  if (UserConfig.ajax_widgets)
-    return "<div data-src='"+ name +"' class='ajax_widgets'>正在加载...</div>";
-  if (!UserConfig.cached_widgets.hasOwnProperty(name))
-  {
-    var str = partial('_widget/static/' + name,{name: name});
+var load_static_widgets = function(name){
+  if (UserConfig.ajax_widgets) return "<div data-src='"+ name +"' class='ajax_widgets'>正在加载...</div>";
+
+  if (!UserConfig.cached_widgets.hasOwnProperty(name)){
+    var str = _partial('_widgets/static/' + name,{name: name});
     UserConfig.cached_widgets[name] = str;
   }
   return UserConfig.cached_widgets[name];
 }
 
-this.fs = hexo.util.fs;
+var load_widgets = function(name,item,index){
+    if (name.search('_') >= 0 && index)	return "";
 
-usercfg.load_widgets = function(name,item,index)
-{
-    if (name.search('_') >= 0 && index)
-	return "";
     var str="<section id='" + name + "_widget'>";
     var widgets = [];
     var theme_widgets = [];
-    if (usercfg.widgets && usercfg.widgets[name])
-        theme_widgets = usercfg.widgets[name];
-    if (item && item.widgets && item.widgets[name])
-    {
+
+    if (UserConfig.widgets && UserConfig.widgets[name]) theme_widgets = UserConfig.widgets[name];
+
+    if (item && item.widgets && item.widgets[name]){
         item.widgets[name].forEach(function(widget){
-            if (widget == '+')//+代表加载主题指定的widgets
-            {
+            if (widget == '+'){//+代表加载主题指定的widgets
                 theme_widgets.forEach(function(n){
-                    if (widgets.indexOf(widget) == -1)
-                        widgets.push(n);
+                    if (widgets.indexOf(widget) == -1) widgets.push(n);
                 })
             }
-            else if (widgets.indexOf(widget) == -1)
-                widgets.push(widget);
+            else if (widgets.indexOf(widget) == -1) widgets.push(widget);
         })
         
-    } else if (!item || ((!item.widgets || item.widgets.theme !== false) && (item.layout !== 'page' || name.search('_') < 0)))//对于页面默认不加载文章前后相关的widgets
+    } else if (!item || ((!item.widgets || item.widgets.theme !== false) && (item.layout !== 'page' || name.search('_') < 0))){//对于页面默认不加载文章前后相关的widgets
         widgets = widgets.concat(theme_widgets);
+    }
 
     widgets.forEach(function(widget){
 	str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';
-	if (usercfg.user_widget_dir && fs.existsSync(usercfg.user_widget_dir + widget + '.ejs')){
-          str += partial(usercfg.user_widget_dir + widget,{pos: name,item: item,name: widget});
-	} else {
-          str += partial('_widget/' + widget,{pos: name,item: item,name: widget});
-	}
+        str += _partial('_widgets/' + widget,{pos: name,item: item,name: widget});
 	str += '</div>';
     });
 
@@ -81,8 +69,5 @@ usercfg.load_widgets = function(name,item,index)
     return str;
 }
 
-if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug'))
-    hexo.debug = hexo.env.debug;
-
-this.UserConfig = _.extend({ajax_widgets: true},hexo.config,usercfg);
+this.UserConfig = _.extend({ajax_widgets: true,load_widgets: load_widgets,load_static_widgets: load_static_widgets},hexo.config,usercfg,usercfg.themeconfig);
 %>

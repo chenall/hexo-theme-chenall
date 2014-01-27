@@ -11,6 +11,7 @@
 - 独特的用户配置文件(自动加载`$SOURCE\_$THEME.yml`[默认就是**source\\_chenall.yml**]作为主题的配置文件,这样可以避免升级主题或其它原因导致的配置文件丢失).
 - `iLink` 文章内链功能
 - `ijs` 文章内嵌脚本或能
+- 允许在head或body的前面或尾部附加自定义内容.
 
 注: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
@@ -26,6 +27,12 @@ git clone git://github.com/chenall/hexo-theme-chenall.git themes/chenall
 或
 ```
 svn co -r HEAD https://github.com/chenall/hexo-theme-chenall/trunk themes/chenall
+```
+
+另外: 主题内置的`list_posts`插件还需要额外安装一个`lodash`组件,使用以下命令安装即可.
+
+```
+npm install lodash --save
 ```
 
 ## 更新
@@ -120,6 +127,22 @@ VALUE: 值
       ```
       {% iLink slug:test %}
       ```
+
+## 附加自定义内容
+
+如果你需要一些添加一些额外和主题无关的内容.这时就可以使用这个功能. 
+在`_modules`目录中(主题或source都可以)新建一个文件夹`partial`.
+
+然后就可以通过`partial`里面的特定文件添加额外内容.
+
+具体文件列表:
+
+* `body_start.ejs`   标签`<body>`后.
+* `body_end.ejs`     标签`</body>`前.
+* `head_start.ejs`   标签`<head>`后
+* `head_end.ejs`     标签`</head>`前
+
+例子: 想要在head中添加一行`meta`信息就可以在`head_start.ejs`中添加.
 
 ## 主题配置说明
 
@@ -248,6 +271,12 @@ widgets:
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown
 tag_minium: 3
+
+## Google 跟踪代码管理器 设置
+## https://www.google.com/tagmanager/
+## ID 就是对应容器的ID
+## GoogleTagManagerID: GTM-ABCDEF
+GTM_ID:
 
 twitter_id: chenall
 facebook_id:

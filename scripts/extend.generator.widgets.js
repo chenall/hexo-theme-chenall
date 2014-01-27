@@ -3,15 +3,17 @@ var route = hexo.route;
 var fs = require('fs');
 
 extend.generator.register(function(locals, render, callback){
-  if (usercfg && usercfg.ajax_widgets)
-  {
-    var base_path = hexo.theme_dir + 'layout/_widget/static/';
+  if (usercfg && usercfg.themeconfig && usercfg.themeconfig.ajax_widgets){
+    var base_path = hexo.theme_dir + 'layout/_widgets/static/';
+
     if (!fs.existsSync(base_path)) callback();
+
     var files=fs.readdirSync(base_path);
     files.forEach(function(file){
       var ff = file.match(/^(.+)\.ejs$/);
-      if (ff == null)
-        return;
+
+      if (ff == null) return;
+
       render('widgets/'+ff[1]+'.html', ['widget'],{name: ff[1],layout: 'widget'});
     });
   }
@@ -19,8 +21,8 @@ extend.generator.register(function(locals, render, callback){
 });
 
 hexo.on('generateBefore',function(){
-  hexo.log.log('generateBefore');
+  hexo.log.d('generateBefore');
 })
 hexo.on('generateAfter',function(){
-  hexo.log.log('generateAfter');
+  hexo.log.d('generateAfter');
 })

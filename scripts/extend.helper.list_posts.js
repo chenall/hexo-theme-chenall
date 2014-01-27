@@ -1,6 +1,5 @@
 var _ = require('lodash');
 
-
 function get_posts(site,options){
   if (!options) {
     options = {};

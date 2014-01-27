@@ -3,46 +3,52 @@
 <%if (page.layout == 'widget'){ -%>
 <%- (body) -%>
 <%return;} -%>
-<%- partial('_partial/head') %>
 <% var sidebar = (!page.hasOwnProperty('sidebar') || page.sidebar);
 if (page.widgets && page.widgets.theme == false)
     sidebar = false;
 %>
+<!DOCTYPE HTML>
+<html>
+<head>
+<%- _partial('_modules/partial/head_start') -%>
+<%- partial('_partial/head') %>
+<%- _partial('_modules/partial/head_end') -%>
+</head>
 <body>
-<%- partial(UserConfig.user_module_dir + 'addon_body.ejs') -%>
-<%if (UserConfig.GTM_ID){ -%>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=<%-UserConfig.GTM_ID%>"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','<%-UserConfig.GTM_ID%>');</script>
-<!-- End Google Tag Manager -->
-<%} -%>
+  <%- _partial('_modules/partial/body_start') -%>
+  <%if (UserConfig.GTM_ID){ -%>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=<%-UserConfig.GTM_ID%>"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','<%-UserConfig.GTM_ID%>');</script>
+  <!-- End Google Tag Manager -->
+  <%} -%>
   <header id="header" class="container"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
-    <div id='content' class="container">
-       <div class="page-header-wrapper">
-       <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
-       <div class="page-header"><h1><%- config.title %> <small><%- config.subtitle %></small></h1></div>
-       </div>
-       <div class="row">
-         <div id="main-col" <%if (sidebar) {%>class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9"<%}%>>
-        <%- UserConfig.load_widgets('header',page) %>
-	    <div id="wrapper"><%- body %></div><!--wapper-->
-         </div><!-- ID main-col END -->
-         <%if (sidebar) {%><aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></aside><%}%>
-         <div class="clearfix"></div>
-       </div><!-- row END -->
-    </div>
-    <footer id="footer" class="container">
-    <div class="panel panel-info">
-    <%- UserConfig.load_widgets('footer',page) -%>
-    <%- partial('_partial/footer') %>
-    </div>
-    </footer>
-    <%- partial('_partial/after_footer') %>
-    <%- partial(UserConfig.user_module_dir + 'addon_after_footer.ejs') -%>
+  <div id='content' class="container">
+     <div class="page-header-wrapper">
+      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+      <div class="page-header"><h1><%- config.title %> <small><%- config.subtitle %></small></h1></div>
+     </div>
+     <div class="row">
+       <div id="main-col" <%if (sidebar) {%>class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9"<%}%>>
+      <%- UserConfig.load_widgets('header',page) %>
+          <div id="wrapper"><%- body %></div><!--wapper-->
+       </div><!-- ID main-col END -->
+       <%if (sidebar) {%><aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></aside><%}%>
+       <div class="clearfix"></div>
+     </div><!-- row END -->
+  </div>
+  <footer id="footer" class="container">
+  <div class="panel panel-info">
+  <%- UserConfig.load_widgets('footer',page) -%>
+  <%- partial('_partial/footer') %>
+  </div>
+  </footer>
+  <%- partial('_partial/after_footer') %>
+  <%- _partial('_modules/partial/body_end') -%>
 </body>
 </html>
