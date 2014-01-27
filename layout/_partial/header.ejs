@@ -23,8 +23,8 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
       <% if (UserConfig.rss) { %>
-        <li><a href="<%- UserConfig.rss%>">RSS</a></li>
-      <% } %>      
+        <li><a href="<%- RealPath(UserConfig.rss) %>">RSS</a></li>
+      <% } %>
       <% if (UserConfig.twitter && UserConfig.twitter.username) { %>
         <li><a href="https://twitter.com/<%- UserConfig.twitter.username %>">twitter</a></li>
       <% } else if (UserConfig.twitter_id) { %>
