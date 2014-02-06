@@ -1,3 +1,4 @@
+var fs = require('fs');
 
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug')) hexo.debug = hexo.env.debug;
 
@@ -19,6 +20,11 @@ var load_default_usercfg = function(){
     cached_widgets:true
   };
   cfg.twbs_style = ['primary','success','info','warning','danger'];
+  var user_cfg = hexo.source_dir + '_' + hexo.config.theme + '.yml';
+  if (!fs.existsSync(user_cfg))
+    user_cfg = hexo.theme_dir + '_config.yml';
+  
+  cfg.themeconfig = hexo.render.renderSync({path: user_cfg});
   cfg.twbs_sty = function(i){return cfg.twbs_style[i%4];}
 }
 
