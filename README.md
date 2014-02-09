@@ -162,7 +162,6 @@ loaded_modules:
 - bootstrap
 - fontawesome
 - prettify
-- imagesloaded
 - fancybox
 - mathjax
 
@@ -173,11 +172,17 @@ loaded_modules:
 #
 #
 modules:
+  # respond 不要放到loaded_modules中,这个会自动加载
+  # proxy 指定respond的proxy地址
+  # 注: bootstrap的css文件和这个proxy需要在同一个域上
+  respond: ## A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more).
+    js: http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js
+    proxy: http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html
   jquery:
     js: http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js
   bootstrap: #强大的CSS框架，由Twitter的开发工程师推出
-    css: http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css
-    js: http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js
+    css: http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css
+    js: http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js
   prettify: # Google Code Prettify 代码的高亮显示
     css: http://cdn.bootcss.com/prettify/r298/prettify.min.css
     js: http://cdn.bootcss.com/prettify/r298/prettify.min.js
@@ -187,8 +192,9 @@ modules:
   fancybox: # 一款基于jQuery开发的类Lightbox插件
     css: http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
     js:  http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
-  imagesloaded: #监测图片是否加载完毕的JavaScript库 使用Gallery Post 时需要用到
-    js: js/jquery.imagesloaded.min.js
+  imagesloaded: #监测图片是否加载完毕的JavaScript库
+    #js: js/jquery.imagesloaded.min.js
+     js: http://cdn.bootcss.com/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js
   Gallery:
     css: http://cdn.bootcss.com/blueimp-gallery/2.11.2/css/blueimp-gallery.min.css
     js: http://cdn.bootcss.com/blueimp-gallery/2.11.2/js/jquery.blueimp-gallery.min.js
@@ -256,7 +262,7 @@ widgets:
     - recent_posts
     - tagcloud
     - latest_update_posts
-    - tags
+    - random_posts
     - sina_weiboshow
     - recent_comments
   before_content: # 文章内容前
@@ -267,6 +273,7 @@ widgets:
 
   after_post:     # 文章框架之后
     - post_pageNav
+    - related_posts
 
 # For use with tagcloud or tag widgets
 # - only tags >= to tag_minium are shown

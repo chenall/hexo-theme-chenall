@@ -26,9 +26,9 @@ var description = function(data, callback){
 };
 
 var case_find = function(name){
-  var find = name.toUpperCase();
+  var find = String(name).toUpperCase();
   return function(data){
-    return find == data.toUpperCase();
+    return find == String(data).toUpperCase();
   }
 }
 

@@ -1,0 +1,6 @@
+<script src="<%- RealPath(module.js) -%>"></script>
+<% if (module.proxy) {%>
+<link href="<%-module.proxy %>" id="respond-proxy" rel="respond-proxy" />
+<link href="<%-config.root %>js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="<%-config.root %>js/respond.proxy.js"></script>
+<%}%>

@@ -47,6 +47,6 @@ title.push(UserConfig.title);
 <!--[if lt IE 9]>
    <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-   <script src="<%- config.root %>js/respond.min.js"></script>
+   <%if (UserConfig.modules['respond']){%><%- partial('../_modules/respond',{module: UserConfig.modules['respond']}) -%><%}%>
    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
 <![endif]-->
