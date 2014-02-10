@@ -147,7 +147,7 @@ title: 禁用评论框方法示范
   <li class="next"><a href="/post/link/" title="链接页面">链接页面 &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/post/日本語テスト/">日本語テスト</a></li><li class="list-group-item"><a href="/post/elements/">Elements</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/gallery-post/">Gallery Post</a></li><li class="list-group-item"><a href="/post/lorem-ipsum/">Lorem Ipsum</a></li><li class="list-group-item"><a href="/post/nocomments/">禁用评论框方法示范</a></li><li class="list-group-item"><a href="/post/categories/">Categories</a></li><li class="list-group-item"><a href="/post/tags/">Tags</a></li></ul></div></section></div><!--wapper-->
+<ul class="list-group"><li class="list-group-item"><a href="/post/no-title/">no-title</a></li><li class="list-group-item"><a href="/post/目录分类/gallery/">图片展示页面示范</a></li><li class="list-group-item"><a href="/post/images/">Images</a></li><li class="list-group-item"><a href="/post/中文測試/">中文測試</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/tag-plugins/">Tag Plugins</a></li><li class="list-group-item"><a href="/post/gallery-post/">Gallery Post</a></li></ul></div></section></div><!--wapper-->
        </div><!-- ID main-col END -->
        <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
 <div id="widget_search" class="widget panel panel-primary">
@@ -176,7 +176,7 @@ title: 禁用评论框方法示范
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/tags/">Tags</a></li><li class="list-group-item"><a href="/post/images/">Images</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/categories/">Categories</a></li><li class="list-group-item"><a href="/post/long-title/">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/gallery-post/">Gallery Post</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/images/">Images</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/link-post-without-title/">www.google.com</a></li><li class="list-group-item"><a href="/post/elements/">Elements</a></li><li class="list-group-item"><a href="/post/categories/">Categories</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/gallery-post/">Gallery Post</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -297,7 +297,7 @@ var uyan_config={
       var alt = this.alt;
 
       if (alt){
-        $(this).after('<span class="caption">' + alt + '</span>');
+        $(this).before('<span class="caption">' + alt + '</span>');
       }
 
       $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />');
