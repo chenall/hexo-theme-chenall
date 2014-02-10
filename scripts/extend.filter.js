@@ -114,9 +114,15 @@ var createTag = function(data, next){
   next();
 };
 
+var replaceVars = function(data,next){
+  data.content = data.content.replace(/\[CDN_URL\]:/ig,usercfg.themeconfig.CDN_URL);
+  next();
+}
+
 hexo.extend.filter.register('post', description);
 
 //支持多个一级分类,和目录分类
 //support "multiple first-level categories" and "Folder as category"
 hexo.extend.filter.register('pre', CreateCategory);
 hexo.extend.filter.register('pre', createTag);
+hexo.extend.filter.register('pre', replaceVars);
