@@ -2,55 +2,46 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>hexo theme chenall</title>
-  <meta name="author" content="chenall">
-  
-  <meta name="description" content="hexo模块化主题">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
-  <meta property="og:site_name" content="hexo theme chenall"/>
+<title>hexo theme chenall</title>
+<meta name="author" content="chenall">
 
-  
-    <meta property="og:image" content="undefined"/>
-  
-  <style>
-img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}body{padding-top:70px;background-color:#fff;}.widget ul .icon:before{content:'\f069';color:#4141e9;font:12px FontAwesome;}article footer{padding-top:10px;border-top:1px solid #333;}article a.more-link{padding-right:20px;padding-top:10px;padding-bottom:20px;color:#880088;text-decoration:none;}article header .icon{color:#258fb8;}article .post .icon:before{content:'\f15c';}article .comment .icon:before{content:'\f086';}article .photo .icon:before{content:'\f030';}article .link .icon:before{content:'\f0c1';}article .link .title a:after{content:'\f08e';color:#999;font:12px FontAwesome;padding-left:10px;vertical-align:super;}article .gallery{overflow:hidden;position:relative;}article .gallery:hover .control{opacity:1;-ms-filter:none;filter:none;}article .gallery img{position:absolute;top:0;left:0;opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);}article .gallery .control{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-webkit-transition:0.3s;-moz-transition:0.3s;-o-transition:0.3s;-ms-transition:0.3s;transition:0.3s;}article .gallery .prev,article .gallery .next{position:absolute;top:0;width:50%;height:100%;cursor:pointer;}article .gallery .prev:before,article .gallery .next:before{position:absolute;font:24px/1 FontAwesome;text-align:center;width:24px;text-shadow:0 0 15px rgba(0,0,0,0.5);color:#fff;margin-top:-12px;top:50%;}article .gallery .prev{left:0;}article .gallery .prev:before{content:'\f053';left:10px;}article .gallery .next{right:0;}article .gallery .next:before{content:'\f054';right:10px;}article video,article img{min-width:0%;max-width:100%;height:auto;border:none;}.tagcloud .entry a{padding-left:5px;display:inline-block;}#sidebar ul li{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.post hr{border-top: 1px solid #080;}.tags a{margin-left: 2px}
-.categories .breadcrumb{padding: 5px 5px;margin-bottom: 0px;}
-.categories .breadcrumb>li+li:before{padding: 0px 2px;content:'/';}
-.testIE{display:none;}
-.carousel-control .fa{position: absolute;top: 50%;z-index: 5;display: inline-block;}
-  </style>
-  <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
-  <!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
-  <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
-  <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
-  <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="atom.xml" title="hexo theme chenall" type="application/atom+xml">
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+<meta name="description" content="hexo模块化主题">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta property="og:site_name" content="hexo theme chenall"/>
+
+<!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
+<!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
+<!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
+
+<link href="/favicon.png" rel="icon">
+<link rel="alternate" href="/atom.xml" title="hexo theme chenall Feed" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" type="text/css">
-<link rel="stylesheet" href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css">
-   <style>code{white-space: pre;word-wrap:break-word; overflow:hidden;}</style>
-<!--[if lt IE 9]>
+<link rel="stylesheet" href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css"><!--[if lt IE 9]>
    <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
-   <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-   <script src="/js/respond.min.js"></script>
+   <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+   <script src="http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<link href="http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/js/respond.proxy.js"></script>
    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
 <![endif]-->
- </head>
 
-
+</head>
 <body>
-  <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
+      <header id="header" class="container hidden-xs"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">hexo theme chenall</a>
@@ -73,45 +64,85 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
       </ul>
       <ul class="nav navbar-nav pull-right">
       
-        <li><a href="atom.xml">RSS</a></li>
-            
+        <li><a href="/atom.xml">RSS</a></li>
+      
       
         <li><a href="https://twitter.com/chenall">twitter</a></li>
       
       
       
       
-        <li><a href="https://github.com/chenall">github</a></li>
+        <li><a href="https://github.com/chenall/almrun">github</a></li>
       
       </ul>
     </div>
   </div>
 </nav>
-<div class="clearfix"></div></header>
-    <div id='content' class="container">
-       <div class="page-header-wrapper">
-       <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
-       <div class="page-header"><h1>hexo theme chenall <small>hexo模块化主题,自由,强大</small></h1></div>
-       </div>
-       <div class="row">
-         <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
-        <section id='header_widget'></section>
-	    <div id="wrapper">
-  
-<article>
+<div class="clearfix"></div>
+</header>
+  <div id='content' class="container">
+     <div class="page-header-wrapper">
+      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+      <div class="page-header"><h1>hexo theme chenall <small>hexo模块化主题,自由,强大</small></h1></div>
+     </div>
+     <div class="row">
+       <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
+      <section id='header_widget'></section>
+          <div id="wrapper"><article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/post/faq/">FAQ</a></h1>
+      
+        <span>发表于<time datetime="2014-02-10T06:49:34.000Z"> <a href="/post/faq/">2014-02-10</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <h3 id="how-to-edit-menu-">How to edit menu?</h3>
+<p>Edit <code>menu</code> parameter in <code>_config.yml</code>.</p>
+<h3 id="how-to-edit-sidebar-">How to edit sidebar?</h3>
+<p>Edit <code>widgets</code> paramter in <code>_config.yml</code>.</p>
+<p>If you have any questions, send me an <a href="https://github.com/chenall/hexo-theme-chenall/issues" target="_blank">issue</a>.</p>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/介绍/">介绍</a></li></span></span> | <span class="tags">标签 <a href="/tags/dolor/" class="label label-primary">dolor</a></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
+<a href="http://hexo.chenall.net/post/faq/#comments" class="ds-thread-count comment-link" data-thread-key="faq" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/post/intro/">介绍</a></h1>
       
-        <span>发表于<time datetime="2013-12-28T07:20:00.000Z"> <a href="/post/intro/">2013-12-28</a></time></span>      
+        <span>发表于<time datetime="2013-12-28T15:20:00.000Z"> <a href="/post/intro/">2013-12-28</a></time></span>      
     </header>
     
     
     <div class="entry">
       
-        <p>基于<a href="http://zespia.tw/hexo" target="_blank">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br>
+        <p>基于<a href="http://zespia.tw/hexo" target="_blank">Hexo</a>默认主题light修改而成,采用bootstrap css框架
+在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.
+可以自定义组合各种组件,像评论系统,统计系统等.
+
       
     </div>
     
@@ -126,7 +157,7 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
     
     
         <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/介绍/">介绍</a></li></span></span> | <span class="tags">标签 <a href="/tags/hexo/" class="label label-primary">hexo</a><a href="/tags/theme/" class="label label-success">theme</a><a href="/tags/chenall/" class="label label-info">chenall</a></span> | <span class="time">最近更新:<time title="2014-01-09 08:16:50"datetime="2014-01-09 08:16:50"> 2014-01-09</time></span>
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/介绍/">介绍</a></li></span></span> | <span class="tags">标签 <a href="/tags/Hexo/" class="label label-primary">Hexo</a><a href="/tags/theme/" class="label label-success">theme</a><a href="/tags/chenall/" class="label label-info">chenall</a></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -136,15 +167,60 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 
 
 
-  
-<article>
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/post/customWidget/">自定义添加小工具</a></h1>
+      
+        <span>发表于<time datetime="2013-12-28T15:00:00.000Z"> <a href="/post/customWidget/">2013-12-28</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.
+同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
+<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个&#39;+&#39;代表在当前位置保留主题的设置.</p>
+<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
+<p>例子:</p>
+<pre><code>layout: post
+title: 自定义添加小工具
+widgets:
+  after_content:
+    - post_pageNav
+    - +
+  after_post:
+    - uyan
+</code></pre>
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="tags">标签 <a href="/tags/测试/" class="label label-primary">测试</a></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
+<a href="http://hexo.chenall.net/post/customWidget/#comments" class="ds-thread-count comment-link" data-thread-key="customWidget" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/post/nowidget/">禁用所有小工具的文章</a></h1>
       
-        <span>发表于<time datetime="2013-12-28T07:00:00.000Z"> <a href="/post/nowidget/">2013-12-28</a></time></span>      
+        <span>发表于<time datetime="2013-12-28T15:00:00.000Z"> <a href="/post/nowidget/">2013-12-28</a></time></span>      
     </header>
     
     
@@ -169,7 +245,7 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
     
     
         <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li><li><a href="/categories/测试/子分类/">子分类</a></li></span></span> | <span class="time">最近更新:<time title="2014-01-08 13:52:32"datetime="2014-01-08 13:52:32"> 2014-01-08</time></span> | <span class="comment-link">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li><li><a href="/categories/测试/子分类/">子分类</a></li></span></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
 <a href="http://hexo.chenall.net/post/nowidget/#comments" class="ds-thread-count comment-link" data-thread-key="nowidget" data-count-type="comments">暂无评论</a></span>
         </footer>
     
@@ -180,61 +256,14 @@ img{max-width:100%;height:auto;}.alignleft{float:left;}.alignright{float:right;}
 
 
 
-  
-<article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/post/customWidget/">自定义添加小工具</a></h1>
-      
-        <span>发表于<time datetime="2013-12-28T07:00:00.000Z"> <a href="/post/customWidget/">2013-12-28</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
-<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
-<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
-<p>例子:</p>
-<pre><code>layout: post
-title: 自定义添加小工具
-widgets:
-  after_content:
-    - post_pageNav
-    - +
-  after_post:
-    - uyan
-</code></pre>
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="tags">标签 <a href="/tags/测试/" class="label label-primary">测试</a></span> | <span class="time">最近更新:<time title="2014-01-08 14:08:54"datetime="2014-01-08 14:08:54"> 2014-01-08</time></span> | <span class="comment-link">
-<a href="http://hexo.chenall.net/post/customWidget/#comments" class="ds-thread-count comment-link" data-thread-key="customWidget" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  
-<article>
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/post/nosidebar/">单独禁用侧边栏</a></h1>
       
-        <span>发表于<time datetime="2013-12-28T02:56:36.000Z"> <a href="/post/nosidebar/">2013-12-28</a></time></span>      
+        <span>发表于<time datetime="2013-12-28T10:56:36.000Z"> <a href="/post/nosidebar/">2013-12-28</a></time></span>      
     </header>
     
     
@@ -256,7 +285,7 @@ title: 无侧边栏
     
     
         <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/介绍/">介绍</a></li></span></span> | <span class="tags">标签 <a href="/tags/test/" class="label label-primary">test</a></span> | <span class="time">最近更新:<time title="2014-01-08 14:12:10"datetime="2014-01-08 14:12:10"> 2014-01-08</time></span> | <span class="comment-link">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/介绍/">介绍</a></li></span></span> | <span class="tags">标签 <a href="/tags/test/" class="label label-primary">test</a></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
 <a href="http://hexo.chenall.net/post/nosidebar/#comments" class="ds-thread-count comment-link" data-thread-key="nosidebar" data-count-type="comments">暂无评论</a></span>
         </footer>
     
@@ -267,8 +296,7 @@ title: 无侧边栏
 
 
 
-  
-<article>
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
@@ -297,7 +325,7 @@ title: 无侧边栏
     
     
         <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/代码/">代码</a></li></span></span> | <span class="tags">标签 <a href="/tags/code/" class="label label-primary">code</a><a href="/tags/hexo/" class="label label-success">hexo</a><a href="/tags/chenall/" class="label label-info">chenall</a></span> | <span class="time">最近更新:<time title="2014-01-08 13:51:14"datetime="2014-01-08 13:51:14"> 2014-01-08</time></span> | <span class="comment-link">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/代码/">代码</a></li></span></span> | <span class="tags">标签 <a href="/tags/code/" class="label label-primary">code</a><a href="/tags/Hexo/" class="label label-success">Hexo</a><a href="/tags/chenall/" class="label label-info">chenall</a></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
 <a href="http://hexo.chenall.net/post/code/#comments" class="ds-thread-count comment-link" data-thread-key="code" data-count-type="comments">暂无评论</a></span>
         </footer>
     
@@ -308,21 +336,59 @@ title: 无侧边栏
 
 
 
-  
-<article>
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/post/images/">Images</a></h1>
+      
+        <span>发表于<time datetime="2013-12-26T22:46:49.000Z"> <a href="/post/images/">2013-12-26</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>This is a image test post.</p>
+<p><img src="/imgs/wallpaper-2572384.jpg" alt=""></p>
+<p><img src="/imgs/wallpaper-2311325.jpg" alt="Caption"></p>
+<p><img src="/imgs/wallpaper-878514.jpg" alt=""></p>
+<p><img src="http://placehold.it/350x150.jpg" alt="Small Picture"></p>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
+<a href="http://hexo.chenall.net/post/images/#comments" class="ds-thread-count comment-link" data-thread-key="images" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/post/nocomments/">禁用评论框方法示范</a></h1>
       
-        <span>发表于<time datetime="2013-12-26T07:00:00.000Z"> <a href="/post/nocomments/">2013-12-26</a></time></span>      
+        <span>发表于<time datetime="2013-12-26T15:00:00.000Z"> <a href="/post/nocomments/">2013-12-26</a></time></span>      
     </header>
     
     
     <div class="entry">
       
-        <p>本页面没有评论框,只是禁用主题_config.yml里面设置comments..<br>可以通过widget添加的评论论不受此限制</p>
+        <p>本页面没有评论框,只是禁用主题_config.yml里面设置comments..
+可以通过widget添加的评论论不受此限制</p>
 <p>使用方法在文章头部添加一个设置</p>
 <pre><code>comments: false
 </code></pre><p>本页面相关参数</p>
@@ -339,7 +405,7 @@ title: 禁用评论框方法示范
     
     
         <footer id="post-meta">
-        <span class="tags">标签 <a href="/tags/test/" class="label label-primary">test</a></span> | <span class="time">最近更新:<time title="2013-12-28 15:17:48"datetime="2013-12-28 15:17:48"> 2013-12-28</time></span>
+        <span class="tags">标签 <a href="/tags/test/" class="label label-primary">test</a></span> | <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -349,8 +415,7 @@ title: 禁用评论框方法示范
 
 
 
-  
-<article>
+  <article>
 <div id="link" class="link well">
   <div class="post-content">
     <header class="well-sm">
@@ -363,7 +428,8 @@ title: 禁用评论框方法示范
     
     <div class="entry">
       
-        <p>本页面是属于链接文章(这个比较少用到,只是保留原主题的功能).<br>点击文章标题会跳到指定的网址,比如这个,会跳到www.google.com</p>
+        <p>本页面是属于链接文章(这个比较少用到,只是保留原主题的功能).
+点击文章标题会跳到指定的网址,比如这个,会跳到www.google.com</p>
 <pre><code>    ---
     layout: link
     link: http://www.google.com
@@ -383,25 +449,20 @@ title: 禁用评论框方法示范
 
 
 
-  
-<article>
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/post/faq/">FAQ</a></h1>
+      <h1 class="title"><a href="/post/no-title/"></a></h1>
       
-        <span>发表于<time datetime="2013-12-23T06:32:51.000Z"> <a href="/post/faq/">2013-12-23</a></time></span>      
+        <span>发表于<time datetime="2013-12-25T22:57:49.000Z"> <a href="/post/no-title/">2013-12-25</a></time></span>      
     </header>
     
     
     <div class="entry">
       
-        <h3 id="How_to_edit_menu-3f-">How to edit menu?</h3>
-<p>Edit <code>menu</code> parameter in <code>_config.yml</code>.</p>
-<h3 id="How_to_edit_sidebar-3f-">How to edit sidebar?</h3>
-<p>Edit <code>widgets</code> paramter in <code>_config.yml</code>.</p>
-<p>If you have any questions, send me an <a href="https://github.com/chenall/hexo-theme-chenall/issues" target="_blank">issue</a>.</p>
+        <p>This post doesn&#39;t have a title. Make sure it&#39;s accessible.</p>
 
       
     </div>
@@ -411,118 +472,8 @@ title: 禁用评论框方法示范
     
     
         <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/测试/">测试</a></li></span><span class="breadcrumb"><li><a href="/categories/介绍/">介绍</a></li></span></span> | <span class="tags">标签 <a href="/tags/dolor/" class="label label-primary">dolor</a></span> | <span class="time">最近更新:<time title="2014-01-08 13:54:15"datetime="2014-01-08 13:54:15"> 2014-01-08</time></span> | <span class="comment-link">
-<a href="http://hexo.chenall.net/post/faq/#comments" class="ds-thread-count comment-link" data-thread-key="faq" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  
-<article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/post/Mathjax/">数学公式示范</a></h1>
-      
-        <span>发表于<time datetime="2013-12-23T00:00:00.000Z"> <a href="/post/Mathjax/">2013-12-23</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>本文章内容需要启用Mathjax,否则显示不正常 来源 <a href="http://winterland.me/2013/12/hexo-mathjax/" target="_blank">http://winterland.me/2013/12/hexo-mathjax/</a></p>
-
-      
-    </div>
-    
-    
-      
-      <div id='more-link'>
-        <div align="left">
-          <a href="/post/Mathjax/#more" class="more-link fa fa-play">阅读全文</a>
-        </div>
-      </div>
-      
-    
-    
-        <footer id="post-meta">
-        <span class="tags">标签 <a href="/tags/Mathjax/" class="label label-primary">Mathjax</a><a href="/tags/Hexo/" class="label label-success">Hexo</a><a href="/tags/测试/" class="label label-info">测试</a></span> | <span class="time">最近更新:<time title="2014-01-12 14:47:08"datetime="2014-01-12 14:47:08"> 2014-01-12</time></span> | <span class="comment-link">
-<a href="http://hexo.chenall.net/post/Mathjax/#comments" class="ds-thread-count comment-link" data-thread-key="Mathjax" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  
-<article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/post/gallery/">图片展示页面示范</a></h1>
-      
-        <span>发表于<time datetime="2013-12-10T00:00:00.000Z"> <a href="/post/gallery/">2013-12-10</a></time></span>      
-    </header>
-    
-<div id="carousel-captions" class="carousel slide" data-interval='3000' data-carousel=0 data-ride="carousel">
-  <ol class="carousel-indicators">
-  
-    <li data-target="#carousel-captions" data-slide-to="0" class="active"></li>
-  
-    <li data-target="#carousel-captions" data-slide-to="1" ></li>
-  
-  </ol>
-  <div class="carousel-inner">
-        <div class="item active">
-      <img src="/imgs/1lightning1.jpg">
-      <div class="carousel-caption">
-        <h3>测试图片1</h3>
-        <p>测试图片1的说明介绍信息支持使用HTML标签哦,比如<a href='http://chenall.net'>我的搏客</a></p>
-      </div>
-    </div>
-        <div class="item">
-      <img src="/imgs/2lightning2.jpg">
-      <div class="carousel-caption">
-        <h3>测试图片2</h3>
-        <p></p>
-      </div>
-    </div>
-      </div>
-  <a class="left carousel-control" href="#carousel-captions" data-slide="prev"><span class="fa fa-chevron-left"></span></a>
-  <a class="right carousel-control" href="#carousel-captions" data-slide="next"><span class="fa fa-chevron-right"></span></a>
-</div>
-
-    
-    <div class="entry">
-      
-        <h3 id="-56fe-7247-8f6e-64ad-529f-80fd-">图片轮播功能</h3>
-
-      
-    </div>
-    
-    
-      
-      <div id='more-link'>
-        <div align="left">
-          <a href="/post/gallery/#more" class="more-link fa fa-play">阅读全文</a>
-        </div>
-      </div>
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/目录分类/">目录分类</a></li></span></span> | <span class="tags">标签 <a href="/tags/Gallery/" class="label label-primary">Gallery</a><a href="/tags/hexo/" class="label label-success">hexo</a><a href="/tags/测试/" class="label label-info">测试</a></span> | <span class="time">最近更新:<time title="2014-01-11 22:12:34"datetime="2014-01-11 22:12:34"> 2014-01-11</time></span> | <span class="comment-link">
-<a href="http://hexo.chenall.net/post/gallery/#comments" class="ds-thread-count comment-link" data-thread-key="gallery" data-count-type="comments">暂无评论</a></span>
+        <span class="time">最近更新:<time title="2014-02-10 06:49:34"datetime="2014-02-10 06:49:34"> 2014-02-10</time></span> | <span class="comment-link">
+<a href="http://hexo.chenall.net/post/no-title/#comments" class="ds-thread-count comment-link" data-thread-key="no-title" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -535,12 +486,11 @@ title: 禁用评论框方法示范
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li class="active"><span class="page-number current">1</span></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="extend next" href="/page/2/">&raquo;</a></li>
+  <li class="active"><li><span class="page-number current">1</span></li></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="page-number" href="/page/3/">3</a></li><li><a class="extend next" href="/page/2/">&raquo;</a></li>
   <div class="clearfix"></div>
-</ul>
-</div><!--wapper-->
-         </div><!-- ID main-col END -->
-         <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
+</ul></div><!--wapper-->
+       </div><!-- ID main-col END -->
+       <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
 <div id="widget_search" class="widget panel panel-primary">
     <form action="//google.com/search" method="get" accept-charset="utf-8">
   <div class="input-group">
@@ -566,11 +516,11 @@ title: 禁用评论框方法示范
 <div id="widget_latest_update_posts" class="widget panel panel-primary">
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
-<div id="widget_tags" class="widget panel panel-primary">
-  <div class="panel-heading">标签</div>  <div data-src='tags' class='ajax_widgets'>正在加载...</div></div>
+<div id="widget_random_posts" class="widget panel panel-primary">
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/elements/">Elements</a></li><li class="list-group-item"><a href="/post/日本語テスト/">日本語テスト</a></li><li class="list-group-item"><a href="/post/中文測試/">中文測試</a></li><li class="list-group-item"><a href="/post/no-title/">no-title</a></li><li class="list-group-item"><a href="/post/目录分类/gallery/">图片展示页面示范</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/tags/">Tags</a></li><li class="list-group-item"><a href="/post/customWidget/">自定义添加小工具</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
-  <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=2&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
+  <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
 </div>
 
 <div id="widget_recent_comments" class="widget panel panel-primary">
@@ -583,12 +533,12 @@ title: 禁用评论框方法示范
 </div>
 
 </aside>
-         <div class="clearfix"></div>
-       </div><!-- row END -->
-    </div>
-    <footer id="footer" class="container">
-    <div class="panel panel-info">
-    <section id='footer_widget'></section>    <div class="panel-footer">
+       <div class="clearfix"></div>
+     </div><!-- row END -->
+  </div>
+  <footer id="footer" class="container">
+  <div class="panel panel-info">
+  <section id='footer_widget'></section>  <div class="panel-footer">
   <div id="site-info">
     <span class='author'>
   
@@ -598,22 +548,18 @@ title: 禁用评论框方法示范
   <span id='analytics-51la'></span><span id='analytics-google'></span><span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5774006'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5774006%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-02-10 06:49:46</em></span></div>
 </div>
 <div class="clearfix"></div>
 
 
-    </div>
-    </footer>
-    
-        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-        
-        <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-        
-        
-        
-        <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
-    <script type="text/javascript">
+  </div>
+  </footer>
+  
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>        
+        <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
+                
+        <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
    var lang=[];
    var pretty_base='';
    $('script').each(function(){
@@ -645,10 +591,7 @@ title: 禁用评论框方法示范
        prettyPrint();
     })
 </script>    
-        <script src="/js/jquery.imagesloaded.min.js"></script>
-        
-        
-    <script type="text/javascript">
+            <script type="text/javascript">
 var duoshuoQuery = {short_name:"hexochenall"};
 	(function() {
 		var ds = document.createElement('script');
@@ -660,33 +603,39 @@ var duoshuoQuery = {short_name:"hexochenall"};
 	})();
 </script>
     
-        
-    <!--wumii_relatedItems-->
+            <!--wumii_relatedItems-->
     
-        
-    
+            
 <script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};</script>
 <script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1880458"></script>
 <a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
     
-        
-    <script type="text/javascript">
+            <script type="text/javascript">
 var uyan_config={
      'url':'http://hexo.chenall.net/',
-'su':'gallery'
+'su':'no-title'
 };
 </script>
 <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1880458"></script>
     
-        <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script src="/js/gallery.js"></script>
-<script type="text/javascript">
+        <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>    <script type="text/javascript">
 (function($){
+  $('.entry').each(function(i){
+    $(this).find('img').each(function(){
+      var alt = this.alt;
+
+      if (alt){
+        $(this).after('<span class="caption">' + alt + '</span>');
+      }
+
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />');
+    });
+  });
+
   $('.fancybox').fancybox();
 })(jQuery);
 </script>    
-        <script src="http://cdn.bootcss.com/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">
+        <script src="http://cdn.bootcss.com/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>    <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -716,5 +665,5 @@ $('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(thi
 </script>
 
 
-</body>
+  </body>
 </html>
