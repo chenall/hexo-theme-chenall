@@ -125,4 +125,4 @@ hexo.extend.filter.register('post', description);
 //support "multiple first-level categories" and "Folder as category"
 hexo.extend.filter.register('pre', CreateCategory);
 hexo.extend.filter.register('pre', createTag);
-hexo.extend.filter.register('pre', replaceVars);
+hexo.extend.filter.register('post', replaceVars);
