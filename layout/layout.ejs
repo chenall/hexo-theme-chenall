@@ -27,7 +27,7 @@ if (page.widgets && page.widgets.theme == false)
   })(window,document,'script','dataLayer','<%-UserConfig.GTM_ID%>');</script>
   <!-- End Google Tag Manager -->
   <%} -%>
-  <header id="header" class="container hidden-xs"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
+  <header id="header" class="container"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
   <div id='content' class="container">
      <div class="page-header-wrapper">
       <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
