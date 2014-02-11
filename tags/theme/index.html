@@ -41,28 +41,34 @@
 
 </head>
 <body>
-      <header id="header" class="container hidden-xs"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
+      <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">hexo theme chenall</a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">hexo theme chenall</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-	
-		    <li><a href="/" title="主页">主页</a></li>	    
-		    <li><a href="/about/" title="关于">关于</a></li>	    
-		    <li><a href="/archives/" title="归档">归档</a></li>	    
-		  <li class='dropdown'>
-		    <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
-		    <ul class='dropdown-menu'>
-		
-		      <li><a href="//chenall.net" title="chenall">chenall</a></li>		
-		      <li><a href="https://github.com/chenall/hexo-theme-chenall" title="gihtub">gihtub</a></li>		
-		    </ul>
-		  </li>
-		
+  
+        <li><a href="/" title="主页">主页</a></li>      
+        <li><a href="/about/" title="关于">关于</a></li>      
+        <li><a href="/archives/" title="归档">归档</a></li>      
+      <li class='dropdown'>
+        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
+        <ul class='dropdown-menu'>
+    
+          <li><a href="//chenall.net" title="chenall">chenall</a></li>    
+          <li><a href="https://github.com/chenall/hexo-theme-chenall" title="gihtub">gihtub</a></li>    
+        </ul>
+      </li>
+    
       </ul>
-      <ul class="nav navbar-nav pull-right">
+      <ul class="nav navbar-nav navbar-right">
       
         <li><a href="/atom.xml">RSS</a></li>
       
@@ -78,8 +84,7 @@
     </div>
   </div>
 </nav>
-<div class="clearfix"></div>
-</header>
+<div class="clearfix"></div></header>
   <div id='content' class="container">
      <div class="page-header-wrapper">
       <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
@@ -125,7 +130,7 @@
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/link-post-without-title/">www.google.com</a></li><li class="list-group-item"><a href="/post/images/">Images</a></li><li class="list-group-item"><a href="/post/tag-plugins/">Tag Plugins</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/link-post/">Link Post</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/customWidget/">自定义添加小工具</a></li><li class="list-group-item"><a href="/post/lorem-ipsum/">Lorem Ipsum</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/nocomments/">禁用评论框方法示范</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/long-title/">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></li><li class="list-group-item"><a href="/post/categories/">Categories</a></li><li class="list-group-item"><a href="/post/日本語テスト/">日本語テスト</a></li><li class="list-group-item"><a href="/post/tags/">Tags</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -156,7 +161,7 @@
   <span id='analytics-51la'></span><span id='analytics-google'></span><span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5774006'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5774006%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-02-10 13:13:35</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-02-11 13:49:33</em></span></div>
 </div>
 <div class="clearfix"></div>
 
