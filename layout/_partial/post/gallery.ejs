@@ -6,7 +6,7 @@
   <%}%>
   </ol>
   <div class="carousel-inner">
-    <%item.photos.forEach(function(photo,index){hexo.log.d(photo);var item = photo.split('>>'); -%>
+    <%item.photos.forEach(function(photo,index){var item = photo.split('>>'); -%>
     <div class="item<%- index==0?' active':''%>">
       <img src="<%-RealPath(item[0])%>">
       <div class="carousel-caption">
