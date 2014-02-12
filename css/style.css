@@ -75,6 +75,14 @@ article .entry code {
   word-wrap: break-word;
   overflow: auto;
 }
+article .entry .caption {
+  color: #904;
+  display: block;
+  font-size: 0.9em;
+  margin: 0.5em 0 0.5em;
+  position: relative;
+  text-align: center;
+}
 article .categories .breadcrumb {
   padding: 5px 5px;
   margin-bottom: 0px;
@@ -94,7 +102,7 @@ article a.more-link {
   color: #808;
   text-decoration: none;
 }
-#sidebar ul>li {
+.widget ul>li {
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
