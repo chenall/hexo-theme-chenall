@@ -12,6 +12,7 @@
 - `iLink` 文章内链功能
 - `ijs` 文章内嵌脚本或能
 - 允许在head或body的前面或尾部附加自定义内容.
+- 独立脚本插件扩展(source_dir/_scripts目录里面的js文件会自动加载,效果和scripts目录里面一样)
 
 注: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
