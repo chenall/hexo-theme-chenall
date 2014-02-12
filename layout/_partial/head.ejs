@@ -42,8 +42,9 @@ title.push(UserConfig.title);
 
 <link href="<%- config.root %>favicon.png" rel="icon">
 <link rel="alternate" href="<% if (UserConfig.rss){ %><%- RealPath(UserConfig.rss) %><% } else if (config.feed.path){ %><%- RealPath(config.feed.path) %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= UserConfig.title %> Feed" type="application/atom+xml">
-<%var modules_css = ['css/style.css'];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
-<%- css(modules_css) -%>
+<%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>
+<%- css(modules_css) %>
+<%- css('css/style.css') %>
 <!--[if lt IE 9]>
    <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
    <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
