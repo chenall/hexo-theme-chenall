@@ -286,6 +286,9 @@ tag_minium: 3
 ## GoogleTagManagerID: GTM-ABCDEF
 GTM_ID:
 
+## ICP备案编号
+Beian:
+
 twitter_id: chenall
 facebook_id:
 linkedin_id:

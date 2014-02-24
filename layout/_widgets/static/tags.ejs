@@ -1,2 +1,2 @@
-<%var str = '';if (site.tags.length){str = '<ul class="list-group">';site.tags.sort('posts.length',-1).limit(40).each(function(item){str += '<li class="list-group-item"><span class="badge">' + item.posts.length + '</span><a href="' + config.root + item.path  + '">' + item.name + '</a></li>';});str += '</ul>';}%>
+<%var str = '',itemnum=(hexo.debug)?-1:40;if (site.tags.length){str = '<ul class="list-group">';site.tags.sort('posts.length',-1).limit(itemnum).each(function(item){str += '<li class="list-group-item"><span class="badge">' + item.posts.length + '</span><a href="' + config.root + item.path  + '">' + item.name + '</a></li>';});str += '</ul>';}%>
 <%- str%>

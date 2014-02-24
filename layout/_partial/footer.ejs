@@ -6,7 +6,8 @@
   <% } else { %>
   &copy; <%= new Date().getFullYear() %> <%= UserConfig.title %>
   <% } %>
-    </span>
+    &nbsp;&nbsp;</span>
+  <% if (UserConfig.Beian) {%><a href='http://www.miibeian.gov.cn/'><%-UserConfig.Beian%></a></span><%}%>
   <% if (UserConfig.analytics && UserConfig.analytics.provider) {
        var provider = UserConfig.analytics.provider.split(',');
        provider.forEach(function(t){
