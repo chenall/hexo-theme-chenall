@@ -71,7 +71,7 @@ comments:
 analytics:
   # provider 要加载的统计代码类型,可同时加载多少,使用","分隔. 如下就加载了51la和google的统计代码
   # provider: 51la,google 
-  provider: 51la,google,cnzz
+  provider: 51la,google,cnzz,baidu
   # google-analytics UA
   google:
   # 我要啦」免费统计 ID
@@ -80,6 +80,8 @@ analytics:
   cnzz:
     siteid: 5774006  #站点ID,在获取统计代码的页面的地址栏上可以看到siteid=xxxx或从代码中提取(一般是一串数字)
     show: #显示样式  留空: 图片形式1; 1: 图片形式2; 2: 图片形式1; 其它值: 文字形式
+  baidu: # 百度统计对应站点的hash信息，在百度统计中获取的代码中的32个字符串信息 %3F 后面的32个十六进制字符串。类似下面的
+    hash: 1442f50724afc42380b51f097c43082c
 
 # 站点顶部菜单,支持子菜单
 menu:

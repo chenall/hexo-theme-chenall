@@ -5,11 +5,6 @@ var disqus_shortname = '<%= module.short_name %>';
 var disqus_identifier=<%=page.thread%>;
 <%}%>
 var disqus_url = '<%=url%>';
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+loadjs('http://' + disqus_shortname + '.disqus.com/embed.js');
 </script>
 <!-- disqus Comment Script END -->
