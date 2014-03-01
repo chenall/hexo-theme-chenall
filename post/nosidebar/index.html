@@ -41,7 +41,9 @@
    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-function loadjs(c,d){var a=document.createElement("script");a.type="text/javascript";a.src=c;a.charset=d||"gbk";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)};
+function loadjs(c,d){var a=document.createElement("script");a.async=!0;a.type="text/javascript";a.src=c;a.charset=d||"gbk";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)};
+var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+var _js2load = [];
 </script>
 
 </head>
@@ -153,7 +155,7 @@ title: 无侧边栏
   <li class="next"><a href="/post/code/" title="代码显示示范">代码显示示范 &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li></ul></div></section>    
 	<div id="comments"><!-- Duoshuo Comment BEGIN -->
 
 <div class="ds-thread"  data-thread-key="nosidebar"  data-url="http://hexo.chenall.net/post/nosidebar/" data-title="单独禁用侧边栏"></div>
@@ -180,7 +182,7 @@ title: 无侧边栏
 </span><span id='analytics-baidu'>
 <script>
 var _hmt = _hmt || [];
-loadjs("//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c");
+_js2load.push({src:"//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c"});
 </script>
 </span>  </div>
   <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
@@ -228,7 +230,7 @@ loadjs("//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c");
 </script>    
             <script type="text/javascript">
 var duoshuoQuery = {short_name:"hexochenall"};
-loadjs('http://static.duoshuo.com/embed.js','UTF-8');
+_js2load.push({src:'http://static.duoshuo.com/embed.js',charset:'UTF-8'});
 </script>
     
             <!--wumii_relatedItems-->
@@ -240,14 +242,14 @@ loadjs('http://static.duoshuo.com/embed.js','UTF-8');
     var wumiiCategories = ["测试","介绍"];
     var wumiiSitePrefix = "http://hexo.chenall.net";
     var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
-    loadjs('http://widget.wumii.cn/ext/relatedItemsWidget');
+    _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});
 </script>
 <a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
 <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
 </a>
     
             
-<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};loadjs('http://v1.ujian.cc/code/ujian.js?uid=1880458');</script>
+<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1880458'});</script>
 <a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
     
             <script type="text/javascript">
@@ -255,7 +257,7 @@ var uyan_config={
      'url':'http://hexo.chenall.net/post/nosidebar/',
 'su':'nosidebar'
 };
-loadjs('http://v2.uyan.cc/code/uyan.js?uid=1880458');
+_js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
 </script>
 
     
@@ -293,7 +295,8 @@ loadjs('http://v2.uyan.cc/code/uyan.js?uid=1880458');
 </script>
     
 <script type="text/javascript">
-$('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');})
+$('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');});
+_js2load.forEach(function(obj){loadjs(obj.src,obj.charset)});
 </script>
 
 
