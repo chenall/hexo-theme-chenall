@@ -155,7 +155,7 @@ title: 无侧边栏
   <li class="next"><a href="/post/code/" title="代码显示示范">代码显示示范 &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li></ul></div></section>    
 	<div id="comments"><!-- Duoshuo Comment BEGIN -->
 
 <div class="ds-thread"  data-thread-key="nosidebar"  data-url="http://hexo.chenall.net/post/nosidebar/" data-title="单独禁用侧边栏"></div>
@@ -197,7 +197,9 @@ _js2load.push({src:"//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c"});
         <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
                 
         <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
-   var lang=[];
+   var lang=["bsh", "c", "cc", "cpp", "cs", "csh", "cyc", "cv", "htm", "html",
+    "java", "js", "m", "mxml", "perl", "pl", "pm", "py", "rb", "sh",
+    "xhtml", "xml", "xsl"];
    var pretty_base='';
    $('script').each(function(){
 	var c = $(this).attr('src');
@@ -296,7 +298,7 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
     
 <script type="text/javascript">
 $('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');});
-_js2load.forEach(function(obj){loadjs(obj.src,obj.charset)});
+$.each(_js2load,function(index,obj){loadjs(obj.src,obj.charset)});
 </script>
 
 

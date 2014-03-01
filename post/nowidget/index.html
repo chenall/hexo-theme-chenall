@@ -200,7 +200,9 @@ _js2load.push({src:"//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c"});
         <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
                 
         <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
-   var lang=[];
+   var lang=["bsh", "c", "cc", "cpp", "cs", "csh", "cyc", "cv", "htm", "html",
+    "java", "js", "m", "mxml", "perl", "pl", "pm", "py", "rb", "sh",
+    "xhtml", "xml", "xsl"];
    var pretty_base='';
    $('script').each(function(){
 	var c = $(this).attr('src');
@@ -299,7 +301,7 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
     
 <script type="text/javascript">
 $('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');});
-_js2load.forEach(function(obj){loadjs(obj.src,obj.charset)});
+$.each(_js2load,function(index,obj){loadjs(obj.src,obj.charset)});
 </script>
 
 
