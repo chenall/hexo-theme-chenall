@@ -6,7 +6,7 @@
 <% }); %>
 <script type="text/javascript">
 $('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('<%-config.root%>widgets/'+src+'.html');});
-_js2load.forEach(function(obj){loadjs(obj.src,obj.charset)});
+$.each(_js2load,function(index,obj){loadjs(obj.src,obj.charset)});
 </script>
 <% if (!cache && hexo.debug) { %>
     <script type="text/javascript">
