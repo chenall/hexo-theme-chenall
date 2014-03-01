@@ -5,6 +5,6 @@ var disqus_shortname = '<%- UserConfig.comments.short_name %>';
 var disqus_identifier='<%=page.thread%>';
 <%}%>
 var disqus_url = '<%=url%>';
-loadjs('http://' + disqus_shortname + '.disqus.com/embed.js');
+_js2load.push({src:'http://' + disqus_shortname + '.disqus.com/embed.js'});
 </script>
 <!-- disqus Comment Script END -->
