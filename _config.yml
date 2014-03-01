@@ -54,6 +54,8 @@ modules:
     uid: 1880458
   ujian: #友荐：为网站添加'猜你喜欢'功能
     uid: 1880458
+  swiftype: #Swiftype配置，详情访问https://swiftype.com
+    key: #对应的Engine Key 在https://swiftype.com/home可以看到。
 
 ##评论功能设置,目前支持disqus和duoshuo/uyan,需要在上面的modules中进行要应的设置
 # show_count 是否显示文章的评论数量
