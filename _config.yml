@@ -140,6 +140,8 @@ CDN_URL: http://your.cdn.url
 ## ICP备案编号
 Beian:
 
+## 使用反色的导航条(值为true时导航条的背景色是黑色)
+bs_nav_inverse: false
 
 twitter_id: chenall
 facebook_id:
