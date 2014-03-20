@@ -25,6 +25,10 @@ body {
   color: #4141e9;
   font: 12px FontAwesome;
 }
+article header .title {
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
 article header .icon {
   color: #258fb8;
 }
