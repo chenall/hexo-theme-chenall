@@ -1,4 +1,4 @@
-var path = require('path'),
+var pathFn = require('path'),
   fs = require('fs'),
   helper = hexo.extend.helper;
 
@@ -17,19 +17,13 @@ var RealPath = function(item){
   return item;
 }
 
-helper.register('_partial',function(view,opt){
-  var src = path.resolve(path.dirname(this.filename), view);
+helper.register('_partial',function(view,opt,only){
+  var viewDir = this.view_dir || this.settings.views,
+    path = pathFn.join(pathFn.dirname(this.filename.substring(viewDir.length)), view);
 
-  if (!path.extname(src)) src += path.extname(this.filename);
+  if (hexo.theme.getView(':' + path)) view = ':' + path;
 
-  var type = src.slice(this.view_dir.length);
-
-  if (type[0] == '_'){
-    var dst = path.join(hexo.source_dir,type);
-    if (fs.existsSync(dst)) hexo.log.d(dst),view = dst.replace(/\\/g, '/');
-  }
-
-  return this.partial(view,opt);
+  return this.partial(view,opt,only);
 })
 
 helper.register('add_module', add_module);

@@ -1,4 +1,5 @@
 var util = hexo.util,
+  extend = hexo.extend.filter;
   format = util.format;
 var description = function(data, callback){
   if (!data.description){
@@ -119,10 +120,10 @@ var replaceVars = function(data,next){
   next();
 }
 
-hexo.extend.filter.register('post', description);
+extend.register('post', description);
 
 //支持多个一级分类,和目录分类
 //support "multiple first-level categories" and "Folder as category"
-hexo.extend.filter.register('pre', CreateCategory);
-hexo.extend.filter.register('pre', createTag);
-hexo.extend.filter.register('post', replaceVars);
+extend.register('pre', CreateCategory);
+extend.register('pre', createTag);
+extend.register('post', replaceVars);

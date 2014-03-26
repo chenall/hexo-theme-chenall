@@ -1,11 +1,13 @@
-# chenall V1.0
+# chenall V2.0
 
-基于[Hexo]默认主题light修改而成,采用bootstrap css框架
+基于[Hexo]默认主题light修改而成,采用bootstrap css框架,主要考虑多站点支持.
 在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.
 可以自定义组合各种组件,像评论系统,统计系统等.
 
+- 支持多站点共用同一主题,免切换
 - 支持单独启用或禁用小工具(像侧边栏之类的)
 - 支持单独启用或禁用评论
+- 支持自动设置目录(source_dir,public_dir,scaffolds)
 - 可以单独指定加载小工具
 - 支持多个分类，支持子分类
 - 独特的用户配置文件(自动加载`$SOURCE\_$THEME.yml`[默认就是**source\\_chenall.yml**]作为主题的配置文件,这样可以避免升级主题或其它原因导致的配置文件丢失).
@@ -16,13 +18,44 @@
 
 注1: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
-注2: 本版本V1.0主题适用的hexo版本为 2.4.x 建议使用2.4.5版,可以使用如下命令安装hexo2.4.5版本.hexo2.5版本因为还有一些问题没有解决,请等待以后的更新.
+注2: 本主题V2.0版适用的hexo版本为 2.5.3 以上(2.5.2版本有Bug会显示不正常).2.4.X版请下载V1.0的主题.
 
 ```
-npm install hexo@2.4.5
+npm install hexo@2.5.3
 ```
 
-### **具体效果:** [demo] 或我的搏客 [chenall.net]
+注3: 建议仔细阅读一下`自动设置目录`和`用户配置文件`相关内容.
+
+注4: 建议把主题配置文件放到source目录下,主题自定义的组件也放到source目录下,并且把站点对应的hexo配置文件放到对应站点目录下,具体可以参考下面的目录结构.
+
+
+```
+hexo/chenall.net
+hexo/chenall.net/_config.yml
+hexo/chenall.net/source
+hexo/chenall.net/source/_chenall.yml
+.....
+hexo/chenall.net/public
+hexo/hexo.chenall.net
+hexo/hexo.chenall.net/_config.yml
+hexo/hexo.chenall.net/source
+....
+hexo/hexo.chenall.net/source/_chenall.yml
+hexo/hexo.chenall.net/public
+```
+
+类似以上的目录结构,其中hexo是工作目录,`_config.yml`这个是hexo的配置文件,`_chenall.yml`是主题配置文件,这样的好处就是多站点的配置完全独立,另外更新主题时也不需要重新修改主题的配置,更不用担心因为更新的原因导致配置丢失.
+
+使用时只需要添加`--config`参数就行了
+
+比如
+
+```
+hexo server --config chenall.net/_config.yml
+hexo generate --config hexo.chenall.net/_config.yml
+```
+
+### **具体效果:** [demo] 或我的搏客 [chenall.net] github.com/chenall里面有这两个站点的完整源码
 
 ## 安装方法
 
@@ -36,12 +69,6 @@ git clone git://github.com/chenall/hexo-theme-chenall.git themes/chenall
 svn co -r HEAD https://github.com/chenall/hexo-theme-chenall/trunk themes/chenall
 ```
 
-另外: 主题内置的`list_posts`插件还需要额外安装一个`lodash`组件,使用以下命令安装即可.
-
-```
-npm install lodash --save
-```
-
 ## 更新
 
 通过以下命令来保持更新:
@@ -50,6 +77,25 @@ npm install lodash --save
 cd themes/light
 git pull 或 svn up
 ```
+
+## 自动设置目录
+
+`hexo`默认的`source`目录等虽然可以通过配置文件来指定,但由于必须使用固定的目录,使用起来不太灵活
+
+本主题对此进行了扩展,允许这些目录跟随配置文件自动变化,比如下面的配置,最终的source_dir是`$config/_config.yml`
+
+
+```
+CustomDir:
+  source_dir: source
+  public_dir: public
+```
+
+说明:
+
+1. 目前只支持'public_dir','source_dir','scaffold_dir'的配置.
+2. 可以使用变量**:config**代表配置文件目录.比如 source_dir: **:config**
+3. 具体实例可以参考[demo.site](https://github.com/chenall/hexo-theme-chenall/tree/site)和[chenall.net.site](https://github.com/chenall/chenall/tree/site)的源码.
 
 ## 分类说明
 
@@ -216,6 +262,8 @@ modules:
     uid: 1880458
   ujian: #友荐：为网站添加'猜你喜欢'功能
     uid: 1880458
+  swiftype: #Swiftype配置，详情访问https://swiftype.com
+    key: #对应的Engine Key 在https://swiftype.com/home可以看到。
 
 ##评论功能设置,目前支持disqus和duoshuo/uyan,需要在上面的modules中进行要应的设置
 # show_count 是否显示文章的评论数量
@@ -233,7 +281,7 @@ comments:
 analytics:
   # provider 要加载的统计代码类型,可同时加载多少,使用","分隔. 如下就加载了51la和google的统计代码
   # provider: 51la,google 
-  provider: 51la,google,cnzz
+  provider: 51la,google,cnzz,baidu
   # google-analytics UA
   google:
   # 我要啦」免费统计 ID
@@ -242,6 +290,8 @@ analytics:
   cnzz:
     siteid: 5774006  #站点ID,在获取统计代码的页面的地址栏上可以看到siteid=xxxx或从代码中提取(一般是一串数字)
     show: #显示样式  留空: 图片形式1; 1: 图片形式2; 2: 图片形式1; 其它值: 文字形式
+  baidu: # 百度统计对应站点的hash信息，在百度统计中获取的代码中的32个字符串信息 %3F 后面的32个十六进制字符串。类似下面的
+    siteid: 1442f50724afc42380b51f097c43082c
 
 # 站点顶部菜单,支持子菜单
 menu:
@@ -292,8 +342,14 @@ tag_minium: 3
 ## GoogleTagManagerID: GTM-ABCDEF
 GTM_ID:
 
+## 在文章中使用'[CDN_URL]:'字符串自动替换为下面的地址,主要是为了方便使用.
+CDN_URL: http://your.cdn.url
+
 ## ICP备案编号
 Beian:
+
+## 使用反色的导航条(值为true时导航条的背景色是黑色)
+bs_nav_inverse: false
 
 twitter_id: chenall
 facebook_id:
@@ -301,6 +357,7 @@ linkedin_id:
 github_id: chenall/almrun
 
 rss: atom.xml
+
 ```
 
 ### 其它语言支持
