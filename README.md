@@ -1,4 +1,4 @@
-# chenall
+# chenall V1.0
 
 基于[Hexo]默认主题light修改而成,采用bootstrap css框架
 在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.
@@ -14,7 +14,13 @@
 - 允许在head或body的前面或尾部附加自定义内容.
 - 独立脚本插件扩展(source_dir/_scripts目录里面的js文件会自动加载,效果和scripts目录里面一样)
 
-注: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
+注1: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
+
+注2: 本版本V1.0主题适用的hexo版本为 2.4.x 建议使用2.4.5版,可以使用如下命令安装hexo2.4.5版本.hexo2.5版本因为还有一些问题没有解决,请等待以后的更新.
+
+```
+npm install hexo@2.4.5
+```
 
 ### **具体效果:** [demo] 或我的搏客 [chenall.net]
 

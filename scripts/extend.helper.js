@@ -26,7 +26,7 @@ helper.register('_partial',function(view,opt){
 
   if (type[0] == '_'){
     var dst = path.join(hexo.source_dir,type);
-    if (fs.existsSync(dst)) hexo.log.d(dst),view = dst;
+    if (fs.existsSync(dst)) hexo.log.d(dst),view = dst.replace(/\\/g, '/');
   }
 
   return this.partial(view,opt);

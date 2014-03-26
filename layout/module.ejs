@@ -6,6 +6,8 @@ if (!usercfg.themeconfig) usercfg.themeconfig = theme;
 hexo.__ = function(item){
   return function(str,opt){
     var s = __(item?item + '.' + str:str);
+    if (item && s == item + '.' + str)
+      return (opt===false?false:str);
     return s?s:(opt===false?false:str);
   }
 }
