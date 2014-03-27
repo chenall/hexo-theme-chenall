@@ -4,6 +4,31 @@ var path = require('path'),
   config_dir = path.dirname(hexo.configfile),
   config = hexo.config;
 
+function testver(){
+  var ver = hexo.env.version.split('.');
+  var test = true;
+
+  if (ver[0] < 2) test = false;
+  else if (ver[0] == 2 && ver[1] < 5) test = false;
+
+  if (test) return;
+  
+  var hexo_curver = 'hexo'.red + (' V' + hexo.env.version).green;
+  var theme_curver = 'chenall'.green  + ' V2.0'.red;
+  
+  var error = 'Current version of ' + hexo_curver + ' Does not apply to the theme ' + theme_curver;
+  error += ',Please use theme ' + 'chenall '.green + 'V1.0'.red + ' or upgrade to' + ' hexo 2.5.0 '.green + 'or latest.';
+  error +='\n\n\t当前版本 ' + hexo_curver + ' 不适用于主题 ' + theme_curver + '\n请使用' + 'chenall '.green + 'V1.0'.red + ' 版主题或升级hexo到' + ' 2.5.0 '.green + '以上';
+  error +='\n\nchenall V1.0:\n' + 'svn co https://github.com/chenall/hexo-theme-chenall/tags/V1.0 themes/chenall'.yellow;
+  error +='\n\nhexo latest(升级):\n\t' + 'npm update hexo'.yellow;
+  error +='\n\nhexo V2.5.X(安装指定版本):\n\t' + 'npm install hexo@2.5.3 -g'.yellow;
+  error += '\n\n\t有什么疑问可以联系我 http://chenall.net';
+  hexo.log.e(error);  
+  process.exit(1);
+}
+
+testver();
+
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug')) hexo.debug = hexo.env.debug;
 
 hexo.__dump = function(obj){
@@ -60,10 +85,11 @@ var load_default_usercfg = function(){
   if (!fs.existsSync(user_cfg)){
     user_cfg = hexo.theme_dir + '_config.yml';
     cfg.themeconfig = hexo.render.renderSync({path: user_cfg});
-    hexo.log.i("User config file: " + user_cfg.green);
+    hexo.log.i("Theme config file: " + user_cfg.green);
   }
 
   cfg.twbs_sty = function(i){return cfg.twbs_style[i%4];}
+  hexo.log.d('Using theme ' + 'chenall V2.0'.green);
 }
 
 hexo.on('ready',load_default_usercfg);

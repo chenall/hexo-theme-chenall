@@ -33,9 +33,9 @@ processor.register('_' + hexo.config.theme + '.yml',function(data, callback){
   if (data.type == 'delete'){
     usercfg.themeconfig = false;
   } else {
-    hexo.log.i("User config file: " + data.source.green);
+    hexo.log.i("Theme config file: " + data.source.green);
     usercfg.themeconfig = hexo.render.renderSync({path: data.source});
-    hexo.log.d("User Configuration file load successfully.");
+    hexo.log.d("Theme Configuration file load successfully.");
   }
 
   usercfg.cached_widgets = {};
