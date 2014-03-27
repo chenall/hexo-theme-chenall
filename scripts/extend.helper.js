@@ -22,6 +22,7 @@ helper.register('_partial',function(view,opt,only){
     path = pathFn.join(pathFn.dirname(this.filename.substring(viewDir.length)), view);
 
   if (hexo.theme.getView(':' + path)) view = ':' + path;
+  else if (!hexo.theme.getView(path)) {hexo.log.d('Partial ' + path.green + ' does not exist');return '';}
 
   return this.partial(view,opt,only);
 })

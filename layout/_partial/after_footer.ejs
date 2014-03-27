@@ -8,9 +8,3 @@
 $('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('<%-config.root%>widgets/'+src+'.html');});
 $.each(_js2load,function(index,obj){loadjs(obj.src,obj.charset)});
 </script>
-<% if (!cache && hexo.debug) { %>
-    <script type="text/javascript">
-	var UserConfig = <%-JSON.stringify(UserConfig)%>;
-	var hexo = <%-hexo.__dump(hexo)%>;
-    </script>
-<% } %>

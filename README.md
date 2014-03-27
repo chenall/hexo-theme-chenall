@@ -13,7 +13,7 @@
 - 独特的用户配置文件(自动加载`$SOURCE\_$THEME.yml`[默认就是**source\\_chenall.yml**]作为主题的配置文件,这样可以避免升级主题或其它原因导致的配置文件丢失).
 - `iLink` 文章内链功能
 - `ijs` 文章内嵌脚本或能
-- 允许在head或body的前面或尾部附加自定义内容.
+- 允许在head或body的前面或尾部附加自定义内容.(相对1.0版改变,新版只使用`source/_modules`目录).
 - 独立脚本插件扩展(source_dir/_scripts目录里面的js文件会自动加载,效果和scripts目录里面一样)
 
 注1: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
@@ -89,6 +89,14 @@ git pull 或 svn up
 CustomDir:
   source_dir: source
   public_dir: public
+```
+
+和下面的一样
+
+```
+CustomDir:
+  source_dir: :config/source
+  public_dir: :config/public
 ```
 
 说明:
@@ -184,7 +192,7 @@ VALUE: 值
 ## 附加自定义内容
 
 如果你需要一些添加一些额外和主题无关的内容.这时就可以使用这个功能. 
-在`_modules`目录中(主题或source都可以)新建一个文件夹`partial`.
+在`source/_modules`目录中新建一个文件夹`partial`.
 
 然后就可以通过`partial`里面的特定文件添加额外内容.
 
