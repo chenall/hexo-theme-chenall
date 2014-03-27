@@ -115,16 +115,11 @@ var _js2load = [];
       
         <p>关于LuaJIT,以下是官网的介绍.</p>
 <p>LuaJIT is a Just-In-Time Compiler (JIT) for the Lua programming language. Lua is a powerful, dynamic and light-weight programming language. It may be embedded or used as a general-purpose, stand-alone language.</p>
-<p>LuaJIT is Copyright © 2005-2013 Mike Pall, released under the MIT open source license.
-LuaJIT对原版LUA进行了一些扩展,功能更强大,实用,速度也更快.本文主要介绍一下FFI扩展功能.
-FFI库允许调用外部C函数以及使用C数据结构.这意味着我们可以通过它来调用一些系统API或DLL的函数,像调用LIBCURL来实现网络功能.等…
-比如以下来自官网最简单的应用代码
-<a id="more"></a></p>
-<h2 id="-">图片测试</h2>
-<p><img src="/imgs/1lightning1.jpg" alt="">
-<img src="/imgs/1lightning1.jpg" alt=""></p>
-<h2 id="-">代码测试</h2>
-<pre><code class="lang-html">&lt;div class=&quot;container&quot; style=&quot;margin-top: 15px;&quot;&gt;
+<p>LuaJIT is Copyright © 2005-2013 Mike Pall, released under the MIT open source license.<br>LuaJIT对原版LUA进行了一些扩展,功能更强大,实用,速度也更快.本文主要介绍一下FFI扩展功能.<br>FFI库允许调用外部C函数以及使用C数据结构.这意味着我们可以通过它来调用一些系统API或DLL的函数,像调用LIBCURL来实现网络功能.等…<br>比如以下来自官网最简单的应用代码<br><a id="more"></a></p>
+<h2 id="图片测试">图片测试</h2>
+<p><img src="/imgs/1lightning1.jpg" alt=""><br><img src="/imgs/1lightning1.jpg" alt=""></p>
+<h2 id="代码测试">代码测试</h2>
+<pre><code class="html">&lt;div class=&quot;container&quot; style=&quot;margin-top: 15px;&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;col-1 col-sm-1 col-lg-1&quot;&gt;
             &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-via=&quot;&lt;%- theme.twitter_id %&gt;&quot; data-size=&quot;large&quot;&gt;Tweet&lt;/a&gt;
@@ -140,7 +135,7 @@ FFI库允许调用外部C函数以及使用C数据结构.这意味着我们可�
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre><pre><code class="lang-lua">local ffi = require(&quot;ffi&quot;)
+</code></pre><pre><code class="lua">local ffi = require(&quot;ffi&quot;)
 ffi.cdef[[
     typedef char TCHAR;
     typedef unsigned int UINT;
@@ -227,7 +222,7 @@ end
   <li class="next"><a href="/post/lorem-ipsum/" title="Lorem Ipsum">Lorem Ipsum &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/post/Mathjax/">数学公式示范</a></li><li class="list-group-item"><a href="/post/目录分类/gallery/">图片展示页面示范</a></li><li class="list-group-item"><a href="/post/customWidget/">自定义添加小工具</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li></ul></div></section>    
 	<div id="comments"><!-- Duoshuo Comment BEGIN -->
 
 <div class="ds-thread"  data-thread-key="abcd"  data-url="http://hexo.chenall.net/post/目录分类/子目录分类/hello-world/" data-title="Hello World 测试文章"></div>
@@ -262,7 +257,7 @@ end
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/categories/">Categories</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/no-title/">no-title</a></li><li class="list-group-item"><a href="/post/elements/">Elements</a></li><li class="list-group-item"><a href="/post/customWidget/">自定义添加小工具</a></li><li class="list-group-item"><a href="/post/tag-plugins/">Tag Plugins</a></li><li class="list-group-item"><a href="/post/videos/">Videos</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/post/tag-plugins/">Tag Plugins</a></li><li class="list-group-item"><a href="/post/customWidget/">自定义添加小工具</a></li><li class="list-group-item"><a href="/post/nocomments/">禁用评论框方法示范</a></li><li class="list-group-item"><a href="/post/目录分类/gallery/">图片展示页面示范</a></li><li class="list-group-item"><a href="/post/Mathjax/">数学公式示范</a></li><li class="list-group-item"><a href="/post/no-title/">no-title</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/categories/">Categories</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -287,7 +282,7 @@ end
   <div id="site-info">
     <span class='author'>
   
-  &copy; 2014 chenall
+  &copy; 2011-2014 chenall
   
     &nbsp;&nbsp;</span>
   
@@ -299,11 +294,9 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'  title="本站由hexo V2.4.5 生成"><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'  title="本站由hexo V2.5.2 生成"><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall V2.0</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
 </div>
 <div class="clearfix"></div>
-
-
   </div>
   </footer>
   
