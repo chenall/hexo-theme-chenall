@@ -28,6 +28,12 @@ iTags.ijs = function(match,content){
   return eval(content);
 };
 
+var oldDate = site.posts.sort('date',0).first().date.format('YYYY');
+var newDate = new Date().getFullYear();
+
+if (oldDate < newDate) usercfg.SiteDate = oldDate + '-' + newDate;
+else usercfg.SiteDate = newDate;
+
 var load_static_widgets = function(name){
   if (UserConfig.ajax_widgets) return "<div data-src='"+ name +"' class='ajax_widgets'>正在加载...</div>";
 
@@ -72,4 +78,6 @@ var load_widgets = function(name,item,index){
 }
 
 this.UserConfig = _.extend({ajax_widgets: true,load_widgets: load_widgets,load_static_widgets: load_static_widgets},hexo.config,usercfg,usercfg.themeconfig);
+
+usercfg.updated = false;
 %>
