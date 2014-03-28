@@ -51,8 +51,4 @@ title.push(UserConfig.title);
    <%if (UserConfig.modules['respond']){%><%- partial('../_modules/respond',{module: UserConfig.modules['respond']}) -%><%}%>
    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
 <![endif]-->
-<script type="text/javascript">
-function loadjs(c,d){var a=document.createElement("script");a.async=!0;a.type="text/javascript";a.src=c;a.charset=d||"gbk";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)};
-var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-var _js2load = [];
-</script>
+<script type="text/javascript">var BASE_URI='<%- config.root%>';var _js2load = [];</script>
