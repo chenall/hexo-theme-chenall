@@ -20,7 +20,20 @@ body {
   padding-top: 70px;
   background-color: #fff;
 }
-.widget ul .icon:before {
+.widget .list-group {
+  margin-bottom: 0px;
+}
+.widget ul >li {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.widget ul >a {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.widget .icon:before {
   content: '\f069';
   color: #4141e9;
   font: 12px FontAwesome;
@@ -106,13 +119,32 @@ article a.more-link {
   color: #808;
   text-decoration: none;
 }
-.widget ul>li {
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 #sidebar .tagcloud .entry>a {
   padding-left: 5px;
   display: inline-block;
+}
+#tooltip {
+  position: absolute;
+  z-index: 1000;
+  max-width: 250px;
+  word-wrap: break-word;
+  background: #000;
+  text-align: left;
+  padding: 5px;
+  min-height: 1em;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#tooltip p {
+  color: #f9f9f9;
+  font-size: 12px;
+}
+#tooltip em {
+  display: block;
+  margin-top: 3px;
+  color: #f60;
+  font-style: normal;
 }
