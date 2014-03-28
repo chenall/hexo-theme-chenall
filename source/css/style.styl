@@ -16,12 +16,20 @@ body
   padding-top: 70px;
   background-color: #fff;
 
-
-.widget ul .icon:before 
-  content: '\f069';
-  color: #4141e9;
-  font: 12px FontAwesome;
-
+.widget
+  .list-group
+    margin-bottom 0px
+  ul
+    >li
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    >a
+      text-overflow: ellipsis;
+   .icon:before
+     content: '\f069';
+     color: #4141e9;
+     font: 12px FontAwesome;
 
 article
   header
@@ -92,11 +100,6 @@ article
     color: #880088;
     text-decoration: none;
 
-.widget
-  ul>li 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 #sidebar
   .tagcloud .entry>a 
     padding-left: 5px;
