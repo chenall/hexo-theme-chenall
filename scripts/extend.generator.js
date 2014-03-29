@@ -20,6 +20,16 @@ extend.generator.register(function(locals, render, callback){
   callback();
 });
 
+extend.generator.register(function(locals, render, callback){
+  var posts = locals.posts;
+  var SitePosts = [];
+  posts.each(function(item){
+    SitePosts.push({title: item.title,uri: item.path});
+  })
+  route.set('js/posts.js',JSON.stringify(SitePosts));
+  callback();
+});
+
 hexo.on('generateBefore',function(){
   hexo.log.d('generateBefore');
 })

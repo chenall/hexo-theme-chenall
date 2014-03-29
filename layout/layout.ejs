@@ -1,14 +1,17 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Cache-Control" content="max-age=7200" />
 <%partial('module'); -%>
 <%body = trim(body); -%>
 <%if (page.layout == 'widget'){ -%>
+</head><body>
 <%- (body) -%>
+</body></html>
 <%return;} -%>
 <% var sidebar = (!page.hasOwnProperty('sidebar') || page.sidebar);
 if (page.widgets && page.widgets.theme == false)
     sidebar = false;
 %>
-<!DOCTYPE HTML>
-<html><head>
 <%- _partial('_modules/partial/head_start') -%>
 <%- partial('_partial/head') %>
 <%- _partial('_modules/partial/head_end') -%>
