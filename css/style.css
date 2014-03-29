@@ -126,7 +126,6 @@ article a.more-link {
 #tooltip {
   position: absolute;
   z-index: 1000;
-  max-width: 250px;
   word-wrap: break-word;
   background: #000;
   text-align: left;
