@@ -22,7 +22,7 @@ function load_random_posts(obj){
   for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
   arr = arr.slice(0,count);
   var html = '<ul class="list-group">';
-  arr.forEach(function(item){html += '<li class="list-group-item"><a href="'+site.BASE_URI+ item.uri + '">' + (item.title || item.uri) + '</a></li>';})
+  $.each(arr,function(index,item){html += '<li class="list-group-item"><a href="'+site.BASE_URI+ item.uri + '">' + (item.title || item.uri) + '</a></li>';});
   $(obj).html(html + '</ul>');
   SetToolTip(obj);
 }
