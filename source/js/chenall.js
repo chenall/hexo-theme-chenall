@@ -37,4 +37,11 @@ jQuery(document).ready(function($){
     if (!site.posts || !site.posts.length) $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
     else load_random_posts(c);
   });
+  $('.nav>li').click(function(){
+    if ($(this).attr('id') == 'show_all_contents'){
+      $('.tab-content div').removeClass();
+    }else if ($('.nav-pills #show_all_contents').hasClass('active')){
+      $('.tab-content div').addClass('tab-pane fade');
+    }
+  })
 })

@@ -58,15 +58,16 @@ posts.each(function(item,id){
   if (item.description) item_data += '<p class="list-group-item-text">' + item.description + '</p>';
 })
 item_arr[item_year] = item_data;
+var show_all = (posts.length <= 10);
 var item_keys = Object.keys(item_arr);
 if (item_keys.length == 1){%>
   <%- item_arr[item_keys[0]]%>
 <%}else{
-var nav_tabs = [];
+var nav_tabs = ['<li id="show_all_contents"' +(show_all?'class="active"':'') +'><a href="#" data-toggle="pill">全部</a></li>'];
 var tab_contents = [];
 for(item in item_arr){
-  nav_tabs.push('<li class="'+(item == item_year?' active':'')+'"><a href="#year_'+item+'" data-toggle="pill">'+item+'</a></li>');
-  tab_contents.push('<div class="tab-pane fade'+(item == item_year?' in active':'')+'" id="year_'+item+'">'+item_arr[item]+'</div>');
+  nav_tabs.push('<li class="'+((!show_all && item == item_year)?' active':'')+'"><a href="#year_'+item+'" data-toggle="pill">'+item+'</a></li>');
+  tab_contents.push('<div ' + (show_all?'':'class="tab-pane fade'+(item == item_year?' in active"':'"'))+' id="year_'+item+'">'+item_arr[item]+'</div>');
 }
 %>
 <!-- Nav tabs -->
