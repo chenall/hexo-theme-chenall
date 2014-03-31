@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[hexo theme chenall]]></title>
+  <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://hexo.chenall.net/"/>
+  <updated>2014-03-31T04:53:45.839Z</updated>
+  <id>http://hexo.chenall.net/</id>
+  
+  <author>
+    <name><![CDATA[chenall]]></name>
+    
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[FAQ]]></title>
+    <link href="http://hexo.chenall.net/post/faq/"/>
+    <id>http://hexo.chenall.net/post/faq/</id>
+    <published>2014-02-26T13:16:31.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="How_to_edit_menu?">How to edit menu?</h3>
+<p>Edit <code>menu</code> parameter in <code>_config.yml</code>.</p>
+<h3 id="How_to_edit_sidebar?">How to edit sidebar?</h3>
+<p>Edit <code>widgets</code> paramter in <code>_config.yml</code>.</p>
+<p>If you have any questions, send me an <a href="https://github.com/chenall/hexo-theme-chenall/issues" target="_blank">issue</a>.</p>
+]]></content>
+    
+    
+      <category term="dolor" scheme="http://hexo.chenall.net/tags/dolor/"/>
+    
+      <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="介绍" scheme="http://hexo.chenall.net/categories/%E4%BB%8B%E7%BB%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[介绍]]></title>
+    <link href="http://hexo.chenall.net/post/intro/"/>
+    <id>http://hexo.chenall.net/post/intro/</id>
+    <published>2013-12-28T07:20:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>基于<a href="http://zespia.tw/hexo" target="_blank">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br><a id="more"></a></p>
+<h2 id="安装方法">安装方法</h2>
+<p>通过以下命令下载主题到您的theme目录，然后修改blog的_config.yml中theme为chenall。</p>
+<pre><code>git clone git://github.com/chenall/hexo-theme-chenall.git themes/chenall
+</code></pre><p>或</p>
+<pre><code>svn co -r HEAD https://github.com/chenall/hexo-theme-chenall/trunk themes/chenall
+</code></pre><h2 id="更新">更新</h2>
+<p>通过以下命令来保持更新:</p>
+<pre><code>cd themes/light
+git pull 或 svn up
+</code></pre><h2 id="功能">功能</h2>
+<ul>
+<li>两栏模块</li>
+<li>侧边栏工具</li>
+<li>模块化,可根据您的需要加载指定模块.</li>
+<li>支持多种评论系统</li>
+<li>支持多种统计系统</li>
+<li>顶部菜单支持子菜单.</li>
+<li>widgets功能增强,完全自定义,并且可以在多个地方加载,比如文章内容前/后,页面顶部/底部等.</li>
+<li>其它功能请参考 <a href="http://zespia.tw/hexo-theme-light/" target="_blank">hexo-theme-light</a></li>
+<li>可以单独启用或禁用各种小工具</li>
+<li>支持多级分类,多个一级分类</li>
+</ul>
+]]></content>
+    <summary type="html"><![CDATA[<p>基于<a href="http://zespia.tw/hexo" target="_blank">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br>]]></summary>
+    
+      <category term="Hexo" scheme="http://hexo.chenall.net/tags/Hexo/"/>
+    
+      <category term="theme" scheme="http://hexo.chenall.net/tags/theme/"/>
+    
+      <category term="chenall" scheme="http://hexo.chenall.net/tags/chenall/"/>
+    
+      <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="介绍" scheme="http://hexo.chenall.net/categories/%E4%BB%8B%E7%BB%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[自定义添加小工具]]></title>
+    <link href="http://hexo.chenall.net/post/customWidget/"/>
+    <id>http://hexo.chenall.net/post/customWidget/</id>
+    <published>2013-12-28T07:00:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
+<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
+<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
+<p>例子:</p>
+<pre><code>layout: post
+title: 自定义添加小工具
+widgets:
+  after_content:
+    - post_pageNav
+    - +
+  after_post:
+    - uyan
+</code></pre>]]></content>
+    
+    
+      <category term="测试" scheme="http://hexo.chenall.net/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[禁用所有小工具的文章]]></title>
+    <link href="http://hexo.chenall.net/post/nowidget/"/>
+    <id>http://hexo.chenall.net/post/nowidget/</id>
+    <published>2013-12-28T07:00:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>本页面会禁用主题设置的所有widgets包含侧边栏</p>
+<p>使用方法,在贴子信息中添加以下内容</p>
+<pre><code>widgets:
+  theme: false
+</code></pre><a id="more"></a>
+
+<p>本页面的设置如下: 本页面额外添加了一个小工具post_pageNav</p>
+<pre><code>---
+title: 禁用所有小工具的文章
+widgets:
+  theme: false
+  after_post:
+    - post_pageNav
+---
+</code></pre><p>你同样可以添加需要的小工具,只需要在widgets:后面添加你需要添加的小工具就行了.</p>
+<p>也可以参考 <a href="/post/customwidget/">自定义添加小工具</a></p>
+]]></content>
+    <summary type="html"><![CDATA[<p>本页面会禁用主题设置的所有widgets包含侧边栏</p>
+<p>使用方法,在贴子信息中添加以下内容</p>
+<pre><code>widgets:
+  theme: false
+</code></pre>]]></summary>
+    
+      <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="子分类" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/%E5%AD%90%E5%88%86%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[单独禁用侧边栏]]></title>
+    <link href="http://hexo.chenall.net/post/nosidebar/"/>
+    <id>http://hexo.chenall.net/post/nosidebar/</id>
+    <published>2013-12-28T02:56:36.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>禁用侧边栏,在文章前面的信息中添加一行</p>
+<pre><code>sidebar: false
+</code></pre><p>例子:</p>
+<pre><code>---
+layout: post
+sidebar: false
+title: 无侧边栏
+</code></pre>]]></content>
+    
+    
+      <category term="test" scheme="http://hexo.chenall.net/tags/test/"/>
+    
+      <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="介绍" scheme="http://hexo.chenall.net/categories/%E4%BB%8B%E7%BB%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[代码显示示范]]></title>
+    <link href="http://hexo.chenall.net/post/code/"/>
+    <id>http://hexo.chenall.net/post/code/</id>
+    <published>2013-12-27T00:00:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>一些在文章中贴代码块的方法</p>
+<p><a id="more"></a><br>普通的代码块:</p>
+<p>使用方法:<br>例子:</p>
+<pre><code>```js
+var http = require(&#39;http&#39;);
+http.createServer(function (req, res) {
+  res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+  res.end(&#39;Hello World\n&#39;);
+}).listen(1337, &#39;127.0.0.1&#39;);
+console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
+```
+</code></pre><p>效果如下:</p>
+<pre><code class="js">var http = require(&#39;http&#39;);
+http.createServer(function (req, res) {
+  res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+  res.end(&#39;Hello World\n&#39;);
+}).listen(1337, &#39;127.0.0.1&#39;);
+console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
+</code></pre>
+<p>Code block:</p>
+<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(arrayLength);
+<span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(element0, element1, ..., elementN);
+</pre></td></tr></table></figure>
+
+
+<p>支持直接调用GIST代码标签:</p>
+<pre><code>    {% gist 996818 %}
+</code></pre><script src="https://gist.github.com/996818.js"></script>
+
+
+<p>支持直接调用jsFiddle的标签:</p>
+<pre><code>     {% jsfiddle ccWP7 %}
+</code></pre><iframe width="100%" height="300" src="http://jsfiddle.net/ccWP7/embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
+]]></content>
+    <summary type="html"><![CDATA[<p>一些在文章中贴代码块的方法</p>
+<p>]]></summary>
+    
+      <category term="code" scheme="http://hexo.chenall.net/tags/code/"/>
+    
+      <category term="Hexo" scheme="http://hexo.chenall.net/tags/Hexo/"/>
+    
+      <category term="chenall" scheme="http://hexo.chenall.net/tags/chenall/"/>
+    
+      <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="代码" scheme="http://hexo.chenall.net/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Images]]></title>
+    <link href="http://hexo.chenall.net/post/images/"/>
+    <id>http://hexo.chenall.net/post/images/</id>
+    <published>2013-12-26T14:46:49.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a image test post.</p>
+<p><img src="/imgs/wallpaper-2572384.jpg" alt=""></p>
+<p><img src="/imgs/wallpaper-2311325.jpg" alt="Caption"></p>
+<p><img src="/imgs/wallpaper-878514.jpg" alt=""></p>
+<p><img src="http://placehold.it/350x150.jpg" alt="Small Picture"></p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[禁用评论框方法示范]]></title>
+    <link href="http://hexo.chenall.net/post/nocomments/"/>
+    <id>http://hexo.chenall.net/post/nocomments/</id>
+    <published>2013-12-26T07:00:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>本页面没有评论框,只是禁用主题_config.yml里面设置comments..<br>可以通过widget添加的评论论不受此限制</p>
+<p>使用方法在文章头部添加一个设置</p>
+<pre><code>comments: false
+</code></pre><p>本页面相关参数</p>
+<pre><code>---
+layout: post
+comments: false
+title: 禁用评论框方法示范
+</code></pre>]]></content>
+    
+    
+      <category term="test" scheme="http://hexo.chenall.net/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[链接页面]]></title>
+    <link href="http://hexo.chenall.net/post/link/"/>
+    <id>http://hexo.chenall.net/post/link/</id>
+    <published>2013-12-26T00:00:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>本页面是属于链接文章(这个比较少用到,只是保留原主题的功能).<br>点击文章标题会跳到指定的网址,比如这个,会跳到www.google.com</p>
+<pre><code>    ---
+    layout: link
+    link: http://www.google.com
+    title: 链接页面
+</code></pre>]]></content>
+    
+    
+      <category term="link" scheme="http://hexo.chenall.net/tags/link/"/>
+    
+      <category term="post" scheme="http://hexo.chenall.net/tags/post/"/>
+    
+      <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="介绍" scheme="http://hexo.chenall.net/categories/%E4%BB%8B%E7%BB%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://hexo.chenall.net/post/no-title/"/>
+    <id>http://hexo.chenall.net/post/no-title/</id>
+    <published>2013-12-25T14:57:49.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This post doesn’t have a title. Make sure it’s accessible.</p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Excerpts]]></title>
+    <link href="http://hexo.chenall.net/post/excerpts/"/>
+    <id>http://hexo.chenall.net/post/excerpts/</id>
+    <published>2013-12-24T16:23:23.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>The following contents should be invisible in home/archive page.</p>
+<a id="more"></a>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna vitae velit eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae libero pharetra adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam. Ut nec velit dolor. Proin eget leo lobortis, aliquam est sed, mollis mauris. Fusce vitae leo pretium massa accumsan condimentum. Fusce malesuada gravida lectus vel vulputate. Donec bibendum porta nibh ut aliquam.</p>
+<p>Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>The following contents should be invisible in home/archive page.</p>
+]]></summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Videos]]></title>
+    <link href="http://hexo.chenall.net/post/videos/"/>
+    <id>http://hexo.chenall.net/post/videos/</id>
+    <published>2013-12-24T16:19:15.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a video test post.</p>
+<p><strong>Youtube</strong></p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/TIbZDRXM-Tg" frameborder="0" allowfullscreen></iframe></div>
+
+
+<p><strong>Vimeo</strong></p>
+<div class="video-container"><iframe src="//player.vimeo.com/video/82090131" frameborder="0" allowfullscreen></iframe></div>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Gallery Post]]></title>
+    <link href="http://hexo.chenall.net/post/gallery-post/"/>
+    <id>http://hexo.chenall.net/post/gallery-post/</id>
+    <published>2013-12-24T16:16:18.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This post contains 4 photos:</p>
+<ul>
+<li>Widescreen wallpaper</li>
+<li>Portrait photo</li>
+<li>Dual widescreen wallpaper</li>
+<li>Small photo</li>
+</ul>
+<p>All photos should be displayed properly.</p>
+<p><em>From <a href="http://wallbase.cc" target="_blank">Wallbase.cc</a></em></p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Tag Plugins]]></title>
+    <link href="http://hexo.chenall.net/post/tag-plugins/"/>
+    <id>http://hexo.chenall.net/post/tag-plugins/</id>
+    <published>2013-12-24T16:14:39.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This post is used for testing tag plugins. See <a href="http://zespia.tw/hexo/docs/tag-plugins.html" target="_blank">docs</a> for more info.</p>
+<h2 id="Block_Quote">Block Quote</h2>
+<h3 id="Normal_blockquote">Normal blockquote</h3>
+<blockquote>
+<p>Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.</p>
+</blockquote>
+<h3 id="Quote_from_a_book">Quote from a book</h3>
+<blockquote>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+
+<h3 id="Quote_from_Twitter">Quote from Twitter</h3>
+<blockquote>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank">http://devdocs.io</a><footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank">twitter.com/devdocs/status/&hellip;</a></cite></footer></blockquote>
+
+<h3 id="Quote_from_an_article_on_the_web">Quote from an article on the web</h3>
+<blockquote>Every interaction is both precious and an opportunity to delight.<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank">Welcome to Island Marketing</a></cite></footer></blockquote>
+
+<h2 id="Code_Block">Code Block</h2>
+<h3 id="Normal_code_block">Normal code block</h3>
+<pre><code>alert(&#39;Hello World!&#39;);
+</code></pre><h3 id="With_caption">With caption</h3>
+<figure class="highlight"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword">array</span>.<span class="keyword">map</span>(callback[, thisArg])
+</pre></td></tr></table></figure>
+
+
+<h3 id="With_caption_and_URL">With caption and URL</h3>
+<figure class="highlight"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="keyword">false</span>, <span class="number">2</span>, ‘’, <span class="number">3</span>]);
+=&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+</pre></td></tr></table></figure>
+
+
+<h3 id="Gist">Gist</h3>
+<script src="https://gist.github.com/996818.js"></script>
+
+
+<h3 id="jsFiddle">jsFiddle</h3>
+<iframe width="100%" height="300" src="http://jsfiddle.net/ccWP7/embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
+
+
+<h2 id="Pullquote">Pullquote</h2>
+<h3 id="Left">Left</h3>
+<blockquote class="pullquote left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</blockquote>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus molestie arcu, et fringilla mauris placerat ac. Nullam luctus bibendum risus. Ut cursus sed ipsum feugiat egestas. Suspendisse elementum, velit eu consequat consequat, augue lorem dapibus libero, eget pulvinar dolor est sit amet nulla. Suspendisse a porta tortor, et posuere mi. Pellentesque ultricies, mi quis volutpat malesuada, erat felis vulputate nisl, ac congue ante tortor ut ante. Proin aliquam sem vel mauris tincidunt, eget scelerisque tortor euismod. Nulla tincidunt enim nec commodo dictum. Mauris id sapien et orci gravida luctus id ut dui. In vel vulputate odio. Duis vel turpis molestie, scelerisque enim eu, lobortis eros. Cras at ipsum gravida, sagittis ante vel, viverra tellus. Nunc mauris turpis, elementum ullamcorper nisl pretium, ultrices cursus justo. Mauris porttitor commodo eros, ac ornare orci interdum in. Cras fermentum cursus leo sed mattis. In dignissim lorem sem, sit amet elementum mauris venenatis ac.</p>
+<h3 id="Right">Right</h3>
+<blockquote class="pullquote right">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</blockquote>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula justo, lobortis sit amet semper vel, dignissim sit amet libero. Praesent ac tempus ligula. Maecenas at gravida odio. Etiam tristique volutpat lacus eu faucibus. Donec non tempus arcu. Phasellus adipiscing, mauris nec mollis egestas, ipsum nunc auctor velit, et rhoncus lorem ipsum at ante. Praesent et sem in velit volutpat auctor. Duis vel mauris nulla. Maecenas mattis interdum ante, quis sagittis nibh cursus et. Nulla facilisi. Morbi convallis gravida tortor, ut fermentum enim gravida et. Nunc vel dictum nisl, non ultrices libero. Proin vestibulum felis eget orci consectetur lobortis. Vestibulum augue nulla, iaculis vitae augue vehicula, dignissim ultrices libero. Sed imperdiet urna et quam ultrices tincidunt nec ac magna. Etiam vel pharetra elit.</p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[www.google.com]]></title>
+    <link href="http://hexo.chenall.net/post/link-post-without-title/"/>
+    <id>http://hexo.chenall.net/post/link-post-without-title/</id>
+    <published>2013-12-24T15:44:13.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a link post without a title. The title should be the link with or without protocol. Clicking on the link should open <a href="http://www.google.com/" target="_blank">Google</a> in a new tab or window.</p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[日本語テスト]]></title>
+    <link href="http://hexo.chenall.net/post/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/"/>
+    <id>http://hexo.chenall.net/post/日本語テスト/</id>
+    <published>2013-12-24T15:33:26.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a Japanese test post.</p>
+<p>私は昨日ついにその助力家というのの上よりするたなけれ。</p>
+<p>最も今をお話団はちょうどこの前後なかろでくらいに困りがいるたをは帰着考えたなかって、そうにもするでうたらない。</p>
+<p>がたを知っないはずも同時に九月をいよいよたありた。</p>
+<p>もっと槙さんにぼんやり金少し説明にえた自分大した人私か影響にというお関係たうませないが、この次第も私か兄具合に使うて、槙さんののに当人のあなたにさぞご意味と行くて私個人が小尊敬を聴いように同時に同反抗に集っだうて、いよいよまず相当へあっうからいだ事をしでなけれ。</p>
+<blockquote>
+<p>それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。</p>
+</blockquote>
+<p>この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。</p>
+<p><em>From <a href="http://lipsum.sugutsukaeru.jp/index.cgi" target="_blank">すぐ使えるダミーテキスト - 日本語 Lorem ipsum</a></em></p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[中文測試]]></title>
+    <link href="http://hexo.chenall.net/post/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/"/>
+    <id>http://hexo.chenall.net/post/中文測試/</id>
+    <published>2013-12-24T15:31:30.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a Chinese test post.</p>
+<p>善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。</p>
+<p>以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？</p>
+<p>就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。</p>
+<p>國新故。</p>
+<blockquote>
+<p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？</p>
+</blockquote>
+<p><em>From <a href="http://www.richyli.com/tool/loremipsum/" target="_blank">亂數假文產生器 - Chinese Lorem Ipsum</a></em></p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.]]></title>
+    <link href="http://hexo.chenall.net/post/long-title/"/>
+    <id>http://hexo.chenall.net/post/long-title/</id>
+    <published>2013-12-24T15:31:06.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This post has a long title. Make sure the title displayed right.</p>
+]]></content>
+    
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Categories]]></title>
+    <link href="http://hexo.chenall.net/post/categories/"/>
+    <id>http://hexo.chenall.net/post/categories/</id>
+    <published>2013-12-24T15:30:09.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This post contains 3 categories. Make sure your theme can display all of the categories.</p>
+]]></content>
+    
+    
+      <category term="Foo" scheme="http://hexo.chenall.net/categories/Foo/"/>
+    
+      <category term="Bar" scheme="http://hexo.chenall.net/categories/Bar/"/>
+    
+      <category term="Baz" scheme="http://hexo.chenall.net/categories/Baz/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Link Post]]></title>
+    <link href="http://hexo.chenall.net/post/link-post/"/>
+    <id>http://hexo.chenall.net/post/link-post/</id>
+    <published>2013-12-24T15:30:04.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a link post. Clicking on the link should open <a href="http://www.google.com/" target="_blank">Google</a> in a new tab or window.</p>
+]]></content>
+    
+    
+  </entry>
+  
+</feed>
