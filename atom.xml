@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net/"/>
-  <updated>2014-04-07T12:52:09.862Z</updated>
+  <updated>2014-04-07T13:09:04.425Z</updated>
   <id>http://hexo.chenall.net/</id>
   
   <author>
@@ -81,6 +81,31 @@ git pull 或 svn up
   </entry>
   
   <entry>
+    <title><![CDATA[自定义添加小工具]]></title>
+    <link href="http://hexo.chenall.net/post/customWidget/"/>
+    <id>http://hexo.chenall.net/post/customWidget/</id>
+    <published>2013-12-28T07:00:00.000Z</published>
+    <updated>2014-02-26T13:16:31.000Z</updated>
+    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
+<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
+<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
+<p>例子:</p>
+<pre><code>layout: post
+title: 自定义添加小工具
+widgets:
+  after_content:
+    - post_pageNav
+    - +
+  after_post:
+    - uyan
+</code></pre>]]></content>
+    
+    
+      <category term="测试" scheme="http://hexo.chenall.net/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[禁用所有小工具的文章]]></title>
     <link href="http://hexo.chenall.net/post/nowidget/"/>
     <id>http://hexo.chenall.net/post/nowidget/</id>
@@ -112,31 +137,6 @@ widgets:
       <category term="测试" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/"/>
     
       <category term="子分类" scheme="http://hexo.chenall.net/categories/%E6%B5%8B%E8%AF%95/%E5%AD%90%E5%88%86%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[自定义添加小工具]]></title>
-    <link href="http://hexo.chenall.net/post/customWidget/"/>
-    <id>http://hexo.chenall.net/post/customWidget/</id>
-    <published>2013-12-28T07:00:00.000Z</published>
-    <updated>2014-02-26T13:16:31.000Z</updated>
-    <content type="html"><![CDATA[<p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
-<p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
-<p><code>+</code>代表添加主题设置的小工具,否则默认不添加.</p>
-<p>例子:</p>
-<pre><code>layout: post
-title: 自定义添加小工具
-widgets:
-  after_content:
-    - post_pageNav
-    - +
-  after_post:
-    - uyan
-</code></pre>]]></content>
-    
-    
-      <category term="测试" scheme="http://hexo.chenall.net/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
