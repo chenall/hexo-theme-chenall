@@ -25,7 +25,7 @@ if (item.categories && item.categories.length)
     else
       cats[cats.length - 1] += '<li><a href="' + config.root + cat.path + '" itemprop="url">' + cat.name + '</a></li>';
   });
-  item_meta.push('<div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">' + __('Posted in') + '<span class="breadcrumb fa fa-folder">' + cats.join('</span><span class="breadcrumb">') + '</span></div>');
+  item_meta.push('<div class="categories"' + (!index?' itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" ':'') + 'style="display:inline">' + __('Posted in') + '<span class="breadcrumb fa fa-folder">' + cats.join('</span><span class="breadcrumb">') + '</span></div>');
 }
 
 if (item.tags && item.tags.length){ 
