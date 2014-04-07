@@ -40,6 +40,7 @@ title.push(UserConfig.title);
 <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
 <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
 
+<%if(config.author_url){%><link rel="author" href="<%-config.author_url%>" /><%}%>
 <link href="<%- config.root %>favicon.png" rel="icon">
 <link rel="alternate" href="<% if (UserConfig.rss){ %><%- RealPath(UserConfig.rss) %><% } else if (config.feed.path){ %><%- RealPath(config.feed.path) %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= UserConfig.title %> Feed" type="application/atom+xml">
 <%var modules_css = [];UserConfig.loaded_modules.forEach(function(mod){var module = UserConfig.modules[mod];if (module && module.css) modules_css.push(module.css);})%>

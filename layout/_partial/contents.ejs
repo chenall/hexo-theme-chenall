@@ -21,17 +21,17 @@ if (item.categories && item.categories.length)
   var cats = [];
   item.categories.forEach(function(cat){
     if (!cat.parent)
-      cats.push('<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>');
+      cats.push('<li><a href="' + config.root + cat.path + '" itemprop="url"><span itemprop="title" >' + cat.name + '</span></a></li>');
     else
-      cats[cats.length - 1] += '<li><a href="' + config.root + cat.path + '">' + cat.name + '</a></li>';
+      cats[cats.length - 1] += '<li><a href="' + config.root + cat.path + '" itemprop="url">' + cat.name + '</a></li>';
   });
-  item_meta.push('<span class="categories">' + __('Posted in') + '<span class="breadcrumb fa fa-folder">' + cats.join('</span><span class="breadcrumb">') + '</span></span>');
+  item_meta.push('<div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">' + __('Posted in') + '<span class="breadcrumb fa fa-folder">' + cats.join('</span><span class="breadcrumb">') + '</span></div>');
 }
 
 if (item.tags && item.tags.length){ 
     var tags = [];
     item.tags.forEach(function(tag,i){
-    tags.push('<a href="' + config.root + tag.path + '" class="label label-'+ UserConfig.twbs_sty(i) +'">' + tag.name + '</a>');
+    tags.push('<a href="' + config.root + tag.path + '" class="label label-'+ UserConfig.twbs_sty(i) +'" itemprop="url"><span itemprop="title">' + tag.name + '</span></a>');
     });
     item_meta.push('<span class="tags">' + __('Tagged') + ' ' + tags.join("") + '</span>');
 }
