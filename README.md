@@ -408,6 +408,6 @@ widgets:
   tags: 标签
   tagcloud: 标签云
 ```
-[Hexo]: http://zespia.tw/hexo/
+[Hexo]: http://hexo.io/
 [demo]: http://hexo.chenall.net
 [chenall.net]: http://chenall.net
