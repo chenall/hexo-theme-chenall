@@ -23,7 +23,7 @@
         </ul>
       </li>
     <%} else {%>
-        <li><%-link_to(RealPath(UserConfig.menu[i]),__(i)) -%></li>
+        <li item='<%-path%>' <%if(page.path.toLowerCase().indexOf(UserConfig.menu[i].toLowerCase())==0){%>class='active'<%}%>><%-link_to(RealPath(UserConfig.menu[i]),__(i)) -%></li>
       <%  }
   }%>
       </ul>

@@ -1,5 +1,22 @@
 @import 'nib'
 
+@media (min-width: 992px)
+  .affix,.affix-bottom
+    width: 213px;
+  .affix
+    position: fixed;
+    top: 80px;
+  .affix-bottom
+    position: absolute;
+  .affix-bottom,.affix,.affix-top
+    margin-top: 0;
+    margin-bottom: 0;
+    left: 10px;
+.pull-left
+  float: left !important
+.pull-right
+  float: right !important
+
 h1,h2,h3,h4,h5,h6
   font-weight bold
   padding-bottom 10px
@@ -77,13 +94,14 @@ article
       white-space: pre
       word-wrap:break-word
       overflow:auto
-    .caption
-      color: #904;
-      display: block;
-      font-size: 0.9em;
-      margin: 0.5em 0 0.5em;
-      position: relative;
-      text-align: center;
+    .img_block
+      display: block
+      position: relative
+      .caption
+        display: none
+        position: absolute
+        top: 0
+        color: #fff
   .categories .breadcrumb 
     padding: 5px 5px;
     margin-bottom: 0px;

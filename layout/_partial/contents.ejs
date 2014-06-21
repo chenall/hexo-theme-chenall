@@ -55,7 +55,7 @@ if (item.comments && UserConfig.comments.provider && UserConfig.comments.show_co
     </header>
     <%- partial('post/gallery')%>
     <%- UserConfig.load_widgets('before_content',item,index) %>
-    <div class="entry">
+    <div class="entry" <%if(!index){%> data-spy="scroll" data-target="#toc" <%}%>>
       <% if (item.excerpt && index){ %>
         <%- item.excerpt %>
       <% } else { %>
