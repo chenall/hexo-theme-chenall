@@ -1,6 +1,11 @@
-<% UserConfig.widgets.sidebar.forEach(function(widget){ var title = __(widget,false);%>
+<% UserConfig.widgets.sidebar.forEach(function(widget){
+  var widget_cfg = {name: widget,options: {}};
+  if (typeof widget === 'object'){
+    widget_cfg = _.extend(widget_cfg,widget);
+  }
+  var title = __(widget_cfg.name,false);%>
 <div id="widget_<%- widget %>" class="widget panel panel-primary">
   <%- title?'<div class="panel-heading">' + title + '</div>':'' -%>
-  <%- _partial('../_widgets/' + widget,{name: widget}) -%>
-</div><%if (!cache && hexo.debug){%><!--widget_<%- widget %>--><%}%>
+  <%- _partial('../_widgets/' + widget_cfg.name,widget_cfg) -%>
+</div><%if (!cache && hexo.debug){%><!--widget_<%- widget_cfg.name %>--><%}%>
 <% }); %>

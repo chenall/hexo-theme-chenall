@@ -34,6 +34,8 @@ var case_find = function(name){
 }
 
 var CreateCategory = function(data, next){
+  if (!data.categories) data.categories = [];
+
   var categories = data.categories;
 
   if (!categories) return next();
@@ -90,7 +92,7 @@ var CreateCategory = function(data, next){
   next();
 };
 
-var createTag = function(data, next){
+var CreateTag = function(data, next){
   var tags = data.tags;
 
   if (!tags || !tags.length) return next();
@@ -120,10 +122,30 @@ var replaceVars = function(data,next){
   next();
 }
 
+
+var ConfigWidgets = function(data, next){
+  var widgets = data.widgets;
+
+  if (!widgets) return next();
+
+  for(var k in widgets){
+    var w=widgets[k];
+    if (w){
+      w.forEach(function(n,i){
+        if (typeof n !== 'object'){
+          var y=n.indexOf(',');
+          if (y > 0) w[i]={name: n.substr(0,y),options: JSON.parse(n.slice(y+1))};
+        }
+      })
+    }
+  }
+  next();
+}
 extend.register('post', description);
 
 //支持多个一级分类,和目录分类
 //support "multiple first-level categories" and "Folder as category"
 extend.register('pre', CreateCategory);
-extend.register('pre', createTag);
+extend.register('pre', CreateTag);
+extend.register('pre', ConfigWidgets);
 extend.register('post', replaceVars);

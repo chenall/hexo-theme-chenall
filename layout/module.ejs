@@ -12,6 +12,20 @@ hexo.__ = function(item){
   }
 }
 
+var configWidgets = function(widgets){
+  for(var k in widgets){
+    var w=widgets[k];
+    if (w){
+      w.forEach(function(n,i){
+        if (typeof n !== 'object'){
+          var y=n.indexOf(',');
+          if (y > 0) w[i]={name: n.substr(0,y),options: JSON.parse(n.slice(y+1))};
+        }
+      })
+    }
+  }
+}
+
 this.iTags = {};
 
 iTags.ilink = function(match,content,br){
@@ -34,14 +48,9 @@ var newDate = new Date().getFullYear();
 if (oldDate < newDate) usercfg.SiteDate = oldDate + '-' + newDate;
 else usercfg.SiteDate = newDate;
 
-var load_static_widgets = function(name){
+var load_static_widgets = function(name,options){
   if (UserConfig.ajax_widgets) return "<div data-src='"+ name +"' class='ajax_widgets'>正在加载...</div>";
-
-  if (!UserConfig.cached_widgets.hasOwnProperty(name)){
-    var str = _partial('_widgets/static/' + name,{name: name});
-    UserConfig.cached_widgets[name] = str;
-  }
-  return UserConfig.cached_widgets[name];
+  return _partial('_widgets/static/' + name,{name: name,options: options});
 }
 
 var load_widgets = function(name,item,index){
@@ -68,9 +77,13 @@ var load_widgets = function(name,item,index){
     }
 
     widgets.forEach(function(widget){
-	str += '<div class="widget" id="widget_' + name + '_' + widget + '>">';
-        str += _partial('_widgets/' + widget,{pos: name,item: item,name: widget});
-	str += '</div>';
+        var widget_cfg = {pos: name,item: item,name: widget,options: {}};
+        if (typeof widget === 'object'){
+          widget_cfg = _.extend(widget_cfg,widget);
+        }
+        str += '<div class="widget" id="widget_' + name + '_' + widget_cfg.name + '>">';
+        str += _partial('_widgets/' + widget_cfg.name,widget_cfg);
+        str += '</div>';
     });
 
     str +='</section>';
@@ -78,6 +91,8 @@ var load_widgets = function(name,item,index){
 }
 
 this.UserConfig = _.extend({ajax_widgets: true,load_widgets: load_widgets,load_static_widgets: load_static_widgets},hexo.config,usercfg,usercfg.themeconfig);
+
+configWidgets(this.UserConfig.widgets);
 
 usercfg.updated = false;
 %>
