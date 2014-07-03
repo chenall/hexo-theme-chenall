@@ -27,7 +27,21 @@ function testver(){
   process.exit(1);
 }
 
+function checkenv(){
+  var store = hexo.extend.renderer.store;
+  var error = '';
+  if (!store['ejs']) error += '\tnpm install hexo-renderer-ejs\n';
+  if (!store['md']) error += '\tnpm install hexo-renderer-marked\n';
+  if (!store['styl']) error +='\tnpm install hexo-renderer-stylus\n';
+
+  if (error){
+    hexo.log.e('\t主题使用环境检测失败\n\n\t缺少必要插件,请使用以下命令安装:\n\n',error);
+    process.exit(1);
+  }
+}
+
 testver();
+checkenv();
 
 if (hexo.hasOwnProperty('env') && hexo.env.hasOwnProperty('debug')) hexo.debug = hexo.env.debug;
 
