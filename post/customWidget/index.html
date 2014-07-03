@@ -59,9 +59,9 @@ after_content的小工具,本例子增加了一个post_pageNav,还有一个’+�
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
   
-        <li><a href="/" title="主页">主页</a></li>      
-        <li><a href="/about/" title="关于">关于</a></li>      
-        <li><a href="/archives/" title="归档">归档</a></li>      
+        <li item='post/customWidget/' class='active'><a href="/" title="主页">主页</a></li>      
+        <li item='post/customWidget/' ><a href="/about/" title="关于">关于</a></li>      
+        <li item='post/customWidget/' ><a href="/archives/" title="归档">归档</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -108,7 +108,7 @@ after_content的小工具,本例子增加了一个post_pageNav,还有一个’+�
     </header>
     
     <section id='before_content_widget'></section>
-    <div class="entry">
+    <div class="entry"  data-spy="scroll" data-target="#toc" >
       
         <p>本文章添加了一个小工具&lt;友言&gt;在文章框架后面,作为附加的评论系统.<br>同时会禁用主题after_post设置的其它小工具.所以主题的设置的post_pageNav就没有了.</p>
 <p>after_content的小工具,本例子增加了一个post_pageNav,还有一个’+’代表在当前位置保留主题的设置.</p>
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://hexo.io/'  title="本站由hexo V2.6.0 生成"><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall V2.0</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://hexo.io/'  title="本站由hexo V2.7.1 生成"><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall V2.2</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
 </div>
 <div class="clearfix"></div>
   </div>
@@ -315,11 +315,9 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
     $(this).find('img').each(function(){
       var alt = this.alt;
 
-      if (alt){
-        $(this).before('<span class="caption">' + alt + '</span>');
-      }
-
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />').wrap('<div class="img_block"></div>');
+     
+      if(alt){$(this).after('<span class="caption">' + alt + '</span>')};
     });
   });
 
@@ -342,6 +340,6 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
   });
 </script>
     
-<script type="text/javascript" src="/js/chenall.js"></script>
+<script src="/js/chenall.js" type="text/javascript"></script>
   </body>
 </html>

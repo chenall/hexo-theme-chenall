@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net/"/>
-  <updated>2014-05-20T06:48:45.647Z</updated>
+  <updated>2014-07-03T14:10:12.358Z</updated>
   <id>http://hexo.chenall.net/</id>
   
   <author>
@@ -24,7 +24,7 @@
 <p>Edit <code>menu</code> parameter in <code>_config.yml</code>.</p>
 <h3 id="How_to_edit_sidebar?">How to edit sidebar?</h3>
 <p>Edit <code>widgets</code> paramter in <code>_config.yml</code>.</p>
-<p>If you have any questions, send me an <a href="https://github.com/chenall/hexo-theme-chenall/issues" target="_blank">issue</a>.</p>
+<p>If you have any questions, send me an <a href="https://github.com/chenall/hexo-theme-chenall/issues" target="_blank" rel="external">issue</a>.</p>
 ]]></content>
     
     
@@ -42,7 +42,7 @@
     <id>http://hexo.chenall.net/post/intro/</id>
     <published>2013-12-28T07:20:00.000Z</published>
     <updated>2014-02-26T13:16:31.000Z</updated>
-    <content type="html"><![CDATA[<p>基于<a href="http://zespia.tw/hexo" target="_blank">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>基于<a href="http://zespia.tw/hexo" target="_blank" rel="external">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br><a id="more"></a></p>
 <h2 id="安装方法">安装方法</h2>
 <p>通过以下命令下载主题到您的theme目录，然后修改blog的_config.yml中theme为chenall。</p>
 <pre><code>git clone git://github.com/chenall/hexo-theme-chenall.git themes/chenall
@@ -61,12 +61,12 @@ git pull 或 svn up
 <li>支持多种统计系统</li>
 <li>顶部菜单支持子菜单.</li>
 <li>widgets功能增强,完全自定义,并且可以在多个地方加载,比如文章内容前/后,页面顶部/底部等.</li>
-<li>其它功能请参考 <a href="http://zespia.tw/hexo-theme-light/" target="_blank">hexo-theme-light</a></li>
+<li>其它功能请参考 <a href="http://zespia.tw/hexo-theme-light/" target="_blank" rel="external">hexo-theme-light</a></li>
 <li>可以单独启用或禁用各种小工具</li>
 <li>支持多级分类,多个一级分类</li>
 </ul>
 ]]></content>
-    <summary type="html"><![CDATA[<p>基于<a href="http://zespia.tw/hexo" target="_blank">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br>]]></summary>
+    <summary type="html"><![CDATA[<p>基于<a href="http://zespia.tw/hexo" target="_blank" rel="external">Hexo</a>默认主题light修改而成,采用bootstrap css框架<br>在尽量保留原有主题功能的同时采用模块化设计支持多个widgets.实现高度自定义,通过widgets你可以添加许多实用功能.<br>可以自定义组合各种组件,像评论系统,统计系统等.<br>]]></summary>
     
       <category term="Hexo" scheme="http://hexo.chenall.net/tags/Hexo/"/>
     
@@ -190,7 +190,7 @@ http.createServer(function (req, res) {
 console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
 </code></pre>
 <p>Code block:</p>
-<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank" rel="external">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(arrayLength);
 <span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(element0, element1, ..., elementN);
@@ -338,7 +338,7 @@ title: 禁用评论框方法示范
 <li>Small photo</li>
 </ul>
 <p>All photos should be displayed properly.</p>
-<p><em>From <a href="http://wallbase.cc" target="_blank">Wallbase.cc</a></em></p>
+<p><em>From <a href="http://wallbase.cc" target="_blank" rel="external">Wallbase.cc</a></em></p>
 ]]></content>
     
     
@@ -350,7 +350,7 @@ title: 禁用评论框方法示范
     <id>http://hexo.chenall.net/post/tag-plugins/</id>
     <published>2013-12-24T16:14:39.000Z</published>
     <updated>2014-02-26T13:16:31.000Z</updated>
-    <content type="html"><![CDATA[<p>This post is used for testing tag plugins. See <a href="http://zespia.tw/hexo/docs/tag-plugins.html" target="_blank">docs</a> for more info.</p>
+    <content type="html"><![CDATA[<p>This post is used for testing tag plugins. See <a href="http://zespia.tw/hexo/docs/tag-plugins.html" target="_blank" rel="external">docs</a> for more info.</p>
 <h2 id="Block_Quote">Block Quote</h2>
 <h3 id="Normal_blockquote">Normal blockquote</h3>
 <blockquote>
@@ -366,15 +366,15 @@ title: 禁用评论框方法示范
 <h3 id="Quote_from_Twitter">Quote from Twitter</h3>
 <blockquote>
 
-<p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank">http://devdocs.io</a></p>
-<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank">twitter.com/devdocs/status/&hellip;</a></cite></footer></blockquote>
+<p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/&hellip;</a></cite></footer></blockquote>
 
 
 <h3 id="Quote_from_an_article_on_the_web">Quote from an article on the web</h3>
 <blockquote>
 
 <p>Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank">Welcome to Island Marketing</a></cite></footer></blockquote>
+<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
 
 
 <h2 id="Code_Block">Code Block</h2>
@@ -386,7 +386,7 @@ title: 禁用评论框方法示范
 </pre></td></tr></table></figure>
 
 <h3 id="With_caption_and_URL">With caption and URL</h3>
-<figure class="highlight"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="keyword">false</span>, <span class="number">2</span>, ‘’, <span class="number">3</span>]);
 =&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
@@ -426,7 +426,7 @@ title: 禁用评论框方法示范
     <id>http://hexo.chenall.net/post/link-post-without-title/</id>
     <published>2013-12-24T15:44:13.000Z</published>
     <updated>2014-02-26T13:16:31.000Z</updated>
-    <content type="html"><![CDATA[<p>This is a link post without a title. The title should be the link with or without protocol. Clicking on the link should open <a href="http://www.google.com/" target="_blank">Google</a> in a new tab or window.</p>
+    <content type="html"><![CDATA[<p>This is a link post without a title. The title should be the link with or without protocol. Clicking on the link should open <a href="http://www.google.com/" target="_blank" rel="external">Google</a> in a new tab or window.</p>
 ]]></content>
     
     
@@ -447,7 +447,7 @@ title: 禁用评论框方法示范
 <p>それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。</p>
 </blockquote>
 <p>この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。</p>
-<p><em>From <a href="http://lipsum.sugutsukaeru.jp/index.cgi" target="_blank">すぐ使えるダミーテキスト - 日本語 Lorem ipsum</a></em></p>
+<p><em>From <a href="http://lipsum.sugutsukaeru.jp/index.cgi" target="_blank" rel="external">すぐ使えるダミーテキスト - 日本語 Lorem ipsum</a></em></p>
 ]]></content>
     
     
@@ -467,7 +467,7 @@ title: 禁用评论框方法示范
 <blockquote>
 <p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？</p>
 </blockquote>
-<p><em>From <a href="http://www.richyli.com/tool/loremipsum/" target="_blank">亂數假文產生器 - Chinese Lorem Ipsum</a></em></p>
+<p><em>From <a href="http://www.richyli.com/tool/loremipsum/" target="_blank" rel="external">亂數假文產生器 - Chinese Lorem Ipsum</a></em></p>
 ]]></content>
     
     
@@ -509,7 +509,7 @@ title: 禁用评论框方法示范
     <id>http://hexo.chenall.net/post/link-post/</id>
     <published>2013-12-24T15:30:04.000Z</published>
     <updated>2014-02-26T13:16:31.000Z</updated>
-    <content type="html"><![CDATA[<p>This is a link post. Clicking on the link should open <a href="http://www.google.com/" target="_blank">Google</a> in a new tab or window.</p>
+    <content type="html"><![CDATA[<p>This is a link post. Clicking on the link should open <a href="http://www.google.com/" target="_blank" rel="external">Google</a> in a new tab or window.</p>
 ]]></content>
     
     

@@ -38,5 +38,11 @@ jQuery(document).ready(function($){
     }else if ($('.nav-pills #show_all_contents').hasClass('active')){
       $('.tab-content div').addClass('tab-pane fade');
     }
+  });
+  $('#toc').on('activate.bs.scrollspy', function () {
+    console.log('test');
   })
+  $('#toc').addClass("nav nav-pills navbar-fixed-bottom navbar-inverse")//.affix({
+//    offset: {top: 100, bottom: function () {this.bottom = $('.entry').outerHeight(true);console.log(this.bottom);return 4460;}}
+//  });
 })

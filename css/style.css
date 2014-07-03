@@ -1,3 +1,29 @@
+@media (min-width: 992px) {
+  .affix,
+  .affix-bottom {
+    width: 213px;
+  }
+  .affix {
+    position: fixed;
+    top: 80px;
+  }
+  .affix-bottom {
+    position: absolute;
+  }
+  .affix-bottom,
+  .affix,
+  .affix-top {
+    margin-top: 0;
+    margin-bottom: 0;
+    left: 10px;
+  }
+}
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
 h1,
 h2,
 h3,
@@ -92,13 +118,15 @@ article .entry code {
   word-wrap: break-word;
   overflow: auto;
 }
-article .entry .caption {
-  color: #904;
+article .entry .img_block {
   display: block;
-  font-size: 0.9em;
-  margin: 0.5em 0 0.5em;
   position: relative;
-  text-align: center;
+}
+article .entry .img_block .caption {
+  display: none;
+  position: absolute;
+  top: 0;
+  color: #fff;
 }
 article .categories .breadcrumb {
   padding: 5px 5px;

@@ -66,9 +66,9 @@ Javascript Array Syntax MDN Documentation
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
   
-        <li><a href="/" title="主页">主页</a></li>      
-        <li><a href="/about/" title="关于">关于</a></li>      
-        <li><a href="/archives/" title="归档">归档</a></li>      
+        <li item='post/code/' class='active'><a href="/" title="主页">主页</a></li>      
+        <li item='post/code/' ><a href="/about/" title="关于">关于</a></li>      
+        <li item='post/code/' ><a href="/archives/" title="归档">归档</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -115,7 +115,7 @@ Javascript Array Syntax MDN Documentation
     </header>
     
     <section id='before_content_widget'></section>
-    <div class="entry">
+    <div class="entry"  data-spy="scroll" data-target="#toc" >
       
         <p>一些在文章中贴代码块的方法</p>
 <p><a id="more"></a><br>普通的代码块:</p>
@@ -137,7 +137,7 @@ http.createServer(function (req, res) {
 console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
 </code></pre>
 <p>Code block:</p>
-<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank" rel="external">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(arrayLength);
 <span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(element0, element1, ..., elementN);
@@ -184,7 +184,7 @@ console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
   <li class="next"><a href="/post/images/" title="Images">Images &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/link/">链接页面</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/目录分类/gallery/">图片展示页面示范</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/Mathjax/">数学公式示范</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/post/code/">代码显示示范</a></li><li class="list-group-item"><a href="/post/目录分类/子目录分类/hello-world/">Hello World 测试文章</a></li><li class="list-group-item"><a href="/post/nowidget/">禁用所有小工具的文章</a></li><li class="list-group-item"><a href="/post/nosidebar/">单独禁用侧边栏</a></li><li class="list-group-item"><a href="/post/faq/">FAQ</a></li><li class="list-group-item"><a href="/post/intro/">介绍</a></li><li class="list-group-item"><a href="/post/Mathjax/">数学公式示范</a></li><li class="list-group-item"><a href="/post/目录分类/gallery/">图片展示页面示范</a></li></ul></div></section>    
 	<div id="comments"><!-- Duoshuo Comment BEGIN -->
 
 <div class="ds-thread"  data-thread-key="code"  data-url="http://hexo.chenall.net/post/code/" data-title="代码显示示范"></div>
@@ -256,7 +256,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?1442f50724afc42380b51f097c43082c"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://hexo.io/'  title="本站由hexo V2.6.0 生成"><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall V2.0</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://hexo.io/'  title="本站由hexo V2.7.1 生成"><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall V2.2</a></strong><span class="pull-right"> 更新时间: <em>2014-02-26 21:16:31</em></span></div>
 </div>
 <div class="clearfix"></div>
   </div>
@@ -338,11 +338,9 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
     $(this).find('img').each(function(){
       var alt = this.alt;
 
-      if (alt){
-        $(this).before('<span class="caption">' + alt + '</span>');
-      }
-
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />').wrap('<div class="img_block"></div>');
+     
+      if(alt){$(this).after('<span class="caption">' + alt + '</span>')};
     });
   });
 
@@ -365,6 +363,6 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1880458'});
   });
 </script>
     
-<script type="text/javascript" src="/js/chenall.js"></script>
+<script src="/js/chenall.js" type="text/javascript"></script>
   </body>
 </html>
