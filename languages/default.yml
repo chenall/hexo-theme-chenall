@@ -24,6 +24,7 @@ menu:
   GuestBook: 留言板
 
 widgets:
+  search: 搜索
   category: 分类
   recent_posts: 最近文章
   latest_update_posts: 最近更新
