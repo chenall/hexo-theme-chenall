@@ -10,7 +10,7 @@
     <a class="navbar-brand" href="<%- config.root %>"><%- UserConfig.title %><%if (hexo.debug) {%>[<span class='testIE IE9'>IE9</span><span class='testIE IE8'>IE8</span><span class='testIE IE7'>lte IE7</span>]<%}%></a>
     </div>
     <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav dropdown-hover">
   <%  for (var i in UserConfig.menu) {
     if ( Object.prototype.toString.call(UserConfig.menu[i] ) === '[object Object]' ) {
     %>
