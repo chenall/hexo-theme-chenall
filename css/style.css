@@ -100,13 +100,51 @@ article img {
 article .entry hr {
   border-top: 1px solid #080;
 }
-article .entry h3 {
+article .entry h1 {
+  color: #f00;
+  margin: 10px 0px 5px 0px;
+  padding: 5px 0px 5px 5px;
+  background-color: #e2e2e2;
+  font-size: 200%;
+}
+article .entry h2 {
   color: #080;
-  margin: 40px 0px 10px 0px;
-  border-left: #008000 solid thick;
-  padding: 10px 0px 10px 10px;
+  margin: 10px 0px 5px 0px;
+  border-bottom: double thick;
+  padding: 5px 0px 5px 5px;
+  background-color: #e2e2e2;
+  font-size: 180%;
+}
+article .entry h3 {
+  color: #2828dc;
+  margin: 10px 0px 5px 0px;
+  border-bottom: #2828dc solid;
+  padding: 5px 0px 5px 5px;
   background-color: #e2e2e2;
   font-size: 160%;
+}
+article .entry h4 {
+  color: #3c69c9;
+  margin: 10px 0px 5px 0px;
+  border-bottom: #3c69c9 dashed;
+  padding: 5px 0px 5px 5px;
+  background-color: #e2e2e2;
+  font-size: 140%;
+}
+article .entry h5 {
+  color: #b35200;
+  margin: 10px 0px 5px 0px;
+  border-bottom: #b35200 dotted;
+  padding: 5px 0px 5px 5px;
+  background-color: #e2e2e2;
+  font-size: 120%;
+}
+article .entry h6 {
+  color: #fa5300;
+  margin: 10px 0px 5px 0px;
+  padding: 5px 0px 5px 5px;
+  background-color: #e2e2e2;
+  font-size: 110%;
 }
 article .entry blockquote footer {
   cite: before;
@@ -174,4 +212,10 @@ article a.more-link {
   margin-top: 3px;
   color: #f60;
   font-style: normal;
+}
+.dropdown-hover .dropdown-menu li:hover .submenu {
+  visibility: visible;
+}
+.dropdown-hover .dropdown:hover .dropdown-menu {
+  display: block;
 }

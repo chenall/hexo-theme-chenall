@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hexo模块化主题,自由,强大]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://hexo.chenall.net/"/>
-  <updated>2014-07-10T09:15:07.683Z</updated>
+  <updated>2014-11-12T08:09:13.346Z</updated>
   <id>http://hexo.chenall.net/</id>
   
   <author>
@@ -168,7 +168,7 @@ title: 无侧边栏
     <title><![CDATA[代码显示示范]]></title>
     <link href="http://hexo.chenall.net/post/code/"/>
     <id>http://hexo.chenall.net/post/code/</id>
-    <published>2013-12-27T00:00:00.000Z</published>
+    <published>2013-12-26T16:00:00.000Z</published>
     <updated>2014-02-26T13:16:31.000Z</updated>
     <content type="html"><![CDATA[<p>一些在文章中贴代码块的方法</p>
 <p><a id="more"></a><br>普通的代码块:</p>
@@ -190,11 +190,7 @@ http.createServer(function (req, res) {
 console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
 </code></pre>
 <p>Code block:</p>
-<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank" rel="external">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(arrayLength);
-<span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(element0, element1, ..., elementN);
-</pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>Javascript Array Syntax </span><a href="http://j.mp/pPUUmW" target="_blank" rel="external">MDN Documentation</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(arrayLength);</div><div class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(element0, element1, ..., elementN);</div></pre></td></tr></table></figure>
 
 <p>支持直接调用GIST代码标签:</p>
 <pre><code>    {% gist 996818 %}
@@ -259,7 +255,7 @@ title: 禁用评论框方法示范
     <title><![CDATA[链接页面]]></title>
     <link href="http://hexo.chenall.net/post/link/"/>
     <id>http://hexo.chenall.net/post/link/</id>
-    <published>2013-12-26T00:00:00.000Z</published>
+    <published>2013-12-25T16:00:00.000Z</published>
     <updated>2014-02-26T13:16:31.000Z</updated>
     <content type="html"><![CDATA[<p>本页面是属于链接文章(这个比较少用到,只是保留原主题的功能).<br>点击文章标题会跳到指定的网址,比如这个,会跳到www.google.com</p>
 <pre><code>    ---
@@ -381,16 +377,10 @@ title: 禁用评论框方法示范
 <h3 id="Normal_code_block">Normal code block</h3>
 <pre><code>alert(&#39;Hello World!&#39;);
 </code></pre><h3 id="With_caption">With caption</h3>
-<figure class="highlight"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="keyword">array</span>.<span class="keyword">map</span>(callback[, thisArg])
-</pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">array</span>.<span class="keyword">map</span>(callback[, thisArg])</div></pre></td></tr></table></figure>
 
 <h3 id="With_caption_and_URL">With caption and URL</h3>
-<figure class="highlight"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre>.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="keyword">false</span>, <span class="number">2</span>, ‘’, <span class="number">3</span>]);
-=&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
-</pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="keyword">false</span>, <span class="number">2</span>, ‘’, <span class="number">3</span>]);</div><div class="line"><span class="output"><span class="status">=&gt;</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span></div></pre></td></tr></table></figure>
 
 <h3 id="Gist">Gist</h3>
 <script src="https://gist.github.com/996818.js"></script>
