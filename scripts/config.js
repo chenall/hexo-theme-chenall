@@ -14,7 +14,7 @@ function testver(){
   if (test) return;
   
   var hexo_curver = 'hexo'.red + (' V' + hexo.env.version).green;
-  var theme_curver = 'chenall'.green  + ' V2.0'.red;
+  var theme_curver = 'chenall'.green  + ' V2.2'.red;
   
   var error = 'Current version of ' + hexo_curver + ' Does not apply to the theme ' + theme_curver;
   error += ',Please use theme ' + 'chenall '.green + 'V1.0'.red + ' or upgrade to' + ' hexo 2.5.0 '.green + 'or latest.';
@@ -103,7 +103,7 @@ var load_default_usercfg = function(){
   }
 
   cfg.twbs_sty = function(i){return cfg.twbs_style[i%4];}
-  hexo.log.d('Using theme ' + 'chenall V2.0'.green);
+  hexo.log.d('Using theme ' + 'chenall V2.2'.green);
 }
 
 hexo.on('ready',load_default_usercfg);

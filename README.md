@@ -18,7 +18,7 @@
 
 注1: 上面的$SOURCE是hexo配置文件中在`source_dir`,$THEME是hexo配置文件中的`theme`,即 **hexo.source_dir + '_'+ hexo.config.theme+ '.yml'**;
 
-注2: 本主题V2.0版适用的hexo版本为 2.5.3 以上(2.5.2版本有Bug会显示不正常).2.4.X版请下载V1.0的主题.
+注2: 本主题v2.0-v2.2版适用的hexo版本为 2.5.3 以上(2.5.2版本有Bug会显示不正常).2.4.X版请下载V1.0的主题,不支持3.x版hexo
 
 ```
 npm install hexo@2.5.3
